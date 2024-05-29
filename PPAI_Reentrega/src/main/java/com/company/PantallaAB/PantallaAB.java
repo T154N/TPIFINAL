@@ -42,15 +42,15 @@ public class PantallaAB extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        backGround.setBackground(new java.awt.Color(246, 221, 231));
+        backGround.setBackground(new java.awt.Color(238, 240, 235));
         backGround.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(106, 46, 65));
+        jPanel1.setBackground(new java.awt.Color(123, 38, 66));
 
-        jButton5.setBackground(new java.awt.Color(175, 76, 106));
+        jButton5.setBackground(new java.awt.Color(219, 179, 177));
         jButton5.setText("jButton5");
 
-        jButton6.setBackground(new java.awt.Color(175, 76, 106));
+        jButton6.setBackground(new java.awt.Color(200, 159, 163));
         jButton6.setText("jButton6");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,7 +58,7 @@ public class PantallaAB extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(175, 75, 106));
+        jButton7.setBackground(new java.awt.Color(145, 83, 104));
         jButton7.setText("jButton7");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -85,23 +85,25 @@ public class PantallaAB extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(248, 230, 237));
+        jPanel2.setBackground(new java.awt.Color(238, 240, 235));
 
-        jButton1.setBackground(new java.awt.Color(175, 76, 106));
-        jButton1.setText("jButton1");
+        jButton1.setBackground(new java.awt.Color(180, 184, 171));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jButton1.setText("Importar actualización \nde vinos de bodega ");
+        jButton1.setActionCommand("Importar actualización \nde vinos de bodega ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(175, 76, 106));
+        jButton2.setBackground(new java.awt.Color(180, 184, 171));
         jButton2.setText("jButton2");
 
-        jButton3.setBackground(new java.awt.Color(175, 76, 106));
+        jButton3.setBackground(new java.awt.Color(180, 184, 171));
         jButton3.setText("jButton3");
 
-        jButton4.setBackground(new java.awt.Color(175, 76, 106));
+        jButton4.setBackground(new java.awt.Color(180, 184, 171));
         jButton4.setText("jButton4");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -130,7 +132,7 @@ public class PantallaAB extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout backGroundLayout = new javax.swing.GroupLayout(backGround);
