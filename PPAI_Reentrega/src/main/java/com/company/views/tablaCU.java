@@ -28,14 +28,14 @@ public class tablaCU extends javax.swing.JPanel {
 
         backGround2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaBodegas = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         botonConfirmar = new javax.swing.JButton();
 
         backGround2.setBackground(new java.awt.Color(123, 38, 66));
 
-        jTable1.setBackground(new java.awt.Color(204, 182, 155));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaBodegas.setBackground(new java.awt.Color(204, 182, 155));
+        tablaBodegas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -61,9 +61,9 @@ public class tablaCU extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setGridColor(new java.awt.Color(102, 102, 102));
-        jTable1.setShowGrid(true);
-        jScrollPane1.setViewportView(jTable1);
+        tablaBodegas.setGridColor(new java.awt.Color(102, 102, 102));
+        tablaBodegas.setShowGrid(true);
+        jScrollPane1.setViewportView(tablaBodegas);
 
         jPanel2.setBackground(new java.awt.Color(123, 38, 66));
         jPanel2.setPreferredSize(new java.awt.Dimension(182, 37));
@@ -121,6 +121,6 @@ public class tablaCU extends javax.swing.JPanel {
     private javax.swing.JButton botonConfirmar;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaBodegas;
     // End of variables declaration//GEN-END:variables
 }
