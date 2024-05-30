@@ -11,6 +11,16 @@ public class Bodega {
 	private RegionVitivinicola regionVitivinicola;
 
 	//Constructor
+	public Bodega(String coordenadasUbicacion, String descripcion, String historia, String nombre,
+			Integer periodoActualizacion, NovedadEvento novedadEvento, RegionVitivinicola regionVitivinicola) {
+		this.coordenadasUbicacion = coordenadasUbicacion;
+		this.descripcion = descripcion;
+		this.historia = historia;
+		this.nombre = nombre;
+		this.periodoActualizacion = periodoActualizacion;
+		this.novedadEvento = novedadEvento;
+		this.regionVitivinicola = regionVitivinicola;
+	}
 
 
 
