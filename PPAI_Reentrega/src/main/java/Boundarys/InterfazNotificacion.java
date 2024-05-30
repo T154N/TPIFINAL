@@ -1,5 +1,4 @@
-﻿package Boundarys;
-
+package Boundarys;
 
 public class InterfazNotificacion {
 
@@ -16,7 +15,7 @@ public class InterfazNotificacion {
 	}
 
 
-	public void _notificarNovedadVino() {
+	public void notificarNovedadVino() {
 
 	}
 }
