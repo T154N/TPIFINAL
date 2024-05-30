@@ -9,58 +9,31 @@ package Clases;
  * @author Cristian
  * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public class Bodega {
+public class Siguiendo {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	private Object coordenadasUbicacion;
+	private Bodega bodega;
 
 	/** 
-	 * @return el coordenadasUbicacion
+	 * @return el bodega
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public Object getCoordenadasUbicacion() {
+	public Bodega getBodega() {
 		// begin-user-code
-		return coordenadasUbicacion;
+		return bodega;
 		// end-user-code
 	}
 
 	/** 
-	 * @param coordenadasUbicacion el coordenadasUbicacion a establecer
+	 * @param bodega el bodega a establecer
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void setCoordenadasUbicacion(Object coordenadasUbicacion) {
+	public void setBodega(Bodega bodega) {
 		// begin-user-code
-		this.coordenadasUbicacion = coordenadasUbicacion;
-		// end-user-code
-	}
-
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	private Object descripcion;
-
-	/** 
-	 * @return el descripcion
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public Object getDescripcion() {
-		// begin-user-code
-		return descripcion;
-		// end-user-code
-	}
-
-	/** 
-	 * @param descripcion el descripcion a establecer
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setDescripcion(Object descripcion) {
-		// begin-user-code
-		this.descripcion = descripcion;
+		this.bodega = bodega;
 		// end-user-code
 	}
 
@@ -69,52 +42,25 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	private Object historia;
+	private Object fechaFin;
 
 	/** 
-	 * @return el historia
+	 * @return el fechaFin
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public Object getHistoria() {
+	public Object getFechaFin() {
 		// begin-user-code
-		return historia;
+		return fechaFin;
 		// end-user-code
 	}
 
 	/** 
-	 * @param historia el historia a establecer
+	 * @param fechaFin el fechaFin a establecer
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void setHistoria(Object historia) {
+	public void setFechaFin(Object fechaFin) {
 		// begin-user-code
-		this.historia = historia;
-		// end-user-code
-	}
-
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	private String nombre;
-
-	/** 
-	 * @return el nombre
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public String getNombre() {
-		// begin-user-code
-		return nombre;
-		// end-user-code
-	}
-
-	/** 
-	 * @param nombre el nombre a establecer
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setNombre(String nombre) {
-		// begin-user-code
-		this.nombre = nombre;
+		this.fechaFin = fechaFin;
 		// end-user-code
 	}
 
@@ -123,52 +69,25 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	private Object periodoActualizacion;
+	private Object fechaInicio;
 
 	/** 
-	 * @return el periodoActualizacion
+	 * @return el fechaInicio
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public Object getPeriodoActualizacion() {
+	public Object getFechaInicio() {
 		// begin-user-code
-		return periodoActualizacion;
+		return fechaInicio;
 		// end-user-code
 	}
 
 	/** 
-	 * @param periodoActualizacion el periodoActualizacion a establecer
+	 * @param fechaInicio el fechaInicio a establecer
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void setPeriodoActualizacion(Object periodoActualizacion) {
+	public void setFechaInicio(Object fechaInicio) {
 		// begin-user-code
-		this.periodoActualizacion = periodoActualizacion;
-		// end-user-code
-	}
-
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	private NovedadEvento novedadEvento;
-
-	/** 
-	 * @return el novedadEvento
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public NovedadEvento getNovedadEvento() {
-		// begin-user-code
-		return novedadEvento;
-		// end-user-code
-	}
-
-	/** 
-	 * @param novedadEvento el novedadEvento a establecer
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setNovedadEvento(NovedadEvento novedadEvento) {
-		// begin-user-code
-		this.novedadEvento = novedadEvento;
+		this.fechaInicio = fechaInicio;
 		// end-user-code
 	}
 
@@ -177,25 +96,25 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	private RegionVitivinicola regionVitivinicola;
+	private Sommelier sommelier;
 
 	/** 
-	 * @return el regionVitivinicola
+	 * @return el sommelier
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public RegionVitivinicola getRegionVitivinicola() {
+	public Sommelier getSommelier() {
 		// begin-user-code
-		return regionVitivinicola;
+		return sommelier;
 		// end-user-code
 	}
 
 	/** 
-	 * @param regionVitivinicola el regionVitivinicola a establecer
+	 * @param sommelier el sommelier a establecer
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void setRegionVitivinicola(RegionVitivinicola regionVitivinicola) {
+	public void setSommelier(Sommelier sommelier) {
 		// begin-user-code
-		this.regionVitivinicola = regionVitivinicola;
+		this.sommelier = sommelier;
 		// end-user-code
 	}
 
@@ -204,7 +123,34 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void contarResenia() {
+	private Enofilo amigo;
+
+	/** 
+	 * @return el amigo
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public Enofilo getAmigo() {
+		// begin-user-code
+		return amigo;
+		// end-user-code
+	}
+
+	/** 
+	 * @param amigo el amigo a establecer
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void setAmigo(Enofilo amigo) {
+		// begin-user-code
+		this.amigo = amigo;
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void sosDeAmigo() {
 		// begin-user-code
 		// TODO Apéndice de método generado automáticamente
 
@@ -216,7 +162,7 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void mostrarTodosVinos() {
+	public void sosDeBodega() {
 		// begin-user-code
 		// TODO Apéndice de método generado automáticamente
 
@@ -228,7 +174,7 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void disponibleActualizar() {
+	public void sosDeSomelier() {
 		// begin-user-code
 		// TODO Apéndice de método generado automáticamente
 
@@ -240,7 +186,7 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void actualizarDatosVino() {
+	public void _sosDeBodega() {
 		// begin-user-code
 		// TODO Apéndice de método generado automáticamente
 

@@ -9,31 +9,31 @@ package Clases;
  * @author Cristian
  * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public class Bodega {
+public class Certificacion {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	private Object coordenadasUbicacion;
+	private Object adjuntoURL;
 
 	/** 
-	 * @return el coordenadasUbicacion
+	 * @return el adjuntoURL
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public Object getCoordenadasUbicacion() {
+	public Object getAdjuntoURL() {
 		// begin-user-code
-		return coordenadasUbicacion;
+		return adjuntoURL;
 		// end-user-code
 	}
 
 	/** 
-	 * @param coordenadasUbicacion el coordenadasUbicacion a establecer
+	 * @param adjuntoURL el adjuntoURL a establecer
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void setCoordenadasUbicacion(Object coordenadasUbicacion) {
+	public void setAdjuntoURL(Object adjuntoURL) {
 		// begin-user-code
-		this.coordenadasUbicacion = coordenadasUbicacion;
+		this.adjuntoURL = adjuntoURL;
 		// end-user-code
 	}
 
@@ -69,25 +69,25 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	private Object historia;
+	private Object fechaFin;
 
 	/** 
-	 * @return el historia
+	 * @return el fechaFin
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public Object getHistoria() {
+	public Object getFechaFin() {
 		// begin-user-code
-		return historia;
+		return fechaFin;
 		// end-user-code
 	}
 
 	/** 
-	 * @param historia el historia a establecer
+	 * @param fechaFin el fechaFin a establecer
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void setHistoria(Object historia) {
+	public void setFechaFin(Object fechaFin) {
 		// begin-user-code
-		this.historia = historia;
+		this.fechaFin = fechaFin;
 		// end-user-code
 	}
 
@@ -96,13 +96,67 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	private String nombre;
+	private Object fechaInicio;
+
+	/** 
+	 * @return el fechaInicio
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public Object getFechaInicio() {
+		// begin-user-code
+		return fechaInicio;
+		// end-user-code
+	}
+
+	/** 
+	 * @param fechaInicio el fechaInicio a establecer
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void setFechaInicio(Object fechaInicio) {
+		// begin-user-code
+		this.fechaInicio = fechaInicio;
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private Object institucionOtorgante;
+
+	/** 
+	 * @return el institucionOtorgante
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public Object getInstitucionOtorgante() {
+		// begin-user-code
+		return institucionOtorgante;
+		// end-user-code
+	}
+
+	/** 
+	 * @param institucionOtorgante el institucionOtorgante a establecer
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void setInstitucionOtorgante(Object institucionOtorgante) {
+		// begin-user-code
+		this.institucionOtorgante = institucionOtorgante;
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private Object nombre;
 
 	/** 
 	 * @return el nombre
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public String getNombre() {
+	public Object getNombre() {
 		// begin-user-code
 		return nombre;
 		// end-user-code
@@ -112,7 +166,7 @@ public class Bodega {
 	 * @param nombre el nombre a establecer
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void setNombre(String nombre) {
+	public void setNombre(Object nombre) {
 		// begin-user-code
 		this.nombre = nombre;
 		// end-user-code
@@ -123,88 +177,7 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	private Object periodoActualizacion;
-
-	/** 
-	 * @return el periodoActualizacion
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public Object getPeriodoActualizacion() {
-		// begin-user-code
-		return periodoActualizacion;
-		// end-user-code
-	}
-
-	/** 
-	 * @param periodoActualizacion el periodoActualizacion a establecer
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setPeriodoActualizacion(Object periodoActualizacion) {
-		// begin-user-code
-		this.periodoActualizacion = periodoActualizacion;
-		// end-user-code
-	}
-
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	private NovedadEvento novedadEvento;
-
-	/** 
-	 * @return el novedadEvento
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public NovedadEvento getNovedadEvento() {
-		// begin-user-code
-		return novedadEvento;
-		// end-user-code
-	}
-
-	/** 
-	 * @param novedadEvento el novedadEvento a establecer
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setNovedadEvento(NovedadEvento novedadEvento) {
-		// begin-user-code
-		this.novedadEvento = novedadEvento;
-		// end-user-code
-	}
-
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	private RegionVitivinicola regionVitivinicola;
-
-	/** 
-	 * @return el regionVitivinicola
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public RegionVitivinicola getRegionVitivinicola() {
-		// begin-user-code
-		return regionVitivinicola;
-		// end-user-code
-	}
-
-	/** 
-	 * @param regionVitivinicola el regionVitivinicola a establecer
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setRegionVitivinicola(RegionVitivinicola regionVitivinicola) {
-		// begin-user-code
-		this.regionVitivinicola = regionVitivinicola;
-		// end-user-code
-	}
-
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void contarResenia() {
+	public void esEnPeriodo() {
 		// begin-user-code
 		// TODO Apéndice de método generado automáticamente
 
@@ -216,7 +189,7 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void mostrarTodosVinos() {
+	public void mostrarInstitucion() {
 		// begin-user-code
 		// TODO Apéndice de método generado automáticamente
 
@@ -228,19 +201,7 @@ public class Bodega {
 	 * <!-- end-UML-doc -->
 	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public void disponibleActualizar() {
-		// begin-user-code
-		// TODO Apéndice de método generado automáticamente
-
-		// end-user-code
-	}
-
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void actualizarDatosVino() {
+	public void verAdjunto() {
 		// begin-user-code
 		// TODO Apéndice de método generado automáticamente
 
