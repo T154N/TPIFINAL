@@ -1,14 +1,19 @@
 package Clases;
 
-
 public class Usuario {
 	//ATRIBUTOS
-	private Object contrasenia;
-	private Object nombre;
-	private Object premium;
+	private String contrasenia;
+	private String nombre;
+	private Boolean premium;
 	private CobroPremium cobroPremium;
 
 	//CONSTRUCTOR
+	public Usuario(String contrasenia, String nombre, Boolean premium, CobroPremium cobroPremium) {
+		this.contrasenia = contrasenia;
+		this.nombre = nombre;
+		this.premium = premium;
+		this.cobroPremium = cobroPremium;
+	}
 
 	//METODOS
 	public void esPremium() {
@@ -23,27 +28,27 @@ public class Usuario {
 	}
 
 	//GETTERS Y SETTERS
-	public Object getContrasenia() {
+	public String getContrasenia() {
 		return contrasenia;
 	}
 
-	public void setContrasenia(Object contrasenia) {
+	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
 	}
 
-	public Object getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(Object nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public Object getPremium() {
+	public Boolean getPremium() {
 		return premium;
 	}
 
-	public void setPremium(Object premium) {
+	public void setPremium(Boolean premium) {
 		this.premium = premium;
 	}
 
@@ -51,9 +56,7 @@ public class Usuario {
 		return cobroPremium;
 	}
 
-
 	public void setCobroPremium(CobroPremium cobroPremium) {
 		this.cobroPremium = cobroPremium;
 	}
-
 }

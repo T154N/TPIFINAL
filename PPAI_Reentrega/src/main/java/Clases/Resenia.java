@@ -1,12 +1,13 @@
 package Clases;
 
+import java.util.Date;
 
 public class Resenia {
 	//ATRIBUTOS
-	private Object comentario;
-	private Object esPremium;
-	private Object fechaResenia;
-	private Object puntaje;
+	private String comentario;
+	private Boolean esPremium;
+	private Date fechaResenia;
+	private Integer puntaje;
 	private Vino vino;
 
 	//CONSTRUCTOR
@@ -25,35 +26,35 @@ public class Resenia {
 	}
 
 	//GETTERS Y SETTERS
-	public Object getComentario() {
+	public String getComentario() {
 		return comentario;
 	}
 
-	public void setComentario(Object comentario) {
+	public void setComentario(String comentario) {
 		this.comentario = comentario;
 	}
 
-	public Object getEsPremium() {
+	public Boolean getEsPremium() {
 		return esPremium;
 	}
 
-	public void setEsPremium(Object esPremium) {
+	public void setEsPremium(Boolean esPremium) {
 		this.esPremium = esPremium;
 	}
 
-	public Object getFechaResenia() {
+	public Date getFechaResenia() {
 		return fechaResenia;
 	}
 
-	public void setFechaResenia(Object fechaResenia) {
+	public void setFechaResenia(Date fechaResenia) {
 		this.fechaResenia = fechaResenia;
 	}
 
-	public Object getPuntaje() {
+	public Integer getPuntaje() {
 		return puntaje;
 	}
 
-	public void setPuntaje(Object puntaje) {
+	public void setPuntaje(Integer puntaje) {
 		this.puntaje = puntaje;
 	}
 

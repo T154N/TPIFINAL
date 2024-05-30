@@ -2,23 +2,31 @@ package Clases;
 
 import java.util.Set;
 
-
 public class Vino {
 
 	//Atributos
-	private Object aniada;
-	private Object imagenEtiqueta;
-	private Object nombre;
-	private Object notaDeCataBodega;
-	private Object precioARS;
+	private Integer aniada;
+	private String imagenEtiqueta;
+	private String nombre;
+	private String notaDeCataBodega;
+	private Double precioARS;
 	private Bodega bodega;
 	private Resenia resenia;
 	private Varietal varietal;
 	private Set<Maridaje> maridaje;
 
 	//Contructor
-
-
+	public Vino(Integer aniada, String imagenEtiqueta, String nombre, String notaDeCataBodega, Double precioARS, Bodega bodega, Resenia resenia, Varietal varietal, Set<Maridaje> maridaje) {
+		this.aniada = aniada;
+		this.imagenEtiqueta = imagenEtiqueta;
+		this.nombre = nombre;
+		this.notaDeCataBodega = notaDeCataBodega;
+		this.precioARS = precioARS;
+		this.bodega = bodega;
+		this.resenia = resenia;
+		this.varietal = varietal;
+		this.maridaje = maridaje;
+	}
 
 	//Metodos
 	public void calcularRanking() {
@@ -62,45 +70,45 @@ public class Vino {
 
 	}
 
-	public Object getAniada() {
+	public Integer getAniada() {
 		return aniada;
 	}
 
-	public void setAniada(Object aniada) {
+	public void setAniada(Integer aniada) {
 		this.aniada = aniada;
 	}
 
-	public Object getImagenEtiqueta() {
+	public String getImagenEtiqueta() {
 		return imagenEtiqueta;
 	}
 
-	public void setImagenEtiqueta(Object imagenEtiqueta) {
+	public void setImagenEtiqueta(String imagenEtiqueta) {
 		this.imagenEtiqueta = imagenEtiqueta;
 	}
 
-	public Object getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(Object nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public Object getNotaDeCataBodega() {
+	public String getNotaDeCataBodega() {
 		return notaDeCataBodega;
 	}
 
-	public void setNotaDeCataBodega(Object notaDeCataBodega) {
+	public void setNotaDeCataBodega(String notaDeCataBodega) {
 		this.notaDeCataBodega = notaDeCataBodega;
 	}
 
-	public Object getPrecioARS() {
+	public Double getPrecioARS() {
 		return precioARS;
 	}
 
-	public void setPrecioARS(Object precioARS) {
+	public void setPrecioARS(Double precioARS) {
 		this.precioARS = precioARS;
-	};
+	}
 
 	public Bodega getBodega() {
 		return bodega;

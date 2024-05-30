@@ -2,10 +2,14 @@ package Clases;
 
 public class Maridaje {
 	//ATRIBUTOS
-	private Object nombre;
-	private Object descripcion;
+	private String nombre;
+	private String descripcion;
 
 	//CONSTRUCTOR
+	public Maridaje(String nombre, String descripcion) {
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
 
 	//METODOS
 	public void maridaConVino() {
@@ -17,19 +21,19 @@ public class Maridaje {
 	}
 
 	//GETTERS Y SETTERS
-	public Object getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(Object nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public Object getDescripcion() {
+	public String getDescripcion() {
 		return descripcion;
 	}
 
-	public void setDescripcion(Object descripcion) {
+	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 }

@@ -4,13 +4,18 @@ import java.util.Set;
 
 public class Enofilo {
 	//ATRIBUTOS
-	private Object apellido;
-	private Object imagenPerfil;
-	private Object nombre;
+	private String apellido;
+	private String imagenPerfil;
+	private String nombre;
 	private Set<Siguiendo> siguiendo;
 
 	//CONSTRUCTOR
-
+	public Enofilo(String apellido, String imagenPerfil, String nombre, Set<Siguiendo> siguiendo) {
+		this.apellido = apellido;
+		this.imagenPerfil = imagenPerfil;
+		this.nombre = nombre;
+		this.siguiendo = siguiendo;
+	}
 	//METODOS
 	public void mostrarAmigosSeguidos() {
 	}
@@ -28,27 +33,27 @@ public class Enofilo {
 
 
 	//GETTERS Y SETTERS
-	public Object getApellido() {
+	public String getApellido() {
 		return apellido;
 	}
 
-	public void setApellido(Object apellido) {
+	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
 
-	public Object getImagenPerfil() {
+	public String getImagenPerfil() {
 		return imagenPerfil;
 	}
 
-	public void setImagenPerfil(Object imagenPerfil) {
+	public void setImagenPerfil(String imagenPerfil) {
 		this.imagenPerfil = imagenPerfil;
 	}
 
-	public Object getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(Object nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 

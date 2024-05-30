@@ -1,17 +1,24 @@
 package Clases;
 
+import java.util.Date;
 
 public class Siguiendo {
 
 	//ATRIBUTOS
 	private Bodega bodega;
-	private Object fechaFin;
-	private Object fechaInicio;
+	private Date fechaFin;
+	private Date fechaInicio;
 	private Sommelier sommelier;
 	private Enofilo amigo;
 
 	//CONSTRUCTOR
-
+	public Siguiendo(Bodega bodega, Date fechaFin, Date fechaInicio, Sommelier sommelier, Enofilo amigo) {
+		this.bodega = bodega;
+		this.fechaFin = fechaFin;
+		this.fechaInicio = fechaInicio;
+		this.sommelier = sommelier;
+		this.amigo = amigo;
+	}
 
 	//METODOS
 	public void sosDeAmigo() {
@@ -29,7 +36,6 @@ public class Siguiendo {
 
 	}
 
-
 	//GETTERS Y SETTERS
 	public Bodega getBodega() {
 		return bodega;
@@ -39,19 +45,19 @@ public class Siguiendo {
 		this.bodega = bodega;
 	}
 
-	public Object getFechaFin() {
+	public Date getFechaFin() {
 		return fechaFin;
 	}
 
-	public void setFechaFin(Object fechaFin) {
+	public void setFechaFin(Date fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 
-	public Object getFechaInicio() {
+	public Date getFechaInicio() {
 		return fechaInicio;
 	}
 
-	public void setFechaInicio(Object fechaInicio) {
+	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 

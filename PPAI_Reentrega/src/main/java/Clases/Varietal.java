@@ -1,14 +1,18 @@
 package Clases;
 
-
 public class Varietal {
 
 	//ATRIBUTOS
-	private Object descripcion;
-	private Object porcentajeComposicion;
+	private String descripcion;
+	private Double porcentajeComposicion;
 	private TipoUva tipoUva;
 
 	//CONSTRUCTOR
+	public Varietal(String descripcion, Double porcentajeComposicion, TipoUva tipoUva) {
+		this.descripcion = descripcion;
+		this.porcentajeComposicion = porcentajeComposicion;
+		this.tipoUva = tipoUva;
+	}
 
 	//METODOS
 	public void conocerTiposUva() {
@@ -24,19 +28,19 @@ public class Varietal {
 	public void _new(){}
 
 	//GETTERS Y SETTERS
-	public Object getDescripcion() {
+	public String getDescripcion() {
 		return descripcion;
 	}
 
-	public void setDescripcion(Object descripcion) {
+	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 
-	public Object getPorcentajeComposicion() {
+	public Double getPorcentajeComposicion() {
 		return porcentajeComposicion;
 	}
 
-	public void setPorcentajeComposicion(Object porcentajeComposicion) {
+	public void setPorcentajeComposicion(Double porcentajeComposicion) {
 		this.porcentajeComposicion = porcentajeComposicion;
 	}
 

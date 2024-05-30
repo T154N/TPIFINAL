@@ -1,12 +1,15 @@
 package Clases;
 
-
 public class RegionVitivinicola {
 	//ATRIBUTOS
-	private Object descripcion;
-	private Object nombre;
+	private String descripcion;
+	private String nombre;
 
 	//CONSTRUCTOR
+	public RegionVitivinicola(String descripcion, String nombre) {
+		this.descripcion = descripcion;
+		this.nombre = nombre;
+	}
 
 	//METODOS
 	public void conocerBodega() {
@@ -19,19 +22,19 @@ public class RegionVitivinicola {
 
 	//GETTERS Y SETTERS
 
-	public Object getDescripcion() {
+	public String getDescripcion() {
 		return descripcion;
 	}
 
-	public void setDescripcion(Object descripcion) {
+	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
 
-	public Object getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(Object nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
