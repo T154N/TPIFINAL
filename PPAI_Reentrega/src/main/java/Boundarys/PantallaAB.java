@@ -50,7 +50,7 @@ public class PantallaAB {
 
 
 	public void mostrarBodegasParaActualizar() {
-	}
+	}//usado
 
 	public void SeleccionarBodega() {
 	}

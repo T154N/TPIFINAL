@@ -5,6 +5,10 @@ import Clases.Maridaje;
 import Clases.TipoUva;
 import Clases.Vino;
 import Clases.Enofilo;
+import com.company.views.tablaCU;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ControladorImportarActualizacionVinosBodega {
@@ -20,6 +24,17 @@ public class ControladorImportarActualizacionVinosBodega {
 	private List<Bodega> listaBodegas;
 
 
+
+	//CREAR BODEGAS DE PRUEBA
+	public void crearBodegasDePrueba() {
+		listaBodegas.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2022-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 3", "Historia 1", "Bodega 2", 2, "2025-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2025-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2025-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2025-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 1", "Historia 1", "Bodega 6", 2, "2027-04-01", null, null));
+	}
+
 	//Constructor
 	public ControladorImportarActualizacionVinosBodega(List<Bodega> bodegaSeleccionada, List<Vino> vinosParaActualizar, Maridaje maridaje, TipoUva tipoUva, List<Vino> listaVinosCreados, List<Enofilo> seguidoresDeBodega, List<String> nombresDeUsuariosSeguidores, List<Bodega> listaBodegas) {
 		this.bodegaSeleccionada = bodegaSeleccionada;
@@ -32,11 +47,21 @@ public class ControladorImportarActualizacionVinosBodega {
 		this.listaBodegas = listaBodegas;
 	}
 
-	//Metodos
-	public void opcionImportarActualizacionVinosBodega() {
+	public ControladorImportarActualizacionVinosBodega() {
+		this.listaBodegas = new ArrayList<>();
 	}
 
-	public void buscarBodegasParaActualizar() {
+	//Metodos
+	public void opcionImportarActualizacionVinosBodega() {
+		buscarBodegasParaActualizar(getListaBodegas());
+	}
+
+	public void buscarBodegasParaActualizar(List<Bodega> listaBodegas) {
+		LocalDate today = LocalDate.now();
+		for (Bodega bodega : listaBodegas) {
+			if (bodega.disponibleActualizar(today)) {
+				bodega.getNombre();
+			}}
 	}
 
 	public void tomarSeleccionBodega() {

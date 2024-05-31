@@ -1,5 +1,8 @@
 package Clases;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 public class Bodega {
 
 	private String coordenadasUbicacion;
@@ -9,10 +12,11 @@ public class Bodega {
 	private Integer periodoActualizacion;
 	private NovedadEvento novedadEvento;
 	private RegionVitivinicola regionVitivinicola;
+	private String ultimaActualizacion; //AGREGAR
 
 	//Constructor
 	public Bodega(String coordenadasUbicacion, String descripcion, String historia, String nombre,
-			Integer periodoActualizacion, NovedadEvento novedadEvento, RegionVitivinicola regionVitivinicola) {
+			Integer periodoActualizacion, String ultimaActualizacion, NovedadEvento novedadEvento, RegionVitivinicola regionVitivinicola) {
 		this.coordenadasUbicacion = coordenadasUbicacion;
 		this.descripcion = descripcion;
 		this.historia = historia;
@@ -20,6 +24,7 @@ public class Bodega {
 		this.periodoActualizacion = periodoActualizacion;
 		this.novedadEvento = novedadEvento;
 		this.regionVitivinicola = regionVitivinicola;
+		this.ultimaActualizacion = ultimaActualizacion;
 	}
 
 
@@ -32,8 +37,10 @@ public class Bodega {
 	public void mostrarTodosVinos() {
 	}
 
-	public void disponibleActualizar() {
-
+	public boolean disponibleActualizar(LocalDate today) {
+		LocalDate fechaUltimaActualizacion = LocalDate.parse(ultimaActualizacion);
+		long monthsBetween = ChronoUnit.MONTHS.between(fechaUltimaActualizacion, today);
+		return monthsBetween >= periodoActualizacion;
 	}
 
 	public void actualizarDatosVino() {
@@ -100,4 +107,11 @@ public class Bodega {
 		this.regionVitivinicola = regionVitivinicola;
 	}
 
+	public String getUltimaActualizacion() {
+		return ultimaActualizacion;
+	}
+
+	public void setUltimaActualizacion(String ultimaActualizacion) {
+		this.ultimaActualizacion = ultimaActualizacion;
+	}
 }
