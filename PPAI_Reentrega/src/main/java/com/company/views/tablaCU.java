@@ -12,16 +12,19 @@ public class tablaCU extends javax.swing.JPanel {
         initComponents();
     }
 
-    public void agregarBodegaATabla(Bodega bodega) {
+    public void llenarTablaBodegas(List<Bodega> listaBodegas) {
         DefaultTableModel model = (DefaultTableModel) tablaBodegas.getModel();
+        model.setRowCount(0); // Limpiar la tabla existente
 
-        model.addRow(new Object[]{
-                bodega.getNombre(),
-                bodega.getDescripcion(),
-                bodega.getUltimaActualizacion(),
-                bodega.getPeriodoActualizacion(),
-                false // Por defecto, la columna 'Seleccionar' no estará seleccionada
-        });
+        for (Bodega bodega : listaBodegas) {
+            model.addRow(new Object[]{
+                    bodega.getNombre(),
+                    bodega.getDescripcion(),
+                    bodega.getUltimaActualizacion(),
+                    bodega.getPeriodoActualizacion(),
+                    false // Por defecto, la columna 'Seleccionar' no estará seleccionada
+            });
+        }
     }
 
     @SuppressWarnings("unchecked")
