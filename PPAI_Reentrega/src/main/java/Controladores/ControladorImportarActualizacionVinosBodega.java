@@ -1,5 +1,6 @@
 package Controladores;
 
+import Boundarys.PantallaAB;
 import Clases.Bodega;
 import Clases.Maridaje;
 import Clases.TipoUva;
@@ -22,17 +23,18 @@ public class ControladorImportarActualizacionVinosBodega {
 	private List<Enofilo> seguidoresDeBodega;
 	private List<String> nombresDeUsuariosSeguidores;
 	private List<Bodega> listaBodegas;
+	private List<Bodega> listaAPI;
 
 
 
 	//CREAR BODEGAS DE PRUEBA
 	public void crearBodegasDePrueba() {
-		listaBodegas.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2022-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 3", "Historia 1", "Bodega 2", 2, "2025-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2025-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2025-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2025-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 1", "Historia 1", "Bodega 6", 2, "2027-04-01", null, null));
+		listaAPI.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2022-04-01", null, null));
+		listaAPI.add(new Bodega("123.45", "Descripcion 3", "Historia 1", "Bodega 2", 2, "2025-04-01", null, null));
+		listaAPI.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2025-04-01", null, null));
+		listaAPI.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2025-04-01", null, null));
+		listaAPI.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2025-04-01", null, null));
+		listaAPI.add(new Bodega("123.45", "Descripcion 1", "Historia 1", "Bodega 6", 2, "2027-04-01", null, null));
 	}
 
 	//Constructor
@@ -47,21 +49,20 @@ public class ControladorImportarActualizacionVinosBodega {
 		this.listaBodegas = listaBodegas;
 	}
 
-	public ControladorImportarActualizacionVinosBodega() {
-		this.listaBodegas = new ArrayList<>();
-	}
-
 	//Metodos
 	public void opcionImportarActualizacionVinosBodega() {
-		buscarBodegasParaActualizar(getListaBodegas());
+		// lista de tipo bodega = buscarBodegasParaActualizar(getListaBodegas());
+		// mostrarBodegasParaActualizar(con una lista de tipo bodega)
 	}
 
-	public void buscarBodegasParaActualizar(List<Bodega> listaBodegas) {
+	public void buscarBodegasParaActualizar(List<Bodega> listaAPI) {
+		tablaCU tabla = new tablaCU();
 		LocalDate today = LocalDate.now();
-		for (Bodega bodega : listaBodegas) {
+		for (Bodega bodega : listaAPI) {
 			if (bodega.disponibleActualizar(today)) {
-				bodega.getNombre();
+			// mostrarBodegasParaActualizar (Iterado por cada bodega que devuelva True en disponible para actualizar)
 			}}
+
 	}
 
 	public void tomarSeleccionBodega() {
