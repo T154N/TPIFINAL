@@ -6,6 +6,8 @@ import Clases.TipoUva;
 import Clases.Vino;
 import Clases.Enofilo;
 import com.company.views.tablaBodegasAct;
+
+import javax.swing.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,11 +28,11 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	//CREAR BODEGAS DE PRUEBA
 	public void crearBodegasDePrueba() {
-		listaBodegas.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2022-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2025-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 3", "Historia 1", "Bodega 2", 2, "2025-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2022-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2021-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2025-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2024-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2023-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2023-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 1", "Historia 1", "Bodega 6", 2, "2027-04-01", null, null));
 	}
 
@@ -53,7 +55,14 @@ public class ControladorImportarActualizacionVinosBodega {
 	//Metodos
 	public void opcionImportarActualizacionVinosBodega() {
 		List<String> listaBodegasConActualizacion = buscarBodegasParaActualizar(getListaBodegas());
-		PantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
+
+		//PREGUNTAR SOL
+		if (listaBodegasConActualizacion.isEmpty()){
+			JOptionPane.showMessageDialog(null, "No hay bodegas para actualizar");
+			//volver a inicio
+		} else {
+			PantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
+		}
 	}
 
 	public List<String> buscarBodegasParaActualizar(List<Bodega> listaBodegas) {

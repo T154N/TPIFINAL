@@ -136,6 +136,11 @@ public class tablaBodegasAct extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    //METODOS
+    private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {
+        
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonConfirmar;

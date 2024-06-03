@@ -172,7 +172,6 @@ public class PantallaAB extends javax.swing.JFrame {
     private void botonImpActBodActionPerformed(java.awt.event.ActionEvent evt) {
         habilitarPantalla();
         controlador.opcionImportarActualizacionVinosBodega();
-
     }
 
     public void barMenu(){
