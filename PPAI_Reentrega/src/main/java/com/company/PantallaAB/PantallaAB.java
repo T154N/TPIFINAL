@@ -13,6 +13,7 @@ public class PantallaAB extends javax.swing.JFrame {
 
     public PantallaAB() {
         initComponents();
+        centrarPanelBotones();
         // Inicialización del controlador
         controlador = new ControladorImportarActualizacionVinosBodega();
         // Crear bodegas de prueba
@@ -29,16 +30,18 @@ public class PantallaAB extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jScrollBar1 = new javax.swing.JScrollBar();
         backGround = new javax.swing.JPanel();
         barMenu = new javax.swing.JPanel();
         Inicio = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         contenedor = new javax.swing.JPanel();
+        panelBotones = new javax.swing.JPanel();
         botonImpActBod = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -89,6 +92,9 @@ public class PantallaAB extends javax.swing.JFrame {
 
         contenedor.setBackground(new java.awt.Color(238, 240, 235));
 
+        panelBotones.setBackground(new java.awt.Color(238, 240, 235));
+        panelBotones.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
         botonImpActBod.setBackground(new java.awt.Color(180, 184, 171));
         botonImpActBod.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         botonImpActBod.setText("Importar actualización \nde vinos de bodega ");
@@ -98,42 +104,59 @@ public class PantallaAB extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(180, 184, 171));
-        jButton2.setText("jButton2");
-
         jButton3.setBackground(new java.awt.Color(180, 184, 171));
         jButton3.setText("jButton3");
 
         jButton4.setBackground(new java.awt.Color(180, 184, 171));
         jButton4.setText("jButton4");
 
+        jButton2.setBackground(new java.awt.Color(180, 184, 171));
+        jButton2.setText("jButton2");
+
+        javax.swing.GroupLayout panelBotonesLayout = new javax.swing.GroupLayout(panelBotones);
+        panelBotones.setLayout(panelBotonesLayout);
+        panelBotonesLayout.setHorizontalGroup(
+            panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBotonesLayout.createSequentialGroup()
+                .addContainerGap(57, Short.MAX_VALUE)
+                .addGroup(panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonImpActBod, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addGroup(panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+        panelBotonesLayout.setVerticalGroup(
+            panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBotonesLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonImpActBod, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addGroup(panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49))
+        );
+
         javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
         contenedor.setLayout(contenedorLayout);
         contenedorLayout.setHorizontalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorLayout.createSequentialGroup()
-                .addGap(178, 178, 178)
-                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonImpActBod, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addGap(120, 120, 120)
+                .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenedorLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonImpActBod, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout backGroundLayout = new javax.swing.GroupLayout(backGround);
@@ -181,8 +204,17 @@ public class PantallaAB extends javax.swing.JFrame {
             jButton6.setBackground(new java.awt.Color(200, 159, 163));
             jButton7.setBackground(new java.awt.Color(145, 83, 104));
     };
-    
-    
+
+    public void centrarPanelBotones() {
+        contenedor.removeAll();
+        contenedor.setLayout(new GridBagLayout()); // Establecer GridBagLayout
+        GridBagConstraints gbc = new GridBagConstraints(); // Crear restricciones
+        gbc.anchor = GridBagConstraints.CENTER; // Centrar el componente
+        contenedor.add(panelBotones, gbc); // Agregar el panelBotones con las restricciones
+        contenedor.revalidate();
+        contenedor.repaint();
+    }
+
     public void habilitarPantalla() {
         // Ocultar botones y mostrar el panel de la tabla
         //contenedor.setVisible(false);
@@ -202,6 +234,8 @@ public class PantallaAB extends javax.swing.JFrame {
     }
 
     //Fijarse los statics
+
+
     public static void mostrarBodegasParaActualizar(List<String> listaBodegasConActualizacion) {
         // Ajustar el tamaño de la tabla
         tabla.llenarTablaBodegas(listaBodegasConActualizacion);
@@ -211,6 +245,7 @@ public class PantallaAB extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PantallaAB().setVisible(true);
+
             }
         });
     }
@@ -227,5 +262,7 @@ public class PantallaAB extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JPanel panelBotones;
     // End of variables declaration//GEN-END:variables
 }
