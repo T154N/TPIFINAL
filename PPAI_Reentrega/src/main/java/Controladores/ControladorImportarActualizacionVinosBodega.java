@@ -54,8 +54,6 @@ public class ControladorImportarActualizacionVinosBodega {
 	public void opcionImportarActualizacionVinosBodega() {
 		List<String> listaBodegasConActualizacion = buscarBodegasParaActualizar(getListaBodegas());
 		PantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
-		// mostrarBodegasParaActualizar(lista)
-
 	}
 
 	public List<String> buscarBodegasParaActualizar(List<Bodega> listaBodegas) {
