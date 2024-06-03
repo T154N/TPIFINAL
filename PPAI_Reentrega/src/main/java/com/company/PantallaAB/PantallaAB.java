@@ -2,6 +2,8 @@ package com.company.PantallaAB;
 
 import Controladores.ControladorImportarActualizacionVinosBodega;
 import com.company.views.tablaBodegasAct;
+
+import java.awt.*;
 import java.util.List;
 
 public class PantallaAB extends javax.swing.JFrame {
@@ -28,7 +30,7 @@ public class PantallaAB extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         backGround = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        barMenu = new javax.swing.JPanel();
         Inicio = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -45,7 +47,7 @@ public class PantallaAB extends javax.swing.JFrame {
         backGround.setBackground(new java.awt.Color(238, 240, 235));
         backGround.setForeground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(123, 38, 66));
+        barMenu.setBackground(new java.awt.Color(123, 38, 66));
 
         Inicio.setBackground(new java.awt.Color(219, 179, 177));
         Inicio.setText("Inicio");
@@ -61,11 +63,11 @@ public class PantallaAB extends javax.swing.JFrame {
         jButton7.setBackground(new java.awt.Color(145, 83, 104));
         jButton7.setText("jButton7");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout barMenuLayout = new javax.swing.GroupLayout(barMenu);
+        barMenu.setLayout(barMenuLayout);
+        barMenuLayout.setHorizontalGroup(
+            barMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(barMenuLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
@@ -74,11 +76,11 @@ public class PantallaAB extends javax.swing.JFrame {
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        barMenuLayout.setVerticalGroup(
+            barMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(barMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -118,7 +120,7 @@ public class PantallaAB extends javax.swing.JFrame {
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         contenedorLayout.setVerticalGroup(
             contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,23 +133,21 @@ public class PantallaAB extends javax.swing.JFrame {
                 .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout backGroundLayout = new javax.swing.GroupLayout(backGround);
         backGround.setLayout(backGroundLayout);
         backGroundLayout.setHorizontalGroup(
             backGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(barMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(backGroundLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
         );
         backGroundLayout.setVerticalGroup(
             backGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backGroundLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(barMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
                 .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -175,12 +175,30 @@ public class PantallaAB extends javax.swing.JFrame {
 
     }
 
+    public void barMenu(){
+           barMenu.setBackground(new java.awt.Color(123, 38, 66));
+            Inicio.setBackground(new java.awt.Color(219, 179, 177));
+            jButton6.setBackground(new java.awt.Color(200, 159, 163));
+            jButton7.setBackground(new java.awt.Color(145, 83, 104));
+    };
+    
+    
     public void habilitarPantalla() {
         // Ocultar botones y mostrar el panel de la tabla
-        contenedor.setVisible(false);
-        jPanel1.setVisible(false);
-        backGround.add(tabla);
-        tabla.setSize(1000, 500);
+        //contenedor.setVisible(false);
+        //jPanel1.setVisible(false);
+        contenedor.removeAll();
+        contenedor.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.fill = GridBagConstraints.BOTH; // Hacer que el componente llene su celda en ambas direcciones
+        gbc.weightx = 1.0; // Dar todo el espacio extra horizontal al componente
+        gbc.weighty = 1.0; // Dar todo el espacio extra vertical al componente
+        contenedor.add(tabla, gbc);
+        contenedor.revalidate();
+        contenedor.repaint();
+
+
     }
 
     //Fijarse los statics
@@ -199,17 +217,16 @@ public class PantallaAB extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    //FIJARSE LOS STATICS
     private javax.swing.JButton Inicio;
-    private static javax.swing.JPanel backGround;
+    private javax.swing.JPanel backGround;
+    private javax.swing.JPanel barMenu;
     private javax.swing.JButton botonImpActBod;
-    private static javax.swing.JPanel contenedor;
+    private javax.swing.JPanel contenedor;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private static javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
