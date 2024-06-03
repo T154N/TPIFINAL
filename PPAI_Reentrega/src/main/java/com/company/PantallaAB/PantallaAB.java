@@ -183,6 +183,7 @@ public class PantallaAB extends javax.swing.JFrame {
         tabla.setSize(1000, 500);
     }
 
+    //Fijarse los statics
     public static void mostrarBodegasParaActualizar(List<String> listaBodegasConActualizacion) {
         // Ajustar el tamaño de la tabla
         tabla.llenarTablaBodegas(listaBodegasConActualizacion);
@@ -198,6 +199,7 @@ public class PantallaAB extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    //FIJARSE LOS STATICS
     private javax.swing.JButton Inicio;
     private static javax.swing.JPanel backGround;
     private javax.swing.JButton botonImpActBod;
