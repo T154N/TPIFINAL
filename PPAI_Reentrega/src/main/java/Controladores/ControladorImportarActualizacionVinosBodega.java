@@ -1,12 +1,11 @@
 package Controladores;
-
+import com.company.PantallaAB.PantallaAB;
 import Clases.Bodega;
 import Clases.Maridaje;
 import Clases.TipoUva;
 import Clases.Vino;
 import Clases.Enofilo;
-import com.company.views.tablaCU;
-
+import com.company.views.tablaBodegasAct;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +28,8 @@ public class ControladorImportarActualizacionVinosBodega {
 	public void crearBodegasDePrueba() {
 		listaBodegas.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2022-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 3", "Historia 1", "Bodega 2", 2, "2025-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2025-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2025-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2022-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2021-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2025-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 1", "Historia 1", "Bodega 6", 2, "2027-04-01", null, null));
 	}
@@ -53,15 +52,23 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	//Metodos
 	public void opcionImportarActualizacionVinosBodega() {
-		buscarBodegasParaActualizar(getListaBodegas());
+		List<String> listaBodegasConActualizacion = buscarBodegasParaActualizar(getListaBodegas());
+		PantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
+		// mostrarBodegasParaActualizar(lista)
+
 	}
 
-	public void buscarBodegasParaActualizar(List<Bodega> listaBodegas) {
-		LocalDate today = LocalDate.now();
+	public List<String> buscarBodegasParaActualizar(List<Bodega> listaBodegas) {
+		LocalDate today = LocalDate.now(); //Tomar fecha actual
+		// array para la lista de nombres
+		List<String> bodegasConActualizacion = new ArrayList<>();// falta este atributo en el diagrama de clases
 		for (Bodega bodega : listaBodegas) {
 			if (bodega.disponibleActualizar(today)) {
-				bodega.getNombre();
+				// agregar al array lista nombres
+				bodegasConActualizacion.add(bodega.getNombre());
 			}}
+		// devolver el array con los nombres de la bodega
+		return bodegasConActualizacion;
 	}
 
 	public void tomarSeleccionBodega() {

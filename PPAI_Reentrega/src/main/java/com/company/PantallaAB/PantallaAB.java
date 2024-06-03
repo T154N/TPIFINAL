@@ -1,12 +1,13 @@
 package com.company.PantallaAB;
 
 import Controladores.ControladorImportarActualizacionVinosBodega;
-import com.company.views.tablaCU;
+import com.company.views.tablaBodegasAct;
+import java.util.List;
 
 public class PantallaAB extends javax.swing.JFrame {
 
     private ControladorImportarActualizacionVinosBodega controlador;
-    private tablaCU tabla;
+    private static tablaBodegasAct tabla;
 
     public PantallaAB() {
         initComponents();
@@ -15,7 +16,7 @@ public class PantallaAB extends javax.swing.JFrame {
         // Crear bodegas de prueba
         controlador.crearBodegasDePrueba();
         // Inicialización de la tabla
-        tabla = new tablaCU();
+        tabla = new tablaBodegasAct();
         // Ajustar el tamaño de la tabla
         tabla.setSize(1000, 500);
     }
@@ -28,11 +29,11 @@ public class PantallaAB extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         backGround = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
+        Inicio = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        contenedor = new javax.swing.JPanel();
+        botonImpActBod = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -46,8 +47,8 @@ public class PantallaAB extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(123, 38, 66));
 
-        jButton5.setBackground(new java.awt.Color(219, 179, 177));
-        jButton5.setText("jButton5");
+        Inicio.setBackground(new java.awt.Color(219, 179, 177));
+        Inicio.setText("Inicio");
 
         jButton6.setBackground(new java.awt.Color(200, 159, 163));
         jButton6.setText("jButton6");
@@ -66,7 +67,7 @@ public class PantallaAB extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -80,19 +81,18 @@ public class PantallaAB extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(238, 240, 235));
+        contenedor.setBackground(new java.awt.Color(238, 240, 235));
 
-        jButton1.setBackground(new java.awt.Color(180, 184, 171));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jButton1.setText("Importar actualización \nde vinos de bodega ");
-        jButton1.setActionCommand("Importar actualización \nde vinos de bodega ");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonImpActBod.setBackground(new java.awt.Color(180, 184, 171));
+        botonImpActBod.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        botonImpActBod.setText("Importar actualización \nde vinos de bodega ");
+        botonImpActBod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonImpActBodActionPerformed(evt);
             }
         });
 
@@ -105,30 +105,30 @@ public class PantallaAB extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(180, 184, 171));
         jButton4.setText("jButton4");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
+        contenedor.setLayout(contenedorLayout);
+        contenedorLayout.setHorizontalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenedorLayout.createSequentialGroup()
                 .addGap(178, 178, 178)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonImpActBod, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(157, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        contenedorLayout.setVerticalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contenedorLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonImpActBod, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(35, Short.MAX_VALUE))
@@ -138,7 +138,7 @@ public class PantallaAB extends javax.swing.JFrame {
         backGround.setLayout(backGroundLayout);
         backGroundLayout.setHorizontalGroup(
             backGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(backGroundLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -148,7 +148,7 @@ public class PantallaAB extends javax.swing.JFrame {
             .addGroup(backGroundLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -165,24 +165,28 @@ public class PantallaAB extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
 
     }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        mostrarBodegasParaActualizar();
-    }
-    public void mostrarBodegasParaActualizar() {
-        // Llamar al método en el controlador y actualizar la tabla
+    private void botonImpActBodActionPerformed(java.awt.event.ActionEvent evt) {
+        habilitarPantalla();
         controlador.opcionImportarActualizacionVinosBodega();
-        tabla.llenarTablaBodegas(controlador.getListaBodegas());
 
-        // Ocultar botones y mostrar solo la tabla
-        jPanel2.setVisible(false);
+    }
+
+    public void habilitarPantalla() {
+        // Ocultar botones y mostrar el panel de la tabla
+        contenedor.setVisible(false);
         jPanel1.setVisible(false);
         backGround.add(tabla);
-        // Ajustar el tamaño de la tabla
         tabla.setSize(1000, 500);
+    }
+
+    public static void mostrarBodegasParaActualizar(List<String> listaBodegasConActualizacion) {
+        // Ajustar el tamaño de la tabla
+        tabla.llenarTablaBodegas(listaBodegasConActualizacion);
+
     }
 
     public static void main(String args[]) {
@@ -194,16 +198,16 @@ public class PantallaAB extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel backGround;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Inicio;
+    private static javax.swing.JPanel backGround;
+    private javax.swing.JButton botonImpActBod;
+    private static javax.swing.JPanel contenedor;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private static javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
