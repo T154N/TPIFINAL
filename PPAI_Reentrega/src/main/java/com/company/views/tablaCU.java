@@ -108,6 +108,7 @@ public class tablaCU extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
 
+
     private javax.swing.JPanel backGround2;
     private javax.swing.JButton botonConfirmar;
     private javax.swing.JPanel jPanel2;
