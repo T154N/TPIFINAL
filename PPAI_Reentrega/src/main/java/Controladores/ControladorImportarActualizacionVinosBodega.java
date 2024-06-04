@@ -38,12 +38,12 @@ public class ControladorImportarActualizacionVinosBodega {
 
 
 	//APIS
-
+//Acceso directo de array
 	// CREAR VINOS DE PRUEBA
 	public void crearVinosActualizar() {
 		List<Vino> listaVinos1 = new ArrayList<>();
 		 bodega1 =
-		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino1", "Nota de cata de la bodega 1", 500.0, , null, null, null));
+		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino1", "Nota de cata de la bodega 1", 500.0, listaBodegas[0], null, null, null));
 		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino2", "Nota de cata de la bodega 1", 500.0, findBodega("Bodega 1"), null, null, null));
 		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino3", "Nota de cata de la bodega 1", 500.0, findBodega("Bodega 1"), null, null, null));
 
