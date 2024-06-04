@@ -42,25 +42,24 @@ public class ControladorImportarActualizacionVinosBodega {
 	// CREAR VINOS DE PRUEBA
 	public void crearVinosActualizar() {
 		List<Vino> listaVinos1 = new ArrayList<>();
-		 bodega1 =
-		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino1", "Nota de cata de la bodega 1", 500.0, listaBodegas[0], null, null, null));
-		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino2", "Nota de cata de la bodega 1", 500.0, findBodega("Bodega 1"), null, null, null));
-		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino3", "Nota de cata de la bodega 1", 500.0, findBodega("Bodega 1"), null, null, null));
+		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino1", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino3", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
 
 		List<Vino> listaVinos2 = new ArrayList<>();
-		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, findBodega("Bodega 2"), null, null, null));
-		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, findBodega("Bodega 2"), null, null, null));
-		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, findBodega("Bodega 2"), null, null, null));
+		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
+		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
+		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
 
 		List<Vino> listaVinos3 = new ArrayList<>();
-		listaVinos3.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, getBodega("Bodega 3"), null, null, null));
-		listaVinos3.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, getBodega("Bodega 3"), null, null, null));
-		listaVinos3.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, getBodega("Bodega 3"), null, null, null));
+		listaVinos3.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
+		listaVinos3.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
+		listaVinos3.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
 
 		List<Vino> listaVinos4 = new ArrayList<>();
-		listaVinos4.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, getBodega("Bodega 4"), null, null, null));
-		listaVinos4.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, getBodega("Bodega 4"), null, null, null));
-		listaVinos4.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, getBodega("Bodega 4"), null, null, null));
+		listaVinos4.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
+		listaVinos4.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
+		listaVinos4.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
 	}
 
 
