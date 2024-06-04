@@ -27,6 +27,9 @@ public class Bodega {
 		this.ultimaActualizacion = ultimaActualizacion;
 	}
 
+	public Bodega(String nombre) {
+		this.nombre = nombre;
+	}
 
 	//Metodos
 	public void contarResenia() {

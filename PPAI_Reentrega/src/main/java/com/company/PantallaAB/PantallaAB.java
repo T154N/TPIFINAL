@@ -249,6 +249,10 @@ public class PantallaAB extends javax.swing.JFrame {
         });
     }
 
+    public void seleccionarBodega(List<String> bodegaSeleccionadas) {
+        controlador.tomarSeleccionBodega(bodegaSeleccionadas);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Inicio;
     private javax.swing.JPanel backGround;

@@ -1,9 +1,15 @@
-
 package com.company.views;
 
+import Controladores.ControladorImportarActualizacionVinosBodega;
+import com.company.PantallaAB.PantallaAB;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+
+
+
 
 public class tablaBodegasAct extends javax.swing.JPanel {
 
@@ -11,11 +17,11 @@ public class tablaBodegasAct extends javax.swing.JPanel {
         initComponents();
     }
 
-        public void llenarTablaBodegas(List<String> listaBodegas) {
-            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-            model.setRowCount(0); // Limpiar la tabla existente
-            for (String bodega : listaBodegas) {
-                model.addRow(new Object[]{bodega, false});
+    public void llenarTablaBodegas(List<String> listaBodegas) {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0); // Limpiar la tabla existente
+        for (String bodega : listaBodegas) {
+            model.addRow(new Object[]{bodega, false});
 
              // Por defecto, la columna 'Seleccionar' no estará seleccionada
 
@@ -103,6 +109,14 @@ public class tablaBodegasAct extends javax.swing.JPanel {
         botonConfirmar.setBackground(new java.awt.Color(204, 182, 155));
         botonConfirmar.setText("Confirmar");
 
+        // Aquí añadimos el ActionListener al botón
+        botonConfirmar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                botonConfirmarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -138,9 +152,20 @@ public class tablaBodegasAct extends javax.swing.JPanel {
 
     //METODOS
     private void botonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {
-        
-    }
+        PantallaAB pantalla = new PantallaAB();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        int rowCount = model.getRowCount();
 
+        List<String> bodegasSeleccionadas = new ArrayList<>();
+
+        for (int i = 0; i < rowCount; i++) {
+            Boolean seleccionado = (Boolean) model.getValueAt(i, 1); // Obtener el valor del checkbox
+            if (seleccionado != null && seleccionado) { // Verificar si está seleccionado
+                bodegasSeleccionadas.add(model.getValueAt(i, 0).toString());
+            }
+        }
+        pantalla.seleccionarBodega(bodegasSeleccionadas);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonConfirmar;
