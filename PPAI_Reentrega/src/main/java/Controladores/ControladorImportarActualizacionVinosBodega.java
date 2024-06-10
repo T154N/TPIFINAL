@@ -1,7 +1,6 @@
 package Controladores;
 import Clases.*;
 import com.company.PantallaAB.PantallaAB;
-import com.company.views.tablaBodegasAct;
 
 import javax.swing.*;
 import java.time.LocalDate;
@@ -28,8 +27,8 @@ public class ControladorImportarActualizacionVinosBodega {
 		listaBodegas.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2025-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 3", "Historia 1", "Bodega 2", 2, "2025-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2024-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2023-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2023-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2021-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2021-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 1", "Historia 1", "Bodega 6", 2, "2027-04-01", null, null));
 	}
 
@@ -75,12 +74,15 @@ public class ControladorImportarActualizacionVinosBodega {
 		this.listaBodegas = listaBodegas;
 	}
 
+
+
 	public ControladorImportarActualizacionVinosBodega() {
 		this.listaBodegas = new ArrayList<>();
 	}
 
 	//Metodos
 	public void opcionImportarActualizacionVinosBodega() {
+		PantallaAB pantallaAB = new PantallaAB();
 		List<String> listaBodegasConActualizacion = buscarBodegasParaActualizar(getListaBodegas());
 
 		//PREGUNTAR SOL
@@ -88,7 +90,7 @@ public class ControladorImportarActualizacionVinosBodega {
 			JOptionPane.showMessageDialog(null, "No hay bodegas para actualizar");
 			//volver a inicio
 		} else {
-			PantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
+			pantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
 		}
 	}
 
@@ -106,12 +108,12 @@ public class ControladorImportarActualizacionVinosBodega {
 	}
 
 	public void tomarSeleccionBodega(List<String> bodegaSeleccionadas) {
-		List<Vino> vinosActualizados = getActualizacionVinos(bodegaSeleccionadas);
+		//List<Vino> vinosActualizados = getActualizacionVinos(bodegaSeleccionadas);
 	}
 
-	public List<Vino> getActualizacionVinos(List<String> bodegaSeleccionadas) {
+	//public void List<Vino> getActualizacionVinos(List<String> bodegaSeleccionadas) {
 		//Aca nos quuedamos, falta hacer la api
-	}
+	//}
 
 	public void actualizarVinosExistentes() {
 	}

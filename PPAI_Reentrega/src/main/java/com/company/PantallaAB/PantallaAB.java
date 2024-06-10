@@ -233,8 +233,6 @@ public class PantallaAB extends javax.swing.JFrame {
     }
 
     //Fijarse los statics
-
-
     public void mostrarBodegasParaActualizar(List<String> listaBodegasConActualizacion) {
         // Ajustar el tamaño de la tabla
         this.tabla.llenarTablaBodegas(listaBodegasConActualizacion);
