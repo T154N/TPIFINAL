@@ -130,11 +130,8 @@ public class ControladorImportarActualizacionVinosBodega {
 		//Aca nos quedamos, falta hacer el arreglo de la api
 		// vinosParaActualizar = [];
 		// For bodegasSeleccionadas = [i]
-		// localhost:8080/nombreBodega[i]/:vinos
-		// if existe
-		// 		Guardar el vino
-		// else
-		// 		System.out.println("No se obtiene respuesta de la API de : bodegaSeleccionada[i])
+		// pedir a la api que devuelva los vinos encontrados en la URL vinosParaActualizar.add(InterfazSB.getImportarActualizacionVinos(bodega[i]))
+		// returnVinosParaActualizar
 	//}
 
 	public void actualizarVinosExistentes() {
