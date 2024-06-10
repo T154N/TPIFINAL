@@ -218,16 +218,13 @@ public class PantallaAB extends javax.swing.JFrame {
         // Ocultar botones y mostrar el panel de la tabla
         //contenedor.setVisible(false);
         //jPanel1.setVisible(false);
-
-
-
         contenedor.removeAll();
         contenedor.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.CENTER;
-        gbc.fill = GridBagConstraints.BOTH;
-        gbc.weightx = 1.0;
-        gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH; // Hacer que el componente llene su celda en ambas direcciones
+        gbc.weightx = 1.0; // Dar todo el espacio extra horizontal al componente
+        gbc.weighty = 1.0; // Dar todo el espacio extra vertical al componente
         contenedor.add(tabla, gbc);
         contenedor.revalidate();
         contenedor.repaint();
@@ -235,37 +232,18 @@ public class PantallaAB extends javax.swing.JFrame {
 
     }
 
-    public void habilitarPantalla2() {
-        // Ocultar botones y mostrar el panel de la tabla
-        contenedor.setVisible(false);
-        //jPanel1.setVisible(false);
-
-
-    }
-
     //Fijarse los statics
-<<<<<<< HEAD
-    public void mostrarBodegasParaActualizar(List<String> listaBodegasConActualizacion) {
-        // Ajustar el tamaño de la tabla
-        this.tabla.llenarTablaBodegas(listaBodegasConActualizacion);
-        //la tabla se llena
-
-=======
 
 
     public static void mostrarBodegasParaActualizar(List<String> listaBodegasConActualizacion) {
         // Ajustar el tamaño de la tabla
         tabla.llenarTablaBodegas(listaBodegasConActualizacion);
->>>>>>> parent of 42b0749 (consulta tabla profe)
     }
-
-
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PantallaAB().setVisible(true);
-
 
             }
         });
