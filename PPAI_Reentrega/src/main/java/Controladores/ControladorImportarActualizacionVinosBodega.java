@@ -82,7 +82,7 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	//Metodos
 	public void opcionImportarActualizacionVinosBodega() {
-		PantallaAB pantalla = new PantallaAB();
+		//PantallaAB pantalla = new PantallaAB();
 		List<String> listaBodegasConActualizacion = buscarBodegasParaActualizar(getListaBodegas());
 
 
@@ -90,7 +90,7 @@ public class ControladorImportarActualizacionVinosBodega {
 			JOptionPane.showMessageDialog(null, "No hay bodegas para actualizar");
 			//volver a inicio
 		} else {
-			pantalla.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
+			PantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
 		}
 	}
 
