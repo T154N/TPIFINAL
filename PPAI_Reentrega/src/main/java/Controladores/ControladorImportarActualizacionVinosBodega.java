@@ -47,13 +47,20 @@ public class ControladorImportarActualizacionVinosBodega {
 
 
 	//APIS
-//Acceso directo de array
+
 	// CREAR VINOS DE PRUEBA
 	public void crearVinosActualizar() {
 		List<Vino> listaVinos1 = new ArrayList<>();
+<<<<<<< HEAD
 		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino1", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
 		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
 		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino3", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+=======
+		 bodega1 =
+		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino1", "Nota de cata de la bodega 1", 500.0, , null, null, null));
+		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino2", "Nota de cata de la bodega 1", 500.0, findBodega("Bodega 1"), null, null, null));
+		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino3", "Nota de cata de la bodega 1", 500.0, findBodega("Bodega 1"), null, null, null));
+>>>>>>> parent of 42b0749 (consulta tabla profe)
 
 		List<Vino> listaVinos2 = new ArrayList<>();
 		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
