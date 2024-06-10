@@ -1,4 +1,6 @@
 package Controladores;
+import Boundarys.InterfazNotificacion;
+import Boundarys.InterfazSB;
 import Clases.*;
 import com.company.PantallaAB.PantallaAB;
 
@@ -19,9 +21,12 @@ public class ControladorImportarActualizacionVinosBodega {
 	private List<String> nombresDeUsuariosSeguidores;
 	private List<Bodega> listaBodegas;
 
+	//inicializar pantalla
 
 
-	//CREAR BODEGAS DE PRUEBA
+
+
+	//BODEGAS BDD
 	public void crearBodegasDePrueba() {
 
 		listaBodegas.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2025-04-01", null, null));
@@ -32,13 +37,8 @@ public class ControladorImportarActualizacionVinosBodega {
 		listaBodegas.add(new Bodega("123.45", "Descripcion 1", "Historia 1", "Bodega 6", 2, "2027-04-01", null, null));
 	}
 
-	//bdd vinos
-
-
-
-	//APIS
 //Acceso directo de array
-	// CREAR VINOS DE PRUEBA
+	// VINOS BDD
 	public void crearVinosActualizar() {
 		List<Vino> listaVinos1 = new ArrayList<>();
 		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino1", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
@@ -61,6 +61,14 @@ public class ControladorImportarActualizacionVinosBodega {
 		listaVinos4.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
 	}
 
+	//APIS
+
+		// URL/ApiBodegaSanJuan/:bodega
+		//vino1, vino2, vino3
+
+	public void apiVinosActualizar(){
+
+	}
 
 	//Constructor
 	public ControladorImportarActualizacionVinosBodega(List<Bodega> bodegaSeleccionada, List<Vino> vinosParaActualizar, Maridaje maridaje, TipoUva tipoUva, List<Vino> listaVinosCreados, List<Enofilo> seguidoresDeBodega, List<String> nombresDeUsuariosSeguidores, List<Bodega> listaBodegas) {
@@ -82,7 +90,7 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	//Metodos
 	public void opcionImportarActualizacionVinosBodega() {
-		PantallaAB pantallaAB = new PantallaAB();
+
 		List<String> listaBodegasConActualizacion = buscarBodegasParaActualizar(getListaBodegas());
 
 		//PREGUNTAR SOL
@@ -90,7 +98,7 @@ public class ControladorImportarActualizacionVinosBodega {
 			JOptionPane.showMessageDialog(null, "No hay bodegas para actualizar");
 			//volver a inicio
 		} else {
-			pantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
+			PantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
 		}
 	}
 
@@ -108,11 +116,15 @@ public class ControladorImportarActualizacionVinosBodega {
 	}
 
 	public void tomarSeleccionBodega(List<String> bodegaSeleccionadas) {
+		//InterfazSB.getImpo
 		//List<Vino> vinosActualizados = getActualizacionVinos(bodegaSeleccionadas);
+		System.out.println(bodegaSeleccionadas); //Muestra por terminal las bodegas seleccionadas
 	}
 
 	//public void List<Vino> getActualizacionVinos(List<String> bodegaSeleccionadas) {
-		//Aca nos quuedamos, falta hacer la api
+		//Aca nos quedamos, falta hacer el arreglo de la api
+		// Buscar las bodegas en la api
+		//
 	//}
 
 	public void actualizarVinosExistentes() {
