@@ -9,7 +9,7 @@ import java.util.List;
 public class PantallaAB extends javax.swing.JFrame {
 
     private ControladorImportarActualizacionVinosBodega controlador;
-    private static tablaBodegasAct tabla;
+    private tablaBodegasAct tabla;
 
     public PantallaAB() {
         initComponents();
@@ -233,11 +233,9 @@ public class PantallaAB extends javax.swing.JFrame {
     }
 
     //Fijarse los statics
-
-
-    public static void mostrarBodegasParaActualizar(List<String> listaBodegasConActualizacion) {
+    public void mostrarBodegasParaActualizar(List<String> listaBodegasConActualizacion) {
         // Ajustar el tamaño de la tabla
-        tabla.llenarTablaBodegas(listaBodegasConActualizacion);
+        this.tabla.llenarTablaBodegas(listaBodegasConActualizacion);
     }
 
     public static void main(String args[]) {

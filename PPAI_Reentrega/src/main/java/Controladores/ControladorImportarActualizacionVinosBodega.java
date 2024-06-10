@@ -19,26 +19,16 @@ public class ControladorImportarActualizacionVinosBodega {
 	private List<String> nombresDeUsuariosSeguidores;
 	private List<Bodega> listaBodegas;
 
-	private PantallaAB pantalla;
-
 
 
 	//CREAR BODEGAS DE PRUEBA
 	public void crearBodegasDePrueba() {
-<<<<<<< HEAD
 
 		listaBodegas.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2025-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 3", "Historia 1", "Bodega 2", 2, "2025-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2024-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2021-04-01", null, null));
 		listaBodegas.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2021-04-01", null, null));
-=======
-		listaBodegas.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2021-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 3", "Historia 1", "Bodega 2", 2, "2021-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2021-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2025-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2025-04-01", null, null));
->>>>>>> 86e4a1f54d13dc4b42958f0d2daddbfdfebc6fdf
 		listaBodegas.add(new Bodega("123.45", "Descripcion 1", "Historia 1", "Bodega 6", 2, "2027-04-01", null, null));
 	}
 
@@ -47,20 +37,13 @@ public class ControladorImportarActualizacionVinosBodega {
 
 
 	//APIS
-
+//Acceso directo de array
 	// CREAR VINOS DE PRUEBA
 	public void crearVinosActualizar() {
 		List<Vino> listaVinos1 = new ArrayList<>();
-<<<<<<< HEAD
 		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino1", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
 		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
 		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino3", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-=======
-		 bodega1 =
-		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino1", "Nota de cata de la bodega 1", 500.0, , null, null, null));
-		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino2", "Nota de cata de la bodega 1", 500.0, findBodega("Bodega 1"), null, null, null));
-		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino3", "Nota de cata de la bodega 1", 500.0, findBodega("Bodega 1"), null, null, null));
->>>>>>> parent of 42b0749 (consulta tabla profe)
 
 		List<Vino> listaVinos2 = new ArrayList<>();
 		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
@@ -99,23 +82,15 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	//Metodos
 	public void opcionImportarActualizacionVinosBodega() {
-<<<<<<< HEAD
 		PantallaAB pantallaAB = new PantallaAB();
-=======
-		PantallaAB pantalla = new PantallaAB();
->>>>>>> 86e4a1f54d13dc4b42958f0d2daddbfdfebc6fdf
 		List<String> listaBodegasConActualizacion = buscarBodegasParaActualizar(getListaBodegas());
 
-
+		//PREGUNTAR SOL
 		if (listaBodegasConActualizacion.isEmpty()){
 			JOptionPane.showMessageDialog(null, "No hay bodegas para actualizar");
 			//volver a inicio
 		} else {
-<<<<<<< HEAD
 			pantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
-=======
-			pantalla.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
->>>>>>> 86e4a1f54d13dc4b42958f0d2daddbfdfebc6fdf
 		}
 	}
 
@@ -136,11 +111,7 @@ public class ControladorImportarActualizacionVinosBodega {
 		//List<Vino> vinosActualizados = getActualizacionVinos(bodegaSeleccionadas);
 	}
 
-<<<<<<< HEAD
 	//public void List<Vino> getActualizacionVinos(List<String> bodegaSeleccionadas) {
-=======
-	public void getActualizacionVinos(List<String> bodegaSeleccionadas) {
->>>>>>> 86e4a1f54d13dc4b42958f0d2daddbfdfebc6fdf
 		//Aca nos quuedamos, falta hacer la api
 	//}
 
