@@ -22,9 +22,13 @@ public class tablaBodegasAct extends javax.swing.JPanel {
         model.setRowCount(0); // Limpiar la tabla existente
         for (String bodega : listaBodegas) {
             model.addRow(new Object[]{bodega, false});
-            // Por defecto, la columna 'Seleccionar' no estará seleccionada
+
+             // Por defecto, la columna 'Seleccionar' no estará seleccionada
+
+            }
+
         }
-    }
+
 
 
 
