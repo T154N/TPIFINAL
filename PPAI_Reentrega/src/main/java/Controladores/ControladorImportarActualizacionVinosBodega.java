@@ -41,9 +41,11 @@ public class ControladorImportarActualizacionVinosBodega {
 	// VINOS BDD
 	public void crearVinosActualizar() {
 		List<Vino> listaVinos1 = new ArrayList<>();
-		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino1", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-		listaVinos1.add(new Vino(2019, "imagen1.jpg", "Vino3", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinos1.add(new Vino(2020, "imagen1.jpg", "Vino Ejemplo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinos1.add(new Vino(2019, "logo.jpg", "Vino Ejemplo 1", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinos1.add(new Vino(2021, "imagen1.jpg", "Vino Ejemplo 2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinos1.add(new Vino(2018, "imagen1.jpg", "Vino Ejemplo 3", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+
 
 		List<Vino> listaVinos2 = new ArrayList<>();
 		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
@@ -117,17 +119,27 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	public void tomarSeleccionBodega(List<String> bodegaSeleccionadas) {
 		//InterfazSB.getImpo
-		//List<Vino> vinosActualizados = getActualizacionVinos(bodegaSeleccionadas);
+		//List<Vino> vinosParaActualizar = getActualizacionVinos(bodegaSeleccionadas);
 		System.out.println(bodegaSeleccionadas); //Muestra por terminal las bodegas seleccionadas
+		// for vinosParaActualizar
+		//		actualizarVinosExistentes(vino[i])
+
 	}
 
 	//public void List<Vino> getActualizacionVinos(List<String> bodegaSeleccionadas) {
 		//Aca nos quedamos, falta hacer el arreglo de la api
-		// Buscar las bodegas en la api
-		//
+		// vinosParaActualizar = [];
+		// For bodegasSeleccionadas = [i]
+		// localhost:8080/nombreBodega[i]/:vinos
+		// if existe
+		// 		Guardar el vino
+		// else
+		// 		System.out.println("No se obtiene respuesta de la API de : bodegaSeleccionada[i])
 	//}
 
 	public void actualizarVinosExistentes() {
+		// actualizarDatosVino(vino)
+		//
 	}
 
 	public void buscarMaridaje() {
