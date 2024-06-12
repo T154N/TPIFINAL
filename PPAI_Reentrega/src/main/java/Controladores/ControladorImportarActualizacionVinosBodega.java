@@ -126,24 +126,24 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	public void tomarSeleccionBodega(List<String> bodegaSeleccionadas) {
 		List<Vino> vinosParaActualizar = getActualizacionVinos(bodegaSeleccionadas);
-		//--------------------------------------------------
-		// for vinosParaActualizar
-		//		actualizarVinosExistentes(vino[i])
 
+		for (Vino vino : vinosParaActualizar) {
+			actualizarVinosExistentes(vino);
+		}
 	}
+
 
 	public List<Vino> getActualizacionVinos(List<String> bodegaSeleccionadas) {
 		List<Vino> vinosParaActualizar = new ArrayList<>();
-		for (String bodega : bodegaSeleccionadas) {
-			vinosParaActualizar.addAll(interfazSB.getImportarActualizacionVinos(bodega));
-		}
+		//for (String bodega : bodegaSeleccionadas) {
+		vinosParaActualizar.addAll(interfazSB.getImportarActualizacionVinos());
+		//}
 		vinosParaActualizar.addAll(listaVinosApi);
 		return vinosParaActualizar;
     }
 
-	public void actualizarVinosExistentes() {
-		// if actualizarDatosVino(vino)
-		//	else
+	public void actualizarVinosExistentes(Vino vino) {
+
 	}
 
 	public void buscarMaridaje() {

@@ -1,19 +1,19 @@
 package Clases;
 
 import java.util.Set;
-import	Clases.Bodega;
+
 public class Vino {
 
 	//Atributos
 	private Integer aniada;
-	private String imagenEtiqueta;
+	private String imagenEtiqueta;	//Modificada
 	private String nombre;
-	private String notaDeCataBodega;
-	private Double precioARS;
+	private String notaDeCataBodega;	//Modificable
+	private Double precioARS;	//Modificable
 	private Bodega bodega;
 	private Resenia resenia;
 	private Varietal varietal;
-	private Set<Maridaje> maridaje;
+	private Set<Maridaje> maridaje;	//Modificable
 
 	//Contructor
 	public Vino(Integer aniada, String imagenEtiqueta, String nombre, String notaDeCataBodega, Double precioARS, Bodega bodega, Resenia resenia, Varietal varietal, Set<Maridaje> maridaje) {
@@ -26,6 +26,11 @@ public class Vino {
 		this.resenia = resenia;
 		this.varietal = varietal;
 		this.maridaje = maridaje;
+	}
+
+	public Vino(String nombre, Bodega bodega ){
+		this.nombre = nombre;
+		this.bodega = bodega;
 	}
 
 	//Metodos
@@ -65,11 +70,10 @@ public class Vino {
 
 	}
 
-	//GETTERS Y SETTERS
 	public void crearVarietal() {
 
 	}
-
+	//GETTERS Y SETTERS
 	public Integer getAniada() {
 		return aniada;
 	}
