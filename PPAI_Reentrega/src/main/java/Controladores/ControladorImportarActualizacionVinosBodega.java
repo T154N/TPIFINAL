@@ -64,9 +64,16 @@ public class ControladorImportarActualizacionVinosBodega {
 	}
 
 	//APIS
+	// VINOS API
+	public void crearVinosApi() {
+		List<Vino> listaVinosApi = new ArrayList<Vino>();
+		listaVinosApi.add(new Vino(2020, "imagen1Modificada.jpg", "Vino Ejemplo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinosApi.add(new Vino(2019, "logo.jpg", "Vino Ejemplo 1", "Nota de cata de la bodega 1", 111500.0, listaBodegas.get(0), null, null, null));
+		listaVinosApi.add(new Vino(2021, "imagen1.jpg", "Vino Ejemplo 2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinosApi.add(new Vino(1900, "imagen1.jpg", "Vino Nuevo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+	}
 
-		// URL/ApiBodegaSanJuan/:bodega
-		//vino1, vino2, vino3
+
 
 	public void apiVinosActualizar(){
 
@@ -92,11 +99,8 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	//Metodos
 	public void opcionImportarActualizacionVinosBodega() {
-<<<<<<< HEAD
 		//PantallaAB pantalla = new PantallaAB();
-=======
 
->>>>>>> adfbe780a3450d70b01f8b2cf468511db42a26d6
 		List<String> listaBodegasConActualizacion = buscarBodegasParaActualizar(getListaBodegas());
 
 		//PREGUNTAR SOL
@@ -130,13 +134,13 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	}
 
-	//public void List<Vino> getActualizacionVinos(List<String> bodegaSeleccionadas) {
-		//Aca nos quedamos, falta hacer el arreglo de la api
-		// vinosParaActualizar = [];
-		// For bodegasSeleccionadas = [i]
-		// pedir a la api que devuelva los vinos encontrados en la URL vinosParaActualizar.add(InterfazSB.getImportarActualizacionVinos(bodega[i]))
-		// returnVinosParaActualizar
-	//}
+	public List<Vino> getActualizacionVinos(List<String> bodegaSeleccionadas) {
+		List<Vino> vinosParaActualizar = new ArrayList<>();
+		for (String bodega : bodegaSeleccionadas) {
+			vinosParaActualizar.addAll(InterfazSB.getImportarActualizacionVinos(bodega));
+		}
+		vinosParaActualizar.addAll(listaVinosApi);
+	}
 
 	public void actualizarVinosExistentes() {
 		// actualizarDatosVino(vino)
