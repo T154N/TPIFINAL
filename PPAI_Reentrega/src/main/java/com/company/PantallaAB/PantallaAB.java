@@ -16,8 +16,6 @@ public class PantallaAB extends javax.swing.JFrame {
         centrarPanelBotones();
         // Inicialización del controlador
         controlador = new ControladorImportarActualizacionVinosBodega();
-        // Crear bodegas de prueba
-        controlador.crearBodegasDePrueba();
         // Inicialización de la tabla
         tabla = new tablaBodegasAct();
         // Ajustar el tamaño de la tabla
