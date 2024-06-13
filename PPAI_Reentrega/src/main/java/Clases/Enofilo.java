@@ -1,5 +1,9 @@
 package Clases;
 
+//----------------------------------
+import Clases.Siguiendo;
+import Clases.Usuario;
+//----------------------------------
 import java.util.Set;
 
 public class Enofilo {
@@ -25,10 +29,11 @@ public class Enofilo {
 	}
 
 	public void seguisBodega() {
+		//Siguiendo.sosBodega()
 	}
 
-	public void _getNombreUsuario() {
-
+	public void getNombreUsuario() {
+		//Usuario.getNombre()
 	}
 
 

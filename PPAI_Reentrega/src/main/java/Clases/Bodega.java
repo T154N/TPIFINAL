@@ -3,6 +3,10 @@ package Clases;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+//----------------------------------
+import Clases.Vino;
+//----------------------------------
+
 public class Bodega {
 
 	private String coordenadasUbicacion;
@@ -45,8 +49,16 @@ public class Bodega {
 		return monthsBetween >= periodoActualizacion;
 	}
 
-	public void actualizarDatosVino() {
-
+	public void actualizarDatosVino(/*vino |hay que preguntar si se puede pasar un vino|*/) {
+		//bandera=false
+		//for vinosBDD
+		//		if sosvinoparaactualizar(vino)
+		//			setprecio(vino )
+		//			setimagen(vino)
+		//			setnotacata(vino)
+		//			bandera = true
+		//			break
+		//return bandera
 	}
 
 

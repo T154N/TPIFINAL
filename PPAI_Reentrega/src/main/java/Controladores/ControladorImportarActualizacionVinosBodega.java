@@ -1,8 +1,16 @@
 package Controladores;
-import Boundarys.InterfazSB;
-import Clases.*;
-import com.company.PantallaAB.PantallaAB;
+//----------------------------------CLASES
+import Clases.Bodega;
+import Clases.Maridaje;
+import Clases.TipoUva;
+import Clases.Enofilo;
+import Clases.Vino;
 
+//----------------------------------BOUNDARYS
+import com.company.PantallaAB.PantallaAB;
+import Boundarys.InterfazSB;
+import Boundarys.InterfazNotificacion;
+//----------------------------------JAVA
 import javax.swing.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -128,7 +136,13 @@ public class ControladorImportarActualizacionVinosBodega {
 		List<Vino> vinosParaActualizar = getActualizacionVinos(bodegaSeleccionadas);
 
 		for (Vino vino : vinosParaActualizar) {
-			actualizarVinosExistentes(vino);
+			//
+			// flagVinoActualizado = actualizarVinosExistentes(vino);
+			//
+			//if flagVinoActualizado = False
+			//			buscarMaridaje(vino)===> recibe o una bandera o el maridaje
+			//			buscarTipoUva(vino)===> recibe o una bandera o el listadetipodeuva
+			// 			crearVino(vino maridaje listtipouva)
 		}
 	}
 
@@ -143,19 +157,34 @@ public class ControladorImportarActualizacionVinosBodega {
     }
 
 	public void actualizarVinosExistentes(Vino vino) {
-
+		//		bodegaSeleccionada = Null
+		//
+		//for Bodega bodega : bodegasSeleccionadas
+		// 		if bogega.getNombre() == vino.getBodega.getNombre()
+		//			bodegaSeleccionada = bodega
+		//			break
+		// (si termina el for y no encuentra la bodega decimo que no existe la bodega)
+		//
+		// bandera = bodegaSeleccionada.actualizarDatosVino( vino )===> recibe una bandera si la bandera es false el
+		//
+		// return bandera
 	}
 
 	public void buscarMaridaje() {
+		//
 	}
 
 	public void buscarTipoUva() {
+		//TipoUva.sosTipoUva();
 	}
 
-	public void crearVino() {
+	public void crearVino(/*vino maridaje listtipouva*/) {
+		//_new(vino maridaje listtipouva)
 	}
 
 	public void buscarSeguidoresBodega() {
+		//Enofilo.seguisBodega()
+		//Enofilo.getNombreUsuario()
 	}
 
 	public void finCU() {

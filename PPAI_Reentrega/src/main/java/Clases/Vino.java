@@ -67,7 +67,9 @@ public class Vino {
 	}
 
 	public void _new() {
-
+		//crear vino ==> crea el el vino con varietal nulo
+		//for tiposDeUvaEnVinoPorCrear
+		//		asignamos al vino = Varietal.new(tipouva)
 	}
 
 	public void crearVarietal() {
