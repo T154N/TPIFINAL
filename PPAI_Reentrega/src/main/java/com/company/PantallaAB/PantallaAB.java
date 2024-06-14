@@ -1,5 +1,6 @@
 package com.company.PantallaAB;
 
+import Clases.Vino;
 import Controladores.ControladorImportarActualizacionVinosBodega;
 import com.company.views.tablaBodegasAct;
 
@@ -247,6 +248,9 @@ public class PantallaAB extends javax.swing.JFrame {
         controlador.tomarSeleccionBodega(bodegaSeleccionadas);
     }
 
+    public void mostrarResumenVinosImportados(Vino vino) {
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Inicio;
     private javax.swing.JPanel backGround;
@@ -261,6 +265,8 @@ public class PantallaAB extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JPanel panelBotones;
+
     // End of variables declaration//GEN-END:variables
 }
+
 

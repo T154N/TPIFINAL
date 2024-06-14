@@ -26,14 +26,14 @@ public class ControladorImportarActualizacionVinosBodega {
 	private List<Enofilo> seguidoresDeBodega;
 	private List<String> nombresDeUsuariosSeguidores;
 	private List<Bodega> listaBodegas;
-	//private List<Vino> listaVinosApi;
+	//private List<Vino> listaVinosApi; //Por falta de BDD
 	private List<Vino> listaVinos;
 
 
 
 	//inicializar pantalla
-
 	InterfazSB interfazSB = new InterfazSB();
+	//PantallaAB pantalla = new PantallaAB();
 
 //Acceso directo de array
 	// VINOS BDD nuestra
@@ -88,12 +88,12 @@ public class ControladorImportarActualizacionVinosBodega {
 	}
 
 	public void crearBodegasDePrueba() {
-		listaBodegas.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 3", "Historia 1", "Bodega 2", 2, "2025-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2024-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2021-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2021-04-01", null, null));
-		listaBodegas.add(new Bodega("123.45", "Descripcion 1", "Historia 1", "Bodega 6", 2, "2027-04-01", null, null));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 3", "Historia 1", "Bodega 2", 2, "2025-04-01"));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 4", "Historia 1", "Bodega 3", 2, "2024-04-01"));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 5", "Historia 1", "Bodega 4", 2, "2021-04-01"));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 6", "Historia 1", "Bodega 5", 2, "2021-04-01"));
+		listaBodegas.add(new Bodega("123.45", "Descripcion 1", "Historia 1", "Bodega 6", 2, "2027-04-01"));
 	}
 
 	//Metodos
@@ -137,17 +137,20 @@ public class ControladorImportarActualizacionVinosBodega {
 
 		for (Vino vino : vinosParaActualizar) {
 			Boolean okey = actualizarVinosExistentes(vino);
-
 			if (!okey){
+
 			}
+			//pantalla.mostrarResumenVinosImportados(vino) //No se si se puede pasar el vino);
 		}
 	}
 
 
 	public List<Vino> getActualizacionVinos(List<String> bodegaSeleccionadas) {
-        //for (String bodega : bodegaSeleccionadas) {
-        List<Vino> vinosParaActualizar = new ArrayList<>(interfazSB.getImportarActualizacionVinos());
-		//}
+		List<Vino> vinosParaActualizar = new ArrayList<>();
+		for (String bodega : bodegaSeleccionadas) {
+			vinosParaActualizar.addAll(interfazSB.getImportarActualizacionVinos(bodega));
+
+		}
 		return vinosParaActualizar;
     }
 

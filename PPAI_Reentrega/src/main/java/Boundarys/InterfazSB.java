@@ -1,33 +1,36 @@
 package Boundarys;
 
 import Clases.*;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 
 public class InterfazSB {
 
-	public List<Vino> getImportarActualizacionVinos() {
-		Bodega bodega = new Bodega("Bodega 4");
+	public List<Vino> getImportarActualizacionVinos(String bodegaSeleccionadas) {
+		// Codifica el nombre de la bodega para que sea seguro usarlo en una URL
+		String nombreBodegaCodificado = URLEncoder.encode(bodegaSeleccionadas, StandardCharsets.UTF_8);
+		String urlStr = "http://localhost:8080/" + nombreBodegaCodificado + "/vinos";
+
 		List<Vino> vinos = new ArrayList<>();
 		try {
-			// URL de la API
-			String urlStr = "http://localhost:8080/Bodega4/vinos";
 			URL url = new URL(urlStr);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Accept", "application/json");
 
 			if (conn.getResponseCode() != 200) {
-				throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
-			}
+				throw new IOException("API sin conexion");
+            }
 
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 
@@ -49,14 +52,29 @@ public class InterfazSB {
 				String notaDeCataBodega = jsonObject.optString("notaDeCataBodega");
 				Double precioARS = jsonObject.optDouble("precioARS");
 
+				// Procesar la bodega
+				JSONObject bodegaJson = jsonObject.getJSONObject("bodega");
+				Bodega bodega = new Bodega(
+						bodegaJson.optString("coordenadasUbicacion"),
+						bodegaJson.optString("descripcion"),
+						bodegaJson.optString("historia"),
+						bodegaJson.optString("nombre"),
+						bodegaJson.optInt("periodoActualizacion"),
+						bodegaJson.optString("ultimaActualizacion")
+				);
+
 				// Procesar las reseñas
 				List<Resenia> resenias = new ArrayList<>();
 				JSONArray reseniasJson = jsonObject.optJSONArray("resenia");
 				if (reseniasJson != null) {
 					for (int j = 0; j < reseniasJson.length(); j++) {
 						JSONObject reseniaJson = reseniasJson.getJSONObject(j);
-						Resenia resenia = new Resenia(reseniaJson.getString("comentario"),reseniaJson.getBoolean("esPremium"),reseniaJson.getString("fechaResenia"),reseniaJson.getInt("puntaje"));
-						// Setea los atributos de Resenia desde reseniaJson
+						Resenia resenia = new Resenia(
+								reseniaJson.getString("comentario"),
+								reseniaJson.getBoolean("esPremium"),
+								reseniaJson.getString("fechaResenia"),
+								reseniaJson.getInt("puntaje")
+						);
 						resenias.add(resenia);
 					}
 				}
@@ -67,8 +85,11 @@ public class InterfazSB {
 				if (varietalesJson != null) {
 					for (int k = 0; k < varietalesJson.length(); k++) {
 						JSONObject varietalJson = varietalesJson.getJSONObject(k);
-						Varietal varietal = new Varietal(varietalJson.getString("descripcion"),varietalJson.getDouble("porcentajeComposicion"),null);// Asume que tienes un constructor o método para crear Varietal desde JSON
-						// Setea los atributos de Varietal desde varietalJson
+						Varietal varietal = new Varietal(
+								varietalJson.getString("descripcion"),
+								varietalJson.getDouble("porcentajeComposicion"),
+								null
+						);
 						varietales.add(varietal);
 					}
 				}
@@ -79,25 +100,34 @@ public class InterfazSB {
 				if (maridajesJson != null) {
 					for (int l = 0; l < maridajesJson.length(); l++) {
 						JSONObject maridajeJson = maridajesJson.getJSONObject(l);
-						Maridaje maridaje = new Maridaje(maridajeJson.getString("nombre"), maridajeJson.getString("descripcion")); // Asume que tienes un constructor o método para crear Maridaje desde JSON
-						// Setea los atributos de Maridaje desde maridajeJson
+						Maridaje maridaje = new Maridaje(
+								maridajeJson.getString("nombre"),
+								maridajeJson.getString("descripcion")
+						);
 						maridajes.add(maridaje);
 					}
 				}
 
-				Vino vino = new Vino(aniada, imagenEtiqueta, nombre, notaDeCataBodega, precioARS, bodega, resenias, varietales, maridajes);
+				Vino vino = new Vino(
+						aniada,
+						imagenEtiqueta,
+						nombre,
+						notaDeCataBodega,
+						precioARS,
+						bodega,
+						resenias,
+						varietales,
+						maridajes
+				);
 				vinos.add(vino);
 			}
 
-			// Imprimir los vinos obtenidos
-			//for (Vino vino : vinos) {
-			//	System.out.println(vino.getPrecioARS());
-			//}
-
+		} catch (IOException e) {
+			System.err.println("API sin conexion " + bodegaSeleccionadas);
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println("Error al importar la actualización de vinos: " + e.getMessage());
 		}
-		//System.out.println("Llegue");
+
 		return vinos;
 	}
 }

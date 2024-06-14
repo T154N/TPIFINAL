@@ -20,16 +20,15 @@ public class Bodega {
 
 	//Constructor
 	public Bodega(String coordenadasUbicacion, String descripcion, String historia, String nombre,
-			Integer periodoActualizacion, String ultimaActualizacion, NovedadEvento novedadEvento, RegionVitivinicola regionVitivinicola) {
+			Integer periodoActualizacion, String ultimaActualizacion) {
 		this.coordenadasUbicacion = coordenadasUbicacion;
 		this.descripcion = descripcion;
 		this.historia = historia;
 		this.nombre = nombre;
 		this.periodoActualizacion = periodoActualizacion;
-		this.novedadEvento = novedadEvento;
-		this.regionVitivinicola = regionVitivinicola;
 		this.ultimaActualizacion = ultimaActualizacion;
 	}
+
 
 	public Bodega(String nombre) {
 		this.nombre = nombre;
