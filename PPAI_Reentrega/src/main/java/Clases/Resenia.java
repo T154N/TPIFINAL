@@ -6,11 +6,18 @@ public class Resenia {
 	//ATRIBUTOS
 	private String comentario;
 	private Boolean esPremium;
-	private Date fechaResenia;
+	private String fechaResenia;
 	private Integer puntaje;
 	private Vino vino;
 
 	//CONSTRUCTOR
+
+	public Resenia(String comentario, Boolean esPremium, String fechaResenia, Integer puntaje) {
+		this.comentario = comentario;
+		this.esPremium = esPremium;
+		this.fechaResenia = fechaResenia;
+		this.puntaje = puntaje;
+	}
 
 	//METODOS
 	public void esPremium() {
@@ -42,11 +49,11 @@ public class Resenia {
 		this.esPremium = esPremium;
 	}
 
-	public Date getFechaResenia() {
+	public String getFechaResenia() {
 		return fechaResenia;
 	}
 
-	public void setFechaResenia(Date fechaResenia) {
+	public void setFechaResenia(String fechaResenia) {
 		this.fechaResenia = fechaResenia;
 	}
 

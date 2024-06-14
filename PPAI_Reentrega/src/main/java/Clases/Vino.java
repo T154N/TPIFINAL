@@ -1,5 +1,6 @@
 package Clases;
 
+import java.util.List;
 import java.util.Set;
 
 public class Vino {
@@ -11,12 +12,12 @@ public class Vino {
 	private String notaDeCataBodega;	//Modificable
 	private Double precioARS;	//Modificable
 	private Bodega bodega;
-	private Resenia resenia;
-	private Varietal varietal;
-	private Set<Maridaje> maridaje;	//Modificable
+	private List<Resenia> resenia;
+	private List<Varietal> varietal;
+	private List<Maridaje> maridaje;	//Modificable
 
 	//Contructor
-	public Vino(Integer aniada, String imagenEtiqueta, String nombre, String notaDeCataBodega, Double precioARS, Bodega bodega, Resenia resenia, Varietal varietal, Set<Maridaje> maridaje) {
+	public Vino(Integer aniada, String imagenEtiqueta, String nombre, String notaDeCataBodega, Double precioARS, Bodega bodega, List<Resenia> resenia, List<Varietal> varietal, List<Maridaje> maridaje) {
 		this.aniada = aniada;
 		this.imagenEtiqueta = imagenEtiqueta;
 		this.nombre = nombre;
@@ -50,21 +51,12 @@ public class Vino {
 
 	}
 
-	public void sosVinoParaActualizar() {
-
-	}
-
-	public void setPrecio() {
-
-	}
-
-	public void setImagenEtiqueta() {
-
-	}
-
-	public void setNotaCata() {
-
-	}
+	public Boolean sosVinoParaActualizar(Vino vinoAPI) {
+		if (this.getNombre().equals(vinoAPI.getNombre())){
+			return true;
+		}
+        return false;
+    }
 
 	public void _new() {
 		//crear vino ==> crea el el vino con varietal nulo
@@ -124,27 +116,27 @@ public class Vino {
 		this.bodega = bodega;
 	}
 
-	public Resenia getResenia() {
+	public List<Resenia> getResenia() {
 		return resenia;
 	}
 
-	public void setResenia(Resenia resenia) {
+	public void setResenia(List<Resenia> resenia) {
 		this.resenia = resenia;
 	}
 
-	public Varietal getVarietal() {
+	public List<Varietal> getVarietal() {
 		return varietal;
 	}
 
-	public void setVarietal(Varietal varietal) {
+	public void setVarietal(List<Varietal> varietal) {
 		this.varietal = varietal;
 	}
 
-	public Set<Maridaje> getMaridaje() {
+	public List<Maridaje> getMaridaje() {
 		return maridaje;
 	}
 
-	public void setMaridaje(Set<Maridaje> maridaje) {
+	public void setMaridaje(List<Maridaje> maridaje) {
 		this.maridaje = maridaje;
 	}
 }

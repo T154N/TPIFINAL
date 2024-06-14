@@ -2,10 +2,10 @@ package Clases;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
-//----------------------------------
 import Clases.Vino;
-//----------------------------------
+
 
 public class Bodega {
 
@@ -35,6 +35,8 @@ public class Bodega {
 		this.nombre = nombre;
 	}
 
+
+
 	//Metodos
 	public void contarResenia() {
 
@@ -49,16 +51,20 @@ public class Bodega {
 		return monthsBetween >= periodoActualizacion;
 	}
 
-	public void actualizarDatosVino(/*vino |hay que preguntar si se puede pasar un vino|*/) {
-		//bandera=false
-		//for vinosBDD
-		//		if sosvinoparaactualizar(vino)
-		//			setprecio(vino )
-		//			setimagen(vino)
-		//			setnotacata(vino)
-		//			bandera = true
-		//			break
-		//return bandera
+	public Boolean actualizarDatosVino(Vino vinoAPI, List<Vino> listaVinosBDD /*vino |hay que preguntar si se puede pasar un vino|*/) {
+		for (Vino vinoBDD : listaVinosBDD){
+			if (vinoBDD.sosVinoParaActualizar(vinoAPI)){
+				vinoBDD.setPrecioARS(vinoAPI.getPrecioARS());
+				vinoBDD.setImagenEtiqueta(vinoAPI.getImagenEtiqueta());
+				vinoBDD.setNotaDeCataBodega(vinoAPI.getNotaDeCataBodega());
+				vinoBDD.setResenia(vinoAPI.getResenia());
+				System.out.println(vinoBDD.getPrecioARS() + " = " + vinoAPI.getPrecioARS());
+				System.out.println("-------------------------------------------------------");
+				return true;
+			}
+		}
+		return false;
+
 	}
 
 

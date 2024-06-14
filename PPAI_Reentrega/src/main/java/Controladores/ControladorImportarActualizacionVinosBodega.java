@@ -5,7 +5,6 @@ import Clases.Maridaje;
 import Clases.TipoUva;
 import Clases.Enofilo;
 import Clases.Vino;
-
 //----------------------------------BOUNDARYS
 import com.company.PantallaAB.PantallaAB;
 import Boundarys.InterfazSB;
@@ -27,7 +26,10 @@ public class ControladorImportarActualizacionVinosBodega {
 	private List<Enofilo> seguidoresDeBodega;
 	private List<String> nombresDeUsuariosSeguidores;
 	private List<Bodega> listaBodegas;
-	private List<Vino> listaVinosApi;
+	//private List<Vino> listaVinosApi;
+	private List<Vino> listaVinos;
+
+
 
 	//inicializar pantalla
 
@@ -36,43 +38,32 @@ public class ControladorImportarActualizacionVinosBodega {
 //Acceso directo de array
 	// VINOS BDD nuestra
 	public void crearVinosActualizar() {
-		List<Vino> listaVinos1 = new ArrayList<Vino>();
-		listaVinos1.add(new Vino(2020, "imagen1.jpg", "Vino Ejemplo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-		listaVinos1.add(new Vino(2019, "logo.jpg", "Vino Ejemplo 1", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-		listaVinos1.add(new Vino(2021, "imagen1.jpg", "Vino Ejemplo 2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-		listaVinos1.add(new Vino(2018, "imagen1.jpg", "Vino Ejemplo 3", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen1.jpg", "Vino Ejemplo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinos.add(new Vino(2019, "logo.jpg", "Vino Ejemplo 1", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinos.add(new Vino(2021, "imagen1.jpg", "Vino Ejemplo 2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinos.add(new Vino(2018, "imagen1.jpg", "Vino Ejemplo 3", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
 
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
 
-		List<Vino> listaVinos2 = new ArrayList<>();
-		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
-		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
-		listaVinos2.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
 
-		List<Vino> listaVinos3 = new ArrayList<>();
-		listaVinos3.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
-		listaVinos3.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
-		listaVinos3.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
-
-		List<Vino> listaVinos4 = new ArrayList<>();
-		listaVinos4.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
-		listaVinos4.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
-		listaVinos4.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
 	}
 
 	//APIS
 	// VINOS API
-	public void crearVinosApi() {
+	/*public void crearVinosApi() {
 		listaVinosApi.add(new Vino(2020, "imagen1Modificada.jpg", "Vino Ejemplo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
 		listaVinosApi.add(new Vino(2019, "logo.jpg", "Vino Ejemplo 1", "Nota de cata de la bodega 1", 111500.0, listaBodegas.get(0), null, null, null));
 		listaVinosApi.add(new Vino(2021, "imagen1.jpg", "Vino Ejemplo 2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
 		listaVinosApi.add(new Vino(1900, "imagen1.jpg", "Vino Nuevo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-	}
-
-
-
-		public void apiVinosActualizar(){
-
-	}
+	}*/
 
 	//Constructor
 	public ControladorImportarActualizacionVinosBodega(List<Bodega> bodegaSeleccionada, List<Vino> vinosParaActualizar, Maridaje maridaje, TipoUva tipoUva, List<Vino> listaVinosCreados, List<Enofilo> seguidoresDeBodega, List<String> nombresDeUsuariosSeguidores, List<Bodega> listaBodegas) {
@@ -86,13 +77,14 @@ public class ControladorImportarActualizacionVinosBodega {
 		this.listaBodegas = listaBodegas;
 	}
 
-
-
 	public ControladorImportarActualizacionVinosBodega() {
 		this.listaBodegas = new ArrayList<>();
-		this.listaVinosApi = new ArrayList<>();
+		this.bodegaSeleccionada = new ArrayList<>();
+		//this.listaVinosApi = new ArrayList<>();
+		this.listaVinos = new ArrayList<>();
 		crearBodegasDePrueba();
-		crearVinosApi();
+		//crearVinosApi();
+		crearVinosActualizar();
 	}
 
 	public void crearBodegasDePrueba() {
@@ -132,42 +124,44 @@ public class ControladorImportarActualizacionVinosBodega {
 		return bodegasConActualizacion;
 	}
 
-	public void tomarSeleccionBodega(List<String> bodegaSeleccionadas) {
-		List<Vino> vinosParaActualizar = getActualizacionVinos(bodegaSeleccionadas);
+	public void tomarSeleccionBodega(List<String> nombresBodegaSeleccionadas) {
+		// Vaciar las bodegasSeleccionadas
+		for (String nombreBodegaSeleccionada : nombresBodegaSeleccionadas){
+			for (Bodega bodegaBDD : listaBodegas){
+				if (bodegaBDD.getNombre().equals(nombreBodegaSeleccionada )){
+					bodegaSeleccionada.add(bodegaBDD);
+				}
+			}
+		}
+		List<Vino> vinosParaActualizar = getActualizacionVinos(nombresBodegaSeleccionadas);
 
 		for (Vino vino : vinosParaActualizar) {
-			//
-			// flagVinoActualizado = actualizarVinosExistentes(vino);
-			//
-			//if flagVinoActualizado = False
-			//			buscarMaridaje(vino)===> recibe o una bandera o el maridaje
-			//			buscarTipoUva(vino)===> recibe o una bandera o el listadetipodeuva
-			// 			crearVino(vino maridaje listtipouva)
+			Boolean okey = actualizarVinosExistentes(vino);
+
+			if (!okey){
+			}
 		}
 	}
 
 
 	public List<Vino> getActualizacionVinos(List<String> bodegaSeleccionadas) {
-		List<Vino> vinosParaActualizar = new ArrayList<>();
-		//for (String bodega : bodegaSeleccionadas) {
-		vinosParaActualizar.addAll(interfazSB.getImportarActualizacionVinos());
+        //for (String bodega : bodegaSeleccionadas) {
+        List<Vino> vinosParaActualizar = new ArrayList<>(interfazSB.getImportarActualizacionVinos());
 		//}
-		vinosParaActualizar.addAll(listaVinosApi);
 		return vinosParaActualizar;
     }
 
-	public void actualizarVinosExistentes(Vino vino) {
-		//		bodegaSeleccionada = Null
-		//
-		//for Bodega bodega : bodegasSeleccionadas
-		// 		if bogega.getNombre() == vino.getBodega.getNombre()
-		//			bodegaSeleccionada = bodega
-		//			break
+	public Boolean actualizarVinosExistentes(Vino vino) {
+		for (Bodega bodegaSeleccionada : bodegaSeleccionada){
+			if (bodegaSeleccionada.getNombre().equals(vino.getBodega().getNombre())){
+				return bodegaSeleccionada.actualizarDatosVino(vino, listaVinos );
+			}
+		}
 		// (si termina el for y no encuentra la bodega decimo que no existe la bodega)
 		//
-		// bandera = bodegaSeleccionada.actualizarDatosVino( vino )===> recibe una bandera si la bandera es false el
+		// bandera = bodegaSelec.actualizarDatosVino( vino )===> recibe una bandera si la bandera es false el
 		//
-		// return bandera
+		return false;
 	}
 
 	public void buscarMaridaje() {

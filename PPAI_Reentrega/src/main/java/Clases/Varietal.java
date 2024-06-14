@@ -14,6 +14,7 @@ public class Varietal {
 		this.tipoUva = tipoUva;
 	}
 
+
 	//METODOS
 	public void conocerTiposUva() {
 	}
