@@ -1,8 +1,10 @@
 package Clases;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.ArrayList;
 
 import Clases.Vino;
 
@@ -50,14 +52,21 @@ public class Bodega {
 		return monthsBetween >= periodoActualizacion;
 	}
 
-	public Boolean actualizarDatosVino(Vino vinoAPI, List<Vino> listaVinosBDD /*vino |hay que preguntar si se puede pasar un vino|*/) {
+	public Boolean actualizarDatosVino(Object vinoAPI, List<Vino> listaVinosBDD /*vino |hay que preguntar si se puede pasar un vino|*/) {
 		for (Vino vinoBDD : listaVinosBDD){
 			if (vinoBDD.sosVinoParaActualizar(vinoAPI)){
-				vinoBDD.setPrecioARS(vinoAPI.getPrecioARS());
-				vinoBDD.setImagenEtiqueta(vinoAPI.getImagenEtiqueta());
-				vinoBDD.setNotaDeCataBodega(vinoAPI.getNotaDeCataBodega());
-				vinoBDD.setResenia(vinoAPI.getResenia());
-				System.out.println(vinoBDD.getPrecioARS() + " = " + vinoAPI.getPrecioARS());
+				System.out.println("entra en el if");
+				String priceStr = ((ArrayList<String>)vinoAPI).get(4);
+				Double price = Double.parseDouble(priceStr);
+				vinoBDD.setPrecioARS(price);
+				vinoBDD.setImagenEtiqueta("hola");
+				String notaStr = ((ArrayList<String>)vinoAPI).get(3);
+				vinoBDD.setNotaDeCataBodega(notaStr);
+				vinoBDD.setResenia(null);
+				System.out.println(vinoBDD.getNotaDeCataBodega() + " = " + ((ArrayList<String>)vinoAPI).get(3));
+				System.out.println(vinoBDD.getImagenEtiqueta() + " = " + "hola");
+				System.out.println(vinoBDD.getResenia()+ "=" + null);
+				System.out.println(vinoBDD.getPrecioARS() + " = " + priceStr);
 				System.out.println("-------------------------------------------------------");
 				return true;
 			}

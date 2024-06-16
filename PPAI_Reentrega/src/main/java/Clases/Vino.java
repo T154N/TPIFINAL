@@ -1,5 +1,6 @@
 package Clases;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -51,8 +52,8 @@ public class Vino {
 
 	}
 
-	public Boolean sosVinoParaActualizar(Vino vinoAPI) {
-		if (this.getNombre().equals(vinoAPI.getNombre())){
+	public Boolean sosVinoParaActualizar(Object vinoAPI) {
+		if (this.getNombre().equals(((ArrayList<String>)vinoAPI).get(2))){
 			return true;
 		}
         return false;

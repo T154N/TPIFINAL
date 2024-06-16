@@ -11,6 +11,7 @@ import Boundarys.InterfazSB;
 import Boundarys.InterfazNotificacion;
 //----------------------------------JAVA
 import javax.swing.*;
+import java.io.ObjectStreamException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -133,20 +134,20 @@ public class ControladorImportarActualizacionVinosBodega {
 				}
 			}
 		}
-		List<Vino> vinosParaActualizar = getActualizacionVinos(nombresBodegaSeleccionadas);
+		ArrayList<Object> vinosParaActualizar = getActualizacionVinos(nombresBodegaSeleccionadas);
 
-		for (Vino vino : vinosParaActualizar) {
-			Boolean okey = actualizarVinosExistentes(vino);
+		for (Object vinostr : vinosParaActualizar) {
+			Boolean okey = actualizarVinosExistentes(vinostr);
 			if (!okey){
-
+				// Anotar el vino creado para mostrarlo en el resumen
 			}
 			//pantalla.mostrarResumenVinosImportados(vino) //No se si se puede pasar el vino);
 		}
 	}
 
 
-	public List<Vino> getActualizacionVinos(List<String> bodegaSeleccionadas) {
-		List<Vino> vinosParaActualizar = new ArrayList<>();
+	public ArrayList<Object> getActualizacionVinos(List<String> bodegaSeleccionadas) {
+		ArrayList<Object> vinosParaActualizar = new ArrayList<>();
 		for (String bodega : bodegaSeleccionadas) {
 			vinosParaActualizar.addAll(interfazSB.getImportarActualizacionVinos(bodega));
 
@@ -154,10 +155,12 @@ public class ControladorImportarActualizacionVinosBodega {
 		return vinosParaActualizar;
     }
 
-	public Boolean actualizarVinosExistentes(Vino vino) {
+	public Boolean actualizarVinosExistentes(Object vino) {
 		for (Bodega bodegaSeleccionada : bodegaSeleccionada){
-			if (bodegaSeleccionada.getNombre().equals(vino.getBodega().getNombre())){
+			if (bodegaSeleccionada.getNombre().equals(((ArrayList<Object>)vino).get(5)));{
 				return bodegaSeleccionada.actualizarDatosVino(vino, listaVinos );
+				// Anotar el vino actualizado para mostrarlo en el resumen
+				// agregar a un array para mostrar el resumen
 			}
 		}
 		// (si termina el for y no encuentra la bodega decimo que no existe la bodega)

@@ -13,13 +13,14 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-
+/*
 public class InterfazSB {
 
 	public List<Vino> getImportarActualizacionVinos(String bodegaSeleccionadas) {
 		// Codifica el nombre de la bodega para que sea seguro usarlo en una URL
-		String nombreBodegaCodificado = URLEncoder.encode(bodegaSeleccionadas, StandardCharsets.UTF_8);
-		String urlStr = "http://localhost:8080/" + nombreBodegaCodificado + "/vinos";
+		//String nombreBodegaCodificado = URLEncoder.encode(bodegaSeleccionadas, StandardCharsets.UTF_8);
+		//String urlStr = "http://localhost:8080/" + nombreBodegaCodificado + "/vinos";
+		String urlStr = "http://localhost:8080/bodega-1/vinos"
 
 		List<Vino> vinos = new ArrayList<>();
 		try {
@@ -129,5 +130,55 @@ public class InterfazSB {
 		}
 
 		return vinos;
+	}
+}
+*/
+public class InterfazSB {
+
+	public ArrayList<Object> getImportarActualizacionVinos(String bodegaSeleccionadas) {
+		String urlStr = "http://localhost:8080/bodega-1/vinos";
+		ArrayList<Object> vinoData = new ArrayList<>();
+
+		try {
+			URL url = new URL(urlStr);
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Accept", "application/json");
+
+			if (conn.getResponseCode() != 200) {
+				throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
+			}
+
+			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+			StringBuilder sb = new StringBuilder();
+			String output;
+			while ((output = br.readLine()) != null) {
+				sb.append(output);
+			}
+
+			conn.disconnect();
+
+			// Process the JSON response
+			JSONArray jsonArray = new JSONArray(sb.toString());
+			for (int i = 0; i < jsonArray.length(); i++) {
+				JSONObject jsonObject = jsonArray.getJSONObject(i);
+				ArrayList<String> vinoIndividual = new ArrayList<>();
+				vinoIndividual.add(jsonObject.optString("aniada"));
+				vinoIndividual.add(jsonObject.optString("imagenEtiqueta"));
+				vinoIndividual.add(jsonObject.optString("nombre"));
+				vinoIndividual.add(jsonObject.optString("notaDeCataBodega"));
+				vinoIndividual.add(String.valueOf(jsonObject.optDouble("precioARS")));
+				vinoIndividual.add(jsonObject.optString("bodega"));
+				vinoIndividual.add(jsonObject.optString("resenias"));
+				vinoIndividual.add(jsonObject.optString("varietales", ""));
+				vinoIndividual.add(jsonObject.optString("maridaje", ""));
+				vinoData.add(vinoIndividual);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			System.out.println(vinoData);
+
+		return vinoData;
 	}
 }
