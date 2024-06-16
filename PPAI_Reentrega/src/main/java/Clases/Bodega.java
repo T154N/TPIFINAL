@@ -56,17 +56,17 @@ public class Bodega {
 		for (Vino vinoBDD : listaVinosBDD){
 
 			if (vinoBDD.sosVinoParaActualizar(vinoAPI)){
-				System.out.println("entra en el if");
-				String priceStr = ((ArrayList<String>)vinoAPI).get(4);
+				System.out.println("antes ="+ vinoBDD.getPrecioARS());
+				String priceStr = ((List<Object>)vinoAPI).get(4).toString();
 				Double price = Double.parseDouble(priceStr);
 				vinoBDD.setPrecioARS(price);
-				vinoBDD.setImagenEtiqueta("hola");
-				String notaStr = ((ArrayList<String>)vinoAPI).get(3);
-				vinoBDD.setNotaDeCataBodega(notaStr);
+				String etiqueta= ((List<Object>)vinoAPI).get(1).toString();
+				vinoBDD.setImagenEtiqueta(etiqueta);
+				String nota= ((List<Object>)vinoAPI).get(3).toString();
+				vinoBDD.setNotaDeCataBodega(nota);
 				vinoBDD.setResenia(null);
-				System.out.println(vinoBDD.getNotaDeCataBodega() + " = " + ((ArrayList<String>)vinoAPI).get(3));
+				System.out.println(vinoBDD.getNotaDeCataBodega() + " = ");
 				System.out.println(vinoBDD.getImagenEtiqueta() + " = " + "hola");
-				System.out.println(vinoBDD.getResenia()+ "=" + null);
 				System.out.println(vinoBDD.getPrecioARS() + " = " + priceStr);
 				System.out.println("-------------------------------------------------------");
 				return true;
