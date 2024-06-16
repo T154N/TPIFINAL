@@ -131,7 +131,15 @@ public class InterfazSB {
 			System.err.println("Error al importar la actualización de vinos: " + e.getMessage());
 		}
 
-		return vinos;
+		return vinos; [{aniada,
+						imagenEtiqueta,
+						nombre,
+						notaDeCataBodega,
+						precioARS,
+						{bodega},
+						{resenias},
+						{varietales},
+						{maridajes}]
 	}
 }
 */
