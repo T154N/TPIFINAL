@@ -54,6 +54,7 @@ public class Bodega {
 
 	public Boolean actualizarDatosVino(Object vinoAPI, List<Vino> listaVinosBDD /*vino |hay que preguntar si se puede pasar un vino|*/) {
 		for (Vino vinoBDD : listaVinosBDD){
+
 			if (vinoBDD.sosVinoParaActualizar(vinoAPI)){
 				System.out.println("entra en el if");
 				String priceStr = ((ArrayList<String>)vinoAPI).get(4);

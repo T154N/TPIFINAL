@@ -14,6 +14,7 @@ import javax.swing.*;
 import java.io.ObjectStreamException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ControladorImportarActualizacionVinosBodega {
@@ -59,12 +60,12 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	//APIS
 	// VINOS API
-	/*public void crearVinosApi() {
-		listaVinosApi.add(new Vino(2020, "imagen1Modificada.jpg", "Vino Ejemplo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-		listaVinosApi.add(new Vino(2019, "logo.jpg", "Vino Ejemplo 1", "Nota de cata de la bodega 1", 111500.0, listaBodegas.get(0), null, null, null));
-		listaVinosApi.add(new Vino(2021, "imagen1.jpg", "Vino Ejemplo 2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-		listaVinosApi.add(new Vino(1900, "imagen1.jpg", "Vino Nuevo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-	}*/
+	//public void crearVinosApi() {
+	//	listaVinosApi.add(new Vino(2020, "imagen1Modificada.jpg", "Vino Ejemplo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+	//	listaVinosApi.add(new Vino(2019, "logo.jpg", "Vino Ejemplo 1", "Nota de cata de la bodega 1", 111500.0, listaBodegas.get(0), null, null, null));
+	//	listaVinosApi.add(new Vino(2021, "imagen1.jpg", "Vino Ejemplo 2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+	//	listaVinosApi.add(new Vino(1900, "imagen1.jpg", "Vino Nuevo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+	//}
 
 	//Constructor
 	public ControladorImportarActualizacionVinosBodega(List<Bodega> bodegaSeleccionada, List<Vino> vinosParaActualizar, Maridaje maridaje, TipoUva tipoUva, List<Vino> listaVinosCreados, List<Enofilo> seguidoresDeBodega, List<String> nombresDeUsuariosSeguidores, List<Bodega> listaBodegas) {
@@ -134,11 +135,12 @@ public class ControladorImportarActualizacionVinosBodega {
 				}
 			}
 		}
-		ArrayList<Object> vinosParaActualizar = getActualizacionVinos(nombresBodegaSeleccionadas);
+		ArrayList<Object> vinosParaActualizar = interfazSB.getImportarActualizacionVinos(/*nombresBodegaSeleccionadas*/);
 
 		for (Object vinostr : vinosParaActualizar) {
-			Boolean okey = actualizarVinosExistentes(vinostr);
-			if (!okey){
+			Boolean vinoActualizado = actualizarVinosExistentes(vinostr);
+			if (!vinoActualizado){
+				// Crear el vino
 				// Anotar el vino creado para mostrarlo en el resumen
 			}
 			//pantalla.mostrarResumenVinosImportados(vino) //No se si se puede pasar el vino);
@@ -149,7 +151,7 @@ public class ControladorImportarActualizacionVinosBodega {
 	public ArrayList<Object> getActualizacionVinos(List<String> bodegaSeleccionadas) {
 		ArrayList<Object> vinosParaActualizar = new ArrayList<>();
 		for (String bodega : bodegaSeleccionadas) {
-			vinosParaActualizar.addAll(interfazSB.getImportarActualizacionVinos(bodega));
+			vinosParaActualizar.addAll(interfazSB.getImportarActualizacionVinos(/*bodega*/));
 
 		}
 		return vinosParaActualizar;
@@ -157,7 +159,7 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	public Boolean actualizarVinosExistentes(Object vino) {
 		for (Bodega bodegaSeleccionada : bodegaSeleccionada){
-			if (bodegaSeleccionada.getNombre().equals(((ArrayList<Object>)vino).get(5)));{
+			if (bodegaSeleccionada.getNombre().equals(new ArrayList<>(((List<Object>)((List<Object>)vino).get(5))).get(3))) {
 				return bodegaSeleccionada.actualizarDatosVino(vino, listaVinos );
 				// Anotar el vino actualizado para mostrarlo en el resumen
 				// agregar a un array para mostrar el resumen

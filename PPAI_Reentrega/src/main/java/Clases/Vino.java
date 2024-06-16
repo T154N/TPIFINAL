@@ -53,7 +53,8 @@ public class Vino {
 	}
 
 	public Boolean sosVinoParaActualizar(Object vinoAPI) {
-		if (this.getNombre().equals(((ArrayList<String>)vinoAPI).get(2))){
+		if (this.getNombre().equals(((List<Object>)vinoAPI).get(2))){
+			System.out.println("entra en el if");
 			return true;
 		}
         return false;

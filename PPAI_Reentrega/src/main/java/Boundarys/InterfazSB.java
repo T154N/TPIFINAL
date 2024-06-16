@@ -9,12 +9,14 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 /*
 public class InterfazSB {
+
 
 	public List<Vino> getImportarActualizacionVinos(String bodegaSeleccionadas) {
 		// Codifica el nombre de la bodega para que sea seguro usarlo en una URL
@@ -133,7 +135,8 @@ public class InterfazSB {
 	}
 }
 */
-public class InterfazSB {
+
+/*public class InterfazSB {
 
 	public ArrayList<Object> getImportarActualizacionVinos(String bodegaSeleccionadas) {
 		String urlStr = "http://localhost:8080/bodega-1/vinos";
@@ -181,4 +184,26 @@ public class InterfazSB {
 
 		return vinoData;
 	}
-}
+}*/
+
+
+public class InterfazSB {
+
+	 public ArrayList<Object> getImportarActualizacionVinos(/*String bodegaSeleccionadas*/) {
+		 ArrayList<Object> vinoData = new ArrayList<>(
+				 Arrays.asList(
+						 Arrays.asList(2020, "imagen1Modificada.jpg", "Vino Ejemplo", "Nota de cata de la bodega 1", 10500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null),
+						 Arrays.asList(2019, "logo.jpg", "Vino Ejemplo 1", "Nota de cata de la bodega 1", 11500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null),
+						 Arrays.asList(2021, "imagen1.jpg", "Vino Ejemplo 2", "Nota de cata de la bodega 1", 12500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null),
+						 Arrays.asList(1900, "imagen1.jpg", "Vino Nuevo", "Nota de cata de la bodega 1", 13500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null)
+				 )
+		 ); //Matriz de datos
+		 System.out.println(vinoData);
+		return vinoData;
+
+	}
+
+
+
+};
+
