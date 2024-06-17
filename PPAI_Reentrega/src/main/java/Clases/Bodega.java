@@ -1,16 +1,17 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package Clases;
 
-import java.lang.reflect.Array;
+import java.io.PrintStream;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.Iterator;
 import java.util.List;
-import java.util.ArrayList;
-
-import Clases.Vino;
-
 
 public class Bodega {
-
 	private String coordenadasUbicacion;
 	private String descripcion;
 	private String historia;
@@ -18,11 +19,9 @@ public class Bodega {
 	private Integer periodoActualizacion;
 	private NovedadEvento novedadEvento;
 	private RegionVitivinicola regionVitivinicola;
-	private String ultimaActualizacion; //AGREGAR
+	private String ultimaActualizacion;
 
-	//Constructor
-	public Bodega(String coordenadasUbicacion, String descripcion, String historia, String nombre,
-			Integer periodoActualizacion, String ultimaActualizacion) {
+	public Bodega(String coordenadasUbicacion, String descripcion, String historia, String nombre, Integer periodoActualizacion, String ultimaActualizacion) {
 		this.coordenadasUbicacion = coordenadasUbicacion;
 		this.descripcion = descripcion;
 		this.historia = historia;
@@ -31,55 +30,54 @@ public class Bodega {
 		this.ultimaActualizacion = ultimaActualizacion;
 	}
 
-
 	public Bodega(String nombre) {
 		this.nombre = nombre;
 	}
 
-
-
-	//Metodos
 	public void contarResenia() {
-
 	}
 
 	public void mostrarTodosVinos() {
 	}
 
 	public boolean disponibleActualizar(LocalDate today) {
-		LocalDate fechaUltimaActualizacion = LocalDate.parse(ultimaActualizacion);
+		LocalDate fechaUltimaActualizacion = LocalDate.parse(this.ultimaActualizacion);
 		long monthsBetween = ChronoUnit.MONTHS.between(fechaUltimaActualizacion, today);
-		return monthsBetween >= periodoActualizacion;
+		return monthsBetween >= (long)this.periodoActualizacion;
 	}
 
-	public Boolean actualizarDatosVino(Object vinoAPI, List<Vino> listaVinosBDD /*vino |hay que preguntar si se puede pasar un vino|*/) {
-		for (Vino vinoBDD : listaVinosBDD){
+	public Boolean actualizarDatosVino(Object vinoAPI, List<Vino> listaVinosBDD) {
+		Iterator var3 = listaVinosBDD.iterator();
 
-			if (vinoBDD.sosVinoParaActualizar(vinoAPI)){
-				System.out.println("antes ="+ vinoBDD.getPrecioARS());
-				String priceStr = ((List<Object>)vinoAPI).get(4).toString();
-				Double price = Double.parseDouble(priceStr);
-				vinoBDD.setPrecioARS(price);
-				String etiqueta= ((List<Object>)vinoAPI).get(1).toString();
-				vinoBDD.setImagenEtiqueta(etiqueta);
-				String nota= ((List<Object>)vinoAPI).get(3).toString();
-				vinoBDD.setNotaDeCataBodega(nota);
-				vinoBDD.setResenia(null);
-				System.out.println(vinoBDD.getNotaDeCataBodega() + " = ");
-				System.out.println(vinoBDD.getImagenEtiqueta() + " = " + "hola");
-				System.out.println(vinoBDD.getPrecioARS() + " = " + priceStr);
-				System.out.println("-------------------------------------------------------");
-				return true;
+		Vino vinoBDD;
+		do {
+			if (!var3.hasNext()) {
+				return false;
 			}
-		}
-		return false;
 
+			vinoBDD = (Vino)var3.next();
+		} while(!vinoBDD.sosVinoParaActualizar(vinoAPI));
+
+		System.out.println("antes =" + vinoBDD.getPrecioARS());
+		String priceStr = ((List)vinoAPI).get(4).toString();
+		Double price = Double.parseDouble(priceStr);
+		vinoBDD.setPrecioARS(price);
+		String etiqueta = ((List)vinoAPI).get(1).toString();
+		vinoBDD.setImagenEtiqueta(etiqueta);
+		String nota = ((List)vinoAPI).get(3).toString();
+		vinoBDD.setNotaDeCataBodega(nota);
+		vinoBDD.setResenia((List)null);
+		System.out.println(vinoBDD.getNotaDeCataBodega() + " = ");
+		System.out.println(vinoBDD.getImagenEtiqueta() + " = hola");
+		PrintStream var10000 = System.out;
+		Double var10001 = vinoBDD.getPrecioARS();
+		var10000.println("" + var10001 + " = " + priceStr);
+		System.out.println("-------------------------------------------------------");
+		return true;
 	}
 
-
-	//Getters y Setters
 	public String getCoordenadasUbicacion() {
-		return coordenadasUbicacion;
+		return this.coordenadasUbicacion;
 	}
 
 	public void setCoordenadasUbicacion(String coordenadasUbicacion) {
@@ -87,7 +85,7 @@ public class Bodega {
 	}
 
 	public String getDescripcion() {
-		return descripcion;
+		return this.descripcion;
 	}
 
 	public void setDescripcion(String descripcion) {
@@ -95,7 +93,7 @@ public class Bodega {
 	}
 
 	public String getHistoria() {
-		return historia;
+		return this.historia;
 	}
 
 	public void setHistoria(String historia) {
@@ -103,7 +101,7 @@ public class Bodega {
 	}
 
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 
 	public void setNombre(String nombre) {
@@ -111,7 +109,7 @@ public class Bodega {
 	}
 
 	public Integer getPeriodoActualizacion() {
-		return periodoActualizacion;
+		return this.periodoActualizacion;
 	}
 
 	public void setPeriodoActualizacion(Integer periodoActualizacion) {
@@ -119,9 +117,7 @@ public class Bodega {
 	}
 
 	public NovedadEvento getNovedadEvento() {
-		// begin-user-code
-		return novedadEvento;
-		// end-user-code
+		return this.novedadEvento;
 	}
 
 	public void setNovedadEvento(NovedadEvento novedadEvento) {
@@ -129,7 +125,7 @@ public class Bodega {
 	}
 
 	public RegionVitivinicola getRegionVitivinicola() {
-		return regionVitivinicola;
+		return this.regionVitivinicola;
 	}
 
 	public void setRegionVitivinicola(RegionVitivinicola regionVitivinicola) {
@@ -137,7 +133,7 @@ public class Bodega {
 	}
 
 	public String getUltimaActualizacion() {
-		return ultimaActualizacion;
+		return this.ultimaActualizacion;
 	}
 
 	public void setUltimaActualizacion(String ultimaActualizacion) {

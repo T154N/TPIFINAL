@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.w3c.dom.ls.LSOutput;
 
 /*
 public class InterfazSB {
@@ -144,74 +145,68 @@ public class InterfazSB {
 }
 */
 
-/*public class InterfazSB {
+
+public class InterfazSB {
+	public InterfazSB() {
+	}
 
 	public ArrayList<Object> getImportarActualizacionVinos(String bodegaSeleccionadas) {
-		String urlStr = "http://localhost:8080/bodega-1/vinos";
-		ArrayList<Object> vinoData = new ArrayList<>();
+		String nombreBodegaCodificado = URLEncoder.encode(bodegaSeleccionadas, StandardCharsets.UTF_8);
+		String urlStr = "http:localhost:8080/" + nombreBodegaCodificado;
+		ArrayList<Object> vinoData = new ArrayList();
 
 		try {
 			URL url = new URL(urlStr);
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Accept", "application/json");
-
 			if (conn.getResponseCode() != 200) {
 				throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
 			}
 
-			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			StringBuilder sb = new StringBuilder();
+
 			String output;
-			while ((output = br.readLine()) != null) {
+			while((output = br.readLine()) != null) {
 				sb.append(output);
 			}
 
 			conn.disconnect();
-
-			// Process the JSON response
 			JSONArray jsonArray = new JSONArray(sb.toString());
-			for (int i = 0; i < jsonArray.length(); i++) {
+
+			for(int i = 0; i < jsonArray.length(); ++i) {
 				JSONObject jsonObject = jsonArray.getJSONObject(i);
-				ArrayList<String> vinoIndividual = new ArrayList<>();
-				vinoIndividual.add(jsonObject.optString("aniada"));
+				ArrayList<Object> vinoIndividual = new ArrayList();
+				vinoIndividual.add(jsonObject.optInt("aniada"));
 				vinoIndividual.add(jsonObject.optString("imagenEtiqueta"));
 				vinoIndividual.add(jsonObject.optString("nombre"));
 				vinoIndividual.add(jsonObject.optString("notaDeCataBodega"));
-				vinoIndividual.add(String.valueOf(jsonObject.optDouble("precioARS")));
-				vinoIndividual.add(jsonObject.optString("bodega"));
-				vinoIndividual.add(jsonObject.optString("resenias"));
-				vinoIndividual.add(jsonObject.optString("varietales", ""));
-				vinoIndividual.add(jsonObject.optString("maridaje", ""));
+				vinoIndividual.add(jsonObject.optDouble("precioARS"));
+				JSONObject bodegaJsonObject = jsonObject.optJSONObject("bodega");
+				ArrayList<Object> bodegaList = new ArrayList();
+				if (bodegaJsonObject != null) {
+					bodegaList.add(bodegaJsonObject.optString("coordenadasUbicacion"));
+					bodegaList.add(bodegaJsonObject.optString("descripcion"));
+					bodegaList.add(bodegaJsonObject.optString("historia"));
+					bodegaList.add(bodegaJsonObject.optString("nombre"));
+					bodegaList.add(bodegaJsonObject.optInt("periodoActualizacion"));
+					bodegaList.add(bodegaJsonObject.optString("ultimaActualizacion"));
+				}
+
+				vinoIndividual.add(bodegaList);
 				vinoData.add(vinoIndividual);
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
 			System.out.println(vinoData);
+			return vinoData;
+		} catch (IOException var16) {
+			System.err.println("API sin conexion " + var16.getMessage());
+		} catch (Exception var17) {
+			Exception e = var17;
+			System.err.println("Error al importar la actualización de vinos: " + e.getMessage());
+		}
 
-		return vinoData;
+		return null;
 	}
-}*/
-
-
-public class InterfazSB {
-
-	 public ArrayList<Object> getImportarActualizacionVinos(/*String bodegaSeleccionadas*/) {
-		 ArrayList<Object> vinoData = new ArrayList<>(
-				 Arrays.asList(
-						 Arrays.asList(2020, "imagen1Modificada.jpg", "Vino Ejemplo", "Nota de cata de la bodega 1", 10500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null),
-						 Arrays.asList(2019, "logo.jpg", "Vino Ejemplo 1", "Nota de cata de la bodega 1", 11500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null),
-						 Arrays.asList(2021, "imagen1.jpg", "Vino Ejemplo 2", "Nota de cata de la bodega 1", 12500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null),
-						 Arrays.asList(1900, "imagen1.jpg", "Vino Nuevo", "Nota de cata de la bodega 1", 13500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null)
-				 )
-		 ); //Matriz de datos
-		 System.out.println(vinoData);
-		return vinoData;
-
-	}
-
-
-
-};
-
+}

@@ -1,23 +1,23 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package Clases;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class Vino {
-
-	//Atributos
 	private Integer aniada;
-	private String imagenEtiqueta;	//Modificada
+	private String imagenEtiqueta;
 	private String nombre;
-	private String notaDeCataBodega;	//Modificable
-	private Double precioARS;	//Modificable
+	private String notaDeCataBodega;
+	private Double precioARS;
 	private Bodega bodega;
 	private List<Resenia> resenia;
 	private List<Varietal> varietal;
-	private List<Maridaje> maridaje;	//Modificable
+	private List<Maridaje> maridaje;
 
-	//Contructor
 	public Vino(Integer aniada, String imagenEtiqueta, String nombre, String notaDeCataBodega, Double precioARS, Bodega bodega, List<Resenia> resenia, List<Varietal> varietal, List<Maridaje> maridaje) {
 		this.aniada = aniada;
 		this.imagenEtiqueta = imagenEtiqueta;
@@ -30,47 +30,35 @@ public class Vino {
 		this.maridaje = maridaje;
 	}
 
-	public Vino(String nombre, Bodega bodega ){
+	public Vino(String nombre, Bodega bodega) {
 		this.nombre = nombre;
 		this.bodega = bodega;
 	}
 
-	//Metodos
 	public void calcularRanking() {
-
 	}
 
 	public void compararEtiquetas() {
-
 	}
 
 	public void esDeBodega() {
-
 	}
 
 	public void esDeRegionVitivinicola() {
-
 	}
 
 	public Boolean sosVinoParaActualizar(Object vinoAPI) {
-		if (this.getNombre().equals(((List<Object>)vinoAPI).get(2))){
-			return true;
-		}
-        return false;
-    }
+		return this.getNombre().equals(((List)vinoAPI).get(2)) ? true : false;
+	}
 
 	public void _new() {
-		//crear vino ==> crea el el vino con varietal nulo
-		//for tiposDeUvaEnVinoPorCrear
-		//		asignamos al vino = Varietal.new(tipouva)
 	}
 
 	public void crearVarietal() {
-
 	}
-	//GETTERS Y SETTERS
+
 	public Integer getAniada() {
-		return aniada;
+		return this.aniada;
 	}
 
 	public void setAniada(Integer aniada) {
@@ -78,7 +66,7 @@ public class Vino {
 	}
 
 	public String getImagenEtiqueta() {
-		return imagenEtiqueta;
+		return this.imagenEtiqueta;
 	}
 
 	public void setImagenEtiqueta(String imagenEtiqueta) {
@@ -86,7 +74,7 @@ public class Vino {
 	}
 
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 
 	public void setNombre(String nombre) {
@@ -94,7 +82,7 @@ public class Vino {
 	}
 
 	public String getNotaDeCataBodega() {
-		return notaDeCataBodega;
+		return this.notaDeCataBodega;
 	}
 
 	public void setNotaDeCataBodega(String notaDeCataBodega) {
@@ -102,7 +90,7 @@ public class Vino {
 	}
 
 	public Double getPrecioARS() {
-		return precioARS;
+		return this.precioARS;
 	}
 
 	public void setPrecioARS(Double precioARS) {
@@ -110,7 +98,7 @@ public class Vino {
 	}
 
 	public Bodega getBodega() {
-		return bodega;
+		return this.bodega;
 	}
 
 	public void setBodega(Bodega bodega) {
@@ -118,7 +106,7 @@ public class Vino {
 	}
 
 	public List<Resenia> getResenia() {
-		return resenia;
+		return this.resenia;
 	}
 
 	public void setResenia(List<Resenia> resenia) {
@@ -126,7 +114,7 @@ public class Vino {
 	}
 
 	public List<Varietal> getVarietal() {
-		return varietal;
+		return this.varietal;
 	}
 
 	public void setVarietal(List<Varietal> varietal) {
@@ -134,7 +122,7 @@ public class Vino {
 	}
 
 	public List<Maridaje> getMaridaje() {
-		return maridaje;
+		return this.maridaje;
 	}
 
 	public void setMaridaje(List<Maridaje> maridaje) {
