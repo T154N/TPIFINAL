@@ -152,7 +152,9 @@ public class InterfazSB {
 
 	public ArrayList<Object> getImportarActualizacionVinos(String bodegaSeleccionadas) {
 		String nombreBodegaCodificado = URLEncoder.encode(bodegaSeleccionadas, StandardCharsets.UTF_8);
-		String urlStr = "http:localhost:8080/" + nombreBodegaCodificado;
+		//String urlStr = "http://localhost:8080/" + nombreBodegaCodificado;
+		String urlStr = "http://localhost:8080/Bodega-4";
+		System.out.println(urlStr);
 		ArrayList<Object> vinoData = new ArrayList();
 
 		try {
