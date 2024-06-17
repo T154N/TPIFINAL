@@ -74,16 +74,7 @@ public class tablaResumen extends javax.swing.JPanel {
         tablaResumenVinos.setBackground(new java.awt.Color(204, 182, 155));
         tablaResumenVinos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Nombre", "Aniada", "Bodega", "Imagen", "Precio", "Nota de Cata", "Creado/Actualizado"

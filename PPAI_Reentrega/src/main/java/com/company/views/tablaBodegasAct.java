@@ -168,6 +168,13 @@ public class tablaBodegasAct extends javax.swing.JPanel {
         }
         pantalla.seleccionarBodega(bodegasSeleccionadas);
 
+        Container container = this.getParent();
+        container.removeAll();
+        container.revalidate();
+        container.repaint();
+        pantalla.habilitarTablaResumen(container);
+
+
 
 
     }

@@ -22,9 +22,14 @@ public class PantallaAB extends javax.swing.JFrame {
         controlador = new ControladorImportarActualizacionVinosBodega();
         // Inicialización de la tabla
         tabla = new tablaBodegasAct();
-        tablaResumenVinos = new tablaResumen();
+        //tablaResumenVinos = new tablaResumen();
         // Ajustar el tamaño de la tabla
         tabla.setSize(1000, 500);
+
+        tablaResumenVinos = new tablaResumen();
+        tablaResumenVinos.setSize(1000, 500);
+
+
     }
 
 
@@ -231,7 +236,8 @@ public class PantallaAB extends javax.swing.JFrame {
         gbc.weighty = 1.0; // Dar todo el espacio extra vertical al componente
         contenedor.add(tabla, gbc);
         contenedor.revalidate();
-        contenedor.repaint();
+
+
     }
 
     //Fijarse los statics
@@ -253,19 +259,22 @@ public class PantallaAB extends javax.swing.JFrame {
         controlador.tomarSeleccionBodega(bodegaSeleccionadas);
     }
 
-    public void mostrarResumenVinosImportados(ArrayList<Object> resumenVinosImportados) {
+    public static void mostrarResumenVinosImportados(ArrayList<Object> resumenVinosImportados) {
         //CERRAR LA VISTA DE LAS BODEGAS SELECCIONADAS
-        contenedor.removeAll();
-        contenedor.setLayout(new GridBagLayout());
         tablaResumenVinos.llenarTablaResumen(resumenVinosImportados);
+
+
+    }
+    public void habilitarTablaResumen(Container container){
+        container.removeAll();
+        container.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.CENTER;
         gbc.fill = GridBagConstraints.BOTH;
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
-        contenedor.add(tablaResumenVinos, gbc);
-        contenedor.revalidate();
-        contenedor.repaint();
+        container.add(tablaResumenVinos, gbc);
+        container.revalidate();
 
     }
 
@@ -283,6 +292,8 @@ public class PantallaAB extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JPanel panelBotones;
+
+
     // End of variables declaration//GEN-END:variables
 }
 

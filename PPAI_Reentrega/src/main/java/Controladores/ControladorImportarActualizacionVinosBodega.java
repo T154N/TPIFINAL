@@ -34,7 +34,7 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	//inicializar pantalla
 	InterfazSB interfazSB = new InterfazSB();
-	//PantallaAB pantalla = new PantallaAB();
+	//PantallaAB pantallaAB = new PantallaAB();
 
 	//Acceso directo de array
 	// VINOS BDD nuestra
@@ -163,9 +163,8 @@ public class ControladorImportarActualizacionVinosBodega {
 			}
 			//pantalla.mostrarResumenVinosImportados(vino) //No se si se puede pasar el vino);
 			vinosPantalla.add(vinoIndividual);
-		}
 
-		
+		}
 		PantallaAB.mostrarResumenVinosImportados(vinosPantalla);
 	}
 
