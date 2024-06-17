@@ -3,14 +3,17 @@ package com.company.PantallaAB;
 import Clases.Vino;
 import Controladores.ControladorImportarActualizacionVinosBodega;
 import com.company.views.tablaBodegasAct;
+import com.company.views.tablaResumen;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PantallaAB extends javax.swing.JFrame {
 
     private ControladorImportarActualizacionVinosBodega controlador;
     private static tablaBodegasAct tabla;
+    private static tablaResumen tablaResumenVinos;
 
     public PantallaAB() {
         initComponents();
@@ -19,6 +22,7 @@ public class PantallaAB extends javax.swing.JFrame {
         controlador = new ControladorImportarActualizacionVinosBodega();
         // Inicialización de la tabla
         tabla = new tablaBodegasAct();
+        tablaResumenVinos = new tablaResumen();
         // Ajustar el tamaño de la tabla
         tabla.setSize(1000, 500);
     }
@@ -194,6 +198,7 @@ public class PantallaAB extends javax.swing.JFrame {
     private void botonImpActBodActionPerformed(java.awt.event.ActionEvent evt) {
         habilitarPantalla();
         controlador.opcionImportarActualizacionVinosBodega();
+
     }
 
     public void barMenu(){
@@ -248,7 +253,20 @@ public class PantallaAB extends javax.swing.JFrame {
         controlador.tomarSeleccionBodega(bodegaSeleccionadas);
     }
 
-    public void mostrarResumenVinosImportados(Vino vino) {
+    public void mostrarResumenVinosImportados(ArrayList<Object> resumenVinosImportados) {
+        //CERRAR LA VISTA DE LAS BODEGAS SELECCIONADAS
+        contenedor.removeAll();
+        contenedor.setLayout(new GridBagLayout());
+        tablaResumenVinos.llenarTablaResumen(resumenVinosImportados);
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.weightx = 1.0;
+        gbc.weighty = 1.0;
+        contenedor.add(tablaResumenVinos, gbc);
+        contenedor.revalidate();
+        contenedor.repaint();
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -265,7 +283,6 @@ public class PantallaAB extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JPanel panelBotones;
-
     // End of variables declaration//GEN-END:variables
 }
 

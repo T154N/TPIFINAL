@@ -251,22 +251,3 @@ public class InterfazSB {
 		return null;
 	}
 }
-/*
-
-public class InterfazSB {
-
-	 public ArrayList<Object> getImportarActualizacionVinos(String bodegaSeleccionadas) {
-		 ArrayList<Object> vinoData = new ArrayList<>(
-				 Arrays.asList(
-						 Arrays.asList(2020, "imagen1Modificada.jpg", "Vino Ejemplo", "Nota de cata de la bodega 1", 10500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null),
-						 Arrays.asList(2019, "logo.jpg", "Vino Ejemplo 1", "Nota de cata de la bodega 1", 11500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null),
-						 Arrays.asList(2021, "imagen1.jpg", "Vino Ejemplo 2", "Nota de cata de la bodega 1", 12500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null),
-						 Arrays.asList(1900, "imagen1.jpg", "Vino Nuevo", "Nota de cata de la bodega 1", 13500.0, Arrays.asList("123.45", "Descripcion 2", "Historia 1", "Bodega 1", 4, "2020-04-01"), null, null, null)
-				 )
-		 ); //Matriz de datos
-		 System.out.println(vinoData);
-		return vinoData;
-
-	}
-};
-*/

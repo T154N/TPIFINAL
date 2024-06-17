@@ -4,6 +4,12 @@
  */
 package com.company.views;
 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.io.ObjectStreamException;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Usuario
@@ -15,6 +21,28 @@ public class tablaResumen extends javax.swing.JPanel {
      */
     public tablaResumen() {
         initComponents();
+    }
+
+    public void habilitarTablaResumen() {
+        tablaResumenVinos.setEnabled(true);
+    }
+
+    public void llenarTablaResumen(ArrayList<Object> listaVinos) {
+        DefaultTableModel model = (DefaultTableModel) tablaResumenVinos.getModel();
+        model.setRowCount(0); // Limpiar la tabla existente
+        System.out.println("TABLA RESUMEN");
+        for (Object vino : listaVinos) {
+            String nombre = ((List<Object>)vino).get(0).toString();
+            String aniada = ((List<Object>)vino).get(1).toString();
+            String bodega = ((List<Object>)vino).get(2).toString();
+            String imagen = ((List<Object>)vino).get(3).toString();
+            String precio = ((List<Object>)vino).get(4).toString();
+            String notaCata = ((List<Object>)vino).get(5).toString();
+            String creadoActualizado = ((List<Object>)vino).get(6).toString();
+            model.addRow(new Object[]{nombre, aniada, bodega, imagen, precio, notaCata, creadoActualizado});
+
+        }
+
     }
 
     /**
@@ -39,12 +67,19 @@ public class tablaResumen extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         botonFinalizar = new javax.swing.JButton();
 
-        BackGround.setBackground(new java.awt.Color(255, 255, 255));
+        BackGround.setBackground(new java.awt.Color(204, 182, 155));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        tablaResumenVinos.setBackground(new java.awt.Color(204, 182, 155));
         tablaResumenVinos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -55,7 +90,7 @@ public class tablaResumen extends javax.swing.JPanel {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false
@@ -69,6 +104,7 @@ public class tablaResumen extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tablaResumenVinos.setShowGrid(true);
         jScrollPane1.setViewportView(tablaResumenVinos);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -84,8 +120,9 @@ public class tablaResumen extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 182, 155));
 
+        tablaBodSinConex.setBackground(new java.awt.Color(204, 182, 155));
         tablaBodSinConex.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -97,8 +134,13 @@ public class tablaResumen extends javax.swing.JPanel {
                 "BODEGAS"
             }
         ));
+        tablaBodSinConex.setShowGrid(true);
         jScrollPane2.setViewportView(tablaBodSinConex);
 
+        jPanel3.setBackground(new java.awt.Color(123, 38, 66));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 182, 155));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("BODEGAS SIN CONEXION");
         jLabel1.setToolTipText("");
@@ -132,13 +174,18 @@ public class tablaResumen extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        jPanel4.setBackground(new java.awt.Color(123, 38, 66));
         jPanel4.setPreferredSize(new java.awt.Dimension(182, 37));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 182, 155));
         jLabel3.setText("VINOS CREADOS Y ACTUALIZADOS");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel3.setInheritsPopupMenu(false);
         jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
+        botonFinalizar.setBackground(new java.awt.Color(204, 182, 155));
+        botonFinalizar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonFinalizar.setText("Finalizar");
         botonFinalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,9 +198,9 @@ public class tablaResumen extends javax.swing.JPanel {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
         );

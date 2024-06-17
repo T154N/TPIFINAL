@@ -3,10 +3,12 @@ package com.company.views;
 import Controladores.ControladorImportarActualizacionVinosBodega;
 import com.company.PantallaAB.PantallaAB;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import com.company.views.tablaResumen;
 
 
 
@@ -165,6 +167,9 @@ public class tablaBodegasAct extends javax.swing.JPanel {
             }
         }
         pantalla.seleccionarBodega(bodegasSeleccionadas);
+
+
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

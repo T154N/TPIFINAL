@@ -134,21 +134,39 @@ public class ControladorImportarActualizacionVinosBodega {
 
 
 		for (Object vinostr : vinosParaActualizar) {
+			ArrayList<String> vinoIndividual = new ArrayList<>();
 			Boolean vinoActualizado = actualizarVinosExistentes(vinostr);
 			if (vinoActualizado){
-				vinosPantalla.add(vinostr + "Actualizado");
+				vinoIndividual.add(((List<Object>)vinostr).get(2).toString());
+				vinoIndividual.add(((List<Object>)vinostr).get(0).toString());
+				vinoIndividual.add(((List<Object>)((List<Object>)vinostr).get(5)).get(3).toString());
+				vinoIndividual.add(((List<Object>)vinostr).get(1).toString());
+				vinoIndividual.add(((List<Object>)vinostr).get(4).toString());
+				vinoIndividual.add(((List<Object>)vinostr).get(3).toString());
+				vinoIndividual.add("Actualizado");
 			}
 			if (!vinoActualizado){
 				ArrayList<Object> maridajesArray = buscarMaridaje(((List<Object>)vinostr).get(8), maridajesList);
 				ArrayList<Object> tipoUvaArray = buscarTipoUva(((List<Object>)vinostr).get(7), tipoUvaList);
 				//crearVino(maridajesArray, tipoUvaArray, vinostr, bodegaSeleccionada);
-				vinosPantalla.add(vinostr + "creado");
+
+
+				vinoIndividual.add(((List<Object>)vinostr).get(2).toString());
+				vinoIndividual.add(((List<Object>)vinostr).get(0).toString());
+				vinoIndividual.add(((List<Object>)((List<Object>)vinostr).get(5)).get(3).toString());
+				vinoIndividual.add(((List<Object>)vinostr).get(1).toString());
+				vinoIndividual.add(((List<Object>)vinostr).get(4).toString());
+				vinoIndividual.add(((List<Object>)vinostr).get(3).toString());
+				vinoIndividual.add("Creado");
 				//con los vinostr el eltimo elemento del array es si esta creado o no
 				// Anotar el vino creado para mostrarlo en el resumen
 			}
 			//pantalla.mostrarResumenVinosImportados(vino) //No se si se puede pasar el vino);
+			vinosPantalla.add(vinoIndividual);
 		}
-		System.out.println(vinosPantalla);
+
+		
+		PantallaAB.mostrarResumenVinosImportados(vinosPantalla);
 	}
 
 
@@ -156,8 +174,6 @@ public class ControladorImportarActualizacionVinosBodega {
 		ArrayList<Object> vinosParaActualizar = new ArrayList<>();
 		for (String bodega : bodegaSeleccionadas) {
 			vinosParaActualizar.addAll(interfazSB.getImportarActualizacionVinos(bodega));
-
-
 		}
 		return vinosParaActualizar;
 	}
