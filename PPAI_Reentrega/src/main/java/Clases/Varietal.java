@@ -26,7 +26,9 @@ public class Varietal {
 
 	}
 
-	public void _new(){}
+	public void _new(){
+
+	}
 
 	//GETTERS Y SETTERS
 	public String getDescripcion() {

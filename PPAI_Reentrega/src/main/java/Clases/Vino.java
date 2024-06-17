@@ -1,5 +1,6 @@
 package Clases;
 
+import java.io.ObjectStreamException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -28,6 +29,10 @@ public class Vino {
 		this.resenia = resenia;
 		this.varietal = varietal;
 		this.maridaje = maridaje;
+	}
+
+	public Vino(){
+
 	}
 
 	public Vino(String nombre, Bodega bodega ){
@@ -59,14 +64,41 @@ public class Vino {
 		return false;
 	}
 
-	public void _new() {
+	public void _new(ArrayList maridajesArray, ArrayList tipoUvaArray, Object vinostr, List<Bodega> bodegaSeleccionada) {
+		ArrayList<Object> vino = (ArrayList<Object>) vinostr;
+		this.setAniada((Integer)vino.get(0));
+		System.out.println(this.getAniada());
+		this.setImagenEtiqueta(vino.get(1).toString());
+		System.out.println(this.getImagenEtiqueta());
+		this.setNombre(vino.get(2).toString());
+		System.out.println(this.getNombre());
+		this.setNotaDeCataBodega(vino.get(3).toString());
+		System.out.println(this.getNotaDeCataBodega());
+		this.setPrecioARS((Double)vino.get(4));
+		System.out.println(this.getPrecioARS());
+		for (Bodega bodega : bodegaSeleccionada){
+			if (bodega.getNombre().equals(vino.get(5).toString())){
+				this.setBodega(bodega);
+				System.out.println(this.getBodega());
+			}
+		}
+		this.setResenia((List<Resenia>)vino.get(6));
+		System.out.println(this.getResenia());
+		this.setVarietal(tipoUvaArray);
+		this.crearVarietal(this, tipoUvaArray);
+		System.out.println(this.getVarietal());
+		this.setMaridaje(maridajesArray);
+		System.out.println(this.getMaridaje());
 		//crear vino ==> crea el el vino con varietal nulo
 		//for tiposDeUvaEnVinoPorCrear
 		//		asignamos al vino = Varietal.new(tipouva)
 	}
 
-	public void crearVarietal() {
-
+	public void crearVarietal(Vino vino, ArrayList tipoUvaArray) {
+		for (TipoUva tipoUva : (ArrayList<TipoUva>)tipoUvaArray){
+			Varietal var = new Varietal("descripcion", 0.0, tipoUva);
+			vino.getVarietal().add(var);
+		}
 	}
 	//GETTERS Y SETTERS
 	public Integer getAniada() {

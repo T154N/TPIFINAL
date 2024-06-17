@@ -1,5 +1,7 @@
 package Clases;
 
+import java.util.List;
+
 public class TipoUva {
 
 	//ATRIBUTOS
@@ -13,7 +15,12 @@ public class TipoUva {
 	}
 
 	//METODOS
-	public void _sosTipoUva() {
+	public boolean _sosTipoUva(Object tipoUvaAPI) {
+		if (this.nombre.equals(((List<Object>)tipoUvaAPI).get(0).toString())) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 	//GETTERS Y SETTERS

@@ -1,0 +1,10 @@
+//
+
+const express = require('express'); const fs = require('fs');
+
+const app = express();
+
+app.get('/Bodega-4', (req, res) => { fs.readFile('./bdd.json', 'utf8', (err, data) => { if (err) { console.error(err); res.status(500).send('Internal Server Error'); }
+else { const jsonData = JSON.parse(data); res.json(jsonData); } }); });
+
+app.listen(8080, () => { console.log('Server is running on port 8080'); });

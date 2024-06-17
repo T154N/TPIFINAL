@@ -1,5 +1,8 @@
 package Clases;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Maridaje {
 	//ATRIBUTOS
 	private String nombre;
@@ -16,10 +19,13 @@ public class Maridaje {
 
 	}
 
-	public void _sosMaridaje() {
-
+	public boolean _sosMaridaje(Object maridajeAPI) {
+		if (this.nombre.equals(((List<Object>)maridajeAPI).get(0).toString())) {
+			return true;
+		}else {
+			return false;
+		}
 	}
-
 	//GETTERS Y SETTERS
 	public String getNombre() {
 		return nombre;

@@ -27,9 +27,9 @@ public class ControladorImportarActualizacionVinosBodega {
 	private List<Enofilo> seguidoresDeBodega;
 	private List<String> nombresDeUsuariosSeguidores;
 	private List<Bodega> listaBodegas;
-	//private List<Vino> listaVinosApi; //Por falta de BDD
 	private List<Vino> listaVinos;
-
+	private ArrayList<Maridaje> maridajesList;
+	private ArrayList<TipoUva> tipoUvaList;
 
 
 	//inicializar pantalla
@@ -39,52 +39,22 @@ public class ControladorImportarActualizacionVinosBodega {
 	//Acceso directo de array
 	// VINOS BDD nuestra
 	public void crearVinosActualizar() {
-		listaVinos.add(new Vino(2020, "imagen1.jpg", "Vino 1", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-		listaVinos.add(new Vino(2019, "logo.jpg", "Vino 2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-		listaVinos.add(new Vino(2021, "imagen1.jpg", "Vino 3", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-		listaVinos.add(new Vino(2018, "imagen1.jpg", "Vino 4", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen1.jpg", "Vino 1b1", "Nota de cata de la bodega 1", 110.0, listaBodegas.get(0), null, null, null));
+		listaVinos.add(new Vino(2019, "logo.jpg", "Vino 2b1", "Nota de cata de la bodega 1", 120.0, listaBodegas.get(0), null, null, null));
+		listaVinos.add(new Vino(2021, "imagen1.jpg", "Vino 3b1", "Nota de cata de la bodega 1", 130.0, listaBodegas.get(0), null, null, null));
+		listaVinos.add(new Vino(2018, "imagen1.jpg", "Vino 4b1", "Nota de cata de la bodega 1", 140.0, listaBodegas.get(0), null, null, null));
 
-		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
-		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
-		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(1), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 1b2", "Nota de cata de la bodega 2", 210.0, listaBodegas.get(1), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 2b2", "Nota de cata de la bodega 2", 220.0, listaBodegas.get(1), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 3b2", "Nota de cata de la bodega 2", 230.0, listaBodegas.get(1), null, null, null));
 
-		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
-		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
-		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(2), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 1b3", "Nota de cata de la bodega 3", 310.0, listaBodegas.get(2), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 2b3", "Nota de cata de la bodega 3", 320.0, listaBodegas.get(2), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 3b3", "Nota de cata de la bodega 3", 330.0, listaBodegas.get(2), null, null, null));
 
-		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 1", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
-		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 2", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
-		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 3", "Nota de cata de la bodega 2", 600.0, listaBodegas.get(3), null, null, null));
-	}
-
-	//APIS
-	// VINOS API
-	//public void crearVinosApi() {
-	//	listaVinosApi.add(new Vino(2020, "imagen1Modificada.jpg", "Vino Ejemplo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-	//	listaVinosApi.add(new Vino(2019, "logo.jpg", "Vino Ejemplo 1", "Nota de cata de la bodega 1", 111500.0, listaBodegas.get(0), null, null, null));
-	//	listaVinosApi.add(new Vino(2021, "imagen1.jpg", "Vino Ejemplo 2", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-	//	listaVinosApi.add(new Vino(1900, "imagen1.jpg", "Vino Nuevo", "Nota de cata de la bodega 1", 500.0, listaBodegas.get(0), null, null, null));
-	//}
-
-	//Constructor
-	public ControladorImportarActualizacionVinosBodega(List<Bodega> bodegaSeleccionada, List<Vino> vinosParaActualizar, Maridaje maridaje, TipoUva tipoUva, List<Vino> listaVinosCreados, List<Enofilo> seguidoresDeBodega, List<String> nombresDeUsuariosSeguidores, List<Bodega> listaBodegas) {
-		this.bodegaSeleccionada = bodegaSeleccionada;
-		this.maridaje = maridaje;
-		this.tipoUva = tipoUva;
-		this.listaVinosCreados = listaVinosCreados;
-		this.seguidoresDeBodega = seguidoresDeBodega;
-		this.nombresDeUsuariosSeguidores = nombresDeUsuariosSeguidores;
-		this.listaBodegas = listaBodegas;
-	}
-
-	public ControladorImportarActualizacionVinosBodega() {
-		this.listaBodegas = new ArrayList<>();
-		this.bodegaSeleccionada = new ArrayList<>();
-		//this.listaVinosApi = new ArrayList<>();
-		this.listaVinos = new ArrayList<>();
-		crearBodegasDePrueba();
-		//crearVinosApi();
-		crearVinosActualizar();
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 1b4", "Nota de cata de la bodega 4", 410.0, listaBodegas.get(3), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 2b4", "Nota de cata de la bodega 4", 420.0, listaBodegas.get(3), null, null, null));
+		listaVinos.add(new Vino(2020, "imagen2.jpg", "Vino 3b4", "Nota de cata de la bodega 4", 430.0, listaBodegas.get(3), null, null, null));
 	}
 
 	public void crearBodegasDePrueba() {
@@ -96,16 +66,40 @@ public class ControladorImportarActualizacionVinosBodega {
 		listaBodegas.add(new Bodega("123.45", "Descripcion 1", "Historia 1", "Bodega 6", 2, "2027-04-01"));
 	}
 
+	public void crearMaridaje(){
+		maridajesList.add(new Maridaje("Ensaladas","Ideal para ensaladas frescas"));
+		maridajesList.add(new Maridaje("Carne","Ideal para carnes rojas"));
+		maridajesList.add(new Maridaje("Arroz","Excelente para platos de arroz"));
+		maridajesList.add(new Maridaje("Pasta","Excelente para platos de pasta"));
+	}
+
+	public void crearTipoUvaBDD(){
+		tipoUvaList.add(new TipoUva("Descripción del tipo de uva Chardonnay", "Chardonnay"));
+		tipoUvaList.add(new TipoUva("Descripción del tipo de uva Riesling", "Riesling"));
+		tipoUvaList.add(new TipoUva("Descripción del tipo de uva Merlot", "Merlot"));
+		tipoUvaList.add(new TipoUva("Descripción del tipo de uva Cabernet Sauvignon", "Cabernet Sauvignon"));
+	}
+
+	//Constructor
+
+	public ControladorImportarActualizacionVinosBodega() {
+		this.listaBodegas = new ArrayList<>();
+		this.bodegaSeleccionada = new ArrayList<>();
+		this.maridajesList = new ArrayList<>();
+		this.listaVinos = new ArrayList<>();
+		this.tipoUvaList = new ArrayList<>();
+		crearBodegasDePrueba();
+		crearVinosActualizar();
+		crearMaridaje();
+		crearTipoUvaBDD();
+	}
+
 	//Metodos
 	public void opcionImportarActualizacionVinosBodega() {
-		//PantallaAB pantalla = new PantallaAB();
-
 		List<String> listaBodegasConActualizacion = buscarBodegasParaActualizar(getListaBodegas());
 
-		//PREGUNTAR SOL
 		if (listaBodegasConActualizacion.isEmpty()){
 			JOptionPane.showMessageDialog(null, "No hay bodegas para actualizar");
-			//volver a inicio
 		} else {
 			PantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
 		}
@@ -125,6 +119,7 @@ public class ControladorImportarActualizacionVinosBodega {
 	}
 
 	public void tomarSeleccionBodega(List<String> nombresBodegaSeleccionadas) {
+		ArrayList<Object> vinosPantalla = new ArrayList<>();
 		// Vaciar las bodegasSeleccionadas
 		ArrayList<Object> vinosParaActualizar = new ArrayList<>();
 		for (String nombreBodegaSeleccionada : nombresBodegaSeleccionadas){
@@ -140,12 +135,20 @@ public class ControladorImportarActualizacionVinosBodega {
 
 		for (Object vinostr : vinosParaActualizar) {
 			Boolean vinoActualizado = actualizarVinosExistentes(vinostr);
+			if (vinoActualizado){
+				vinosPantalla.add(vinostr + "Actualizado");
+			}
 			if (!vinoActualizado){
-				// Crear el vino
+				ArrayList<Object> maridajesArray = buscarMaridaje(((List<Object>)vinostr).get(8), maridajesList);
+				ArrayList<Object> tipoUvaArray = buscarTipoUva(((List<Object>)vinostr).get(7), tipoUvaList);
+				//crearVino(maridajesArray, tipoUvaArray, vinostr, bodegaSeleccionada);
+				vinosPantalla.add(vinostr + "creado");
+				//con los vinostr el eltimo elemento del array es si esta creado o no
 				// Anotar el vino creado para mostrarlo en el resumen
 			}
 			//pantalla.mostrarResumenVinosImportados(vino) //No se si se puede pasar el vino);
 		}
+		System.out.println(vinosPantalla);
 	}
 
 
@@ -167,23 +170,59 @@ public class ControladorImportarActualizacionVinosBodega {
 				// agregar a un array para mostrar el resumen
 			}
 		}
-		// (si termina el for y no encuentra la bodega decimo que no existe la bodega)
-		//
-		// bandera = bodegaSelec.actualizarDatosVino( vino )===> recibe una bandera si la bandera es false el
-		//
 		return false;
 	}
 
-	public void buscarMaridaje(Object maridaje) {
-		//
+	public ArrayList<Object> buscarMaridaje(Object maridajeAPI, ArrayList<Maridaje> maridajesList) {
+		ArrayList<Object> result = new ArrayList<>();
+		boolean yaExiste = false;
+			for (Object maridajeIndividual : (List<Object>) maridajeAPI) {
+				for (Maridaje m : maridajesList) {/* preguntar si lo sacamos afuera */
+					if (m._sosMaridaje(maridajeIndividual) && !yaExiste) {
+						List<Object> maridajeList = (List<Object>) maridajeIndividual;
+						maridajeList.add("existe");
+						result.add(maridajeList);
+						yaExiste = true;
+						break;
+					}
+				}
+				if (!yaExiste) {
+					List<Object> maridajeList = (List<Object>) maridajeIndividual;
+					maridajeList.add("no existe");
+					result.add(maridajeList);
+					break;
+				}
+
+			}
+		return result;
+
+}
+
+	public ArrayList<Object> buscarTipoUva(Object varietal, ArrayList<TipoUva> tipoUvaBDD) {
+		ArrayList<Object> result = new ArrayList<>();
+		for (Object tipoUvaIndividual : (List<Object>) varietal) {
+			boolean yaExiste = false;
+			for (TipoUva tu : tipoUvaBDD) {
+				if (tu._sosTipoUva(((List<Object>)tipoUvaIndividual).get(2))) {
+					List<Object> tipoUvaList = (List<Object>) ((List<Object>)tipoUvaIndividual).get(2);
+					tipoUvaList.add("existe");
+					result.add(tipoUvaList);
+					yaExiste = true;
+					break;
+				}
+			}
+			if (!yaExiste) {
+				List<Object> tipoUvaList = (List<Object>) ((List<Object>)tipoUvaIndividual).get(2);
+				tipoUvaList.add("no existe");
+				result.add(tipoUvaList);
+			}
+		}
+		return result;
 	}
 
-	public void buscarTipoUva() {
-		//TipoUva.sosTipoUva();
-	}
-
-	public void crearVino(/*vino maridaje listtipouva*/) {
-		//_new(vino maridaje listtipouva)
+	public void crearVino(ArrayList maridajesArray, ArrayList tipoUvaArray, Object vinostr, List<Bodega> bodegaSeleccionada) {
+		Vino vino = new Vino();
+		vino._new(maridajesArray, tipoUvaArray, vinostr, bodegaSeleccionada);
 	}
 
 	public void buscarSeguidoresBodega() {

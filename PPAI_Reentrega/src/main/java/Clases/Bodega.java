@@ -69,6 +69,7 @@ public class Bodega {
 				System.out.println(vinoBDD.getImagenEtiqueta() + " = " + "hola");
 				System.out.println(vinoBDD.getPrecioARS() + " = " + priceStr);
 				System.out.println("-------------------------------------------------------");
+
 				return true;
 			}
 		}
