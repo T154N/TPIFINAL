@@ -97,9 +97,9 @@ public class ControladorImportarActualizacionVinosBodega {
 	//Metodos
 	public void opcionImportarActualizacionVinosBodega() {
 		List<String> listaBodegasConActualizacion = buscarBodegasParaActualizar(getListaBodegas());
-
 		if (listaBodegasConActualizacion.isEmpty()){
 			JOptionPane.showMessageDialog(null, "No hay bodegas para actualizar");
+			System.exit(0);
 		} else {
 			PantallaAB.mostrarBodegasParaActualizar(listaBodegasConActualizacion);
 		}
