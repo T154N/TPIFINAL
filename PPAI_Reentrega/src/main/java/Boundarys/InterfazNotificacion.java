@@ -15,7 +15,7 @@ public class InterfazNotificacion {
 	}
 
 
-	public void notificarNovedadVino() {
-
+	public void notificarNovedadVino(/*Usuarios*/) {
+		// Sout de los usuarios por terminal
 	}
 }

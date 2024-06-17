@@ -3,6 +3,10 @@ package Clases;
 
 public class Sommelier {
 
+	//ATRIBUTOS
+	//private String fechaValidacion;
+	//private String nombre;
+
 	private Object fechaValidacion;
 
 

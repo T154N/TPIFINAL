@@ -8,7 +8,6 @@ public class Resenia {
 	private Boolean esPremium;
 	private String fechaResenia;
 	private Integer puntaje;
-	private Vino vino;
 
 	//CONSTRUCTOR
 
@@ -17,6 +16,10 @@ public class Resenia {
 		this.esPremium = esPremium;
 		this.fechaResenia = fechaResenia;
 		this.puntaje = puntaje;
+	}
+
+	public Resenia(){
+
 	}
 
 	//METODOS
@@ -63,14 +66,6 @@ public class Resenia {
 
 	public void setPuntaje(Integer puntaje) {
 		this.puntaje = puntaje;
-	}
-
-	public Vino getVino() {
-		return vino;
-	}
-
-	public void setVino(Vino vino) {
-		this.vino = vino;
 	}
 
 }

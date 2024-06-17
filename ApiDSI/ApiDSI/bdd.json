@@ -161,8 +161,14 @@
             {
                 "comentario": "Muy bueno",
                 "esPremium": false,
-                "fechaResenia": "2024-06-17T00:00:00.000+00:00",
-                "puntaje": 7,
+                "fechaResenia": "2024-06-17",
+                "puntaje": 7
+            },
+            {
+                "comentario": "Excelente",
+                "esPremium": true,
+                "fechaResenia": "2024-06-10",
+                "puntaje": 9,
                 "vino": null
             }
         ],

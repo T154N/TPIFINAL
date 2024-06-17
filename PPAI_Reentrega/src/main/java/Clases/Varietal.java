@@ -1,5 +1,7 @@
 package Clases;
 
+import java.util.ArrayList;
+
 public class Varietal {
 
 	//ATRIBUTOS
@@ -14,6 +16,24 @@ public class Varietal {
 		this.tipoUva = tipoUva;
 	}
 
+	public  Varietal(Object Varietal, ArrayList<TipoUva> tipoUvaList){
+		ArrayList<Object> varArray = (ArrayList<Object>) Varietal;
+		System.out.println("entro aqui");
+		System.out.println(varArray);
+		ArrayList<Object> tipoUvaArray = (ArrayList<Object>) varArray.get(2);
+
+		this.descripcion = varArray.get(0).toString();
+		this.porcentajeComposicion = Double.parseDouble(varArray.get(1).toString());
+		if (tipoUvaArray.get(3) == "existe"){
+			for (TipoUva tipoUvaBDD : tipoUvaList) {
+				if (tipoUvaBDD.getNombre().equals((tipoUvaArray.get(1).toString()))){
+					this.tipoUva = tipoUvaBDD;
+				}
+			}
+		}else {
+			this.tipoUva = new TipoUva(tipoUvaArray.get(0).toString(), tipoUvaArray.get(1).toString());
+		}
+	}
 
 	//METODOS
 	public void conocerTiposUva() {
@@ -26,9 +46,6 @@ public class Varietal {
 
 	}
 
-	public void _new(){
-
-	}
 
 	//GETTERS Y SETTERS
 	public String getDescripcion() {

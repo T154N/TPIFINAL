@@ -144,6 +144,10 @@ public class InterfazSB {
 }
 */
 
+/* public void crearUrlBodegas(){
+		urlBodegas.add(new String("Bodega 4", "http://localhost:8080/Bodega-4/vinos"));
+	} */
+
 public class InterfazSB {
 
 	public ArrayList<Object> getImportarActualizacionVinos(String bodegaSeleccionadas) {

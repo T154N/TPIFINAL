@@ -17,6 +17,7 @@ public class PantallaAB extends javax.swing.JFrame {
 
     public PantallaAB() {
         initComponents();
+        setLocationRelativeTo(null);
         centrarPanelBotones();
         // Inicialización del controlador
         controlador = new ControladorImportarActualizacionVinosBodega();

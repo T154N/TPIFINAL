@@ -4,6 +4,7 @@ package Clases;
 import Clases.Siguiendo;
 import Clases.Usuario;
 //----------------------------------
+
 import java.util.Set;
 
 public class Enofilo {
@@ -12,13 +13,15 @@ public class Enofilo {
 	private String imagenPerfil;
 	private String nombre;
 	private Set<Siguiendo> siguiendo;
+	private Set<Usuario> usuario;
 
 	//CONSTRUCTOR
-	public Enofilo(String apellido, String imagenPerfil, String nombre, Set<Siguiendo> siguiendo) {
+	public Enofilo(String apellido, String imagenPerfil, String nombre, Set<Siguiendo> siguiendo, Set<Usuario> usuario) {
 		this.apellido = apellido;
 		this.imagenPerfil = imagenPerfil;
 		this.nombre = nombre;
 		this.siguiendo = siguiendo;
+		this.usuario = usuario;
 	}
 	//METODOS
 	public void mostrarAmigosSeguidos() {
@@ -28,12 +31,15 @@ public class Enofilo {
 
 	}
 
-	public void seguisBodega() {
-		//Siguiendo.sosBodega()
+	public Boolean seguisBodega(/*String bodegaSeleccionada*/) {
+		// return Siguiendo.sosBodega(String bodegaSeleccionada);
+		return false;
+
 	}
 
-	public void getNombreUsuario() {
-		//Usuario.getNombre()
+	public String getNombreUsuario() {
+		//return this.Usuario.getNombre();
+		return "Cristulo";
 	}
 
 
@@ -69,5 +75,15 @@ public class Enofilo {
 	public void setSiguiendo(Set<Siguiendo> siguiendo) {
 		this.siguiendo = siguiendo;
 	}
+	public Set<Usuario> getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Set<Usuario> usuario) {
+		this.usuario = usuario;
+	}
 
 }
+
+
+

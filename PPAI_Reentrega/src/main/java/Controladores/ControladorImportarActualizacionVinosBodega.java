@@ -34,6 +34,7 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	//inicializar pantalla
 	InterfazSB interfazSB = new InterfazSB();
+	InterfazNotificacion interfazNotificacion = new InterfazNotificacion();
 	//PantallaAB pantallaAB = new PantallaAB();
 
 	//Acceso directo de array
@@ -79,6 +80,29 @@ public class ControladorImportarActualizacionVinosBodega {
 		tipoUvaList.add(new TipoUva("Descripción del tipo de uva Merlot", "Merlot"));
 		tipoUvaList.add(new TipoUva("Descripción del tipo de uva Cabernet Sauvignon", "Cabernet Sauvignon"));
 	}
+
+	//------------------------------------
+	//Parte de la notificacion
+
+	//usuarios
+	//public void crearUsuarioBDD(){
+	//	usuario.add(new Usuario("contra1","usuario1",true, null);
+	//	usuario.add(new Usuario("contra2","usuario2",true, null));
+	//  usuario.add(new Usuario("contra3","usuario3",false, null"));
+	//
+
+	//enofilo
+	//public void crearEnofiloBDD(){
+	//	enofilo.add(new Enofilo("apellido1","img1", "nombre1", siguiendo.get(0), usuario.get(0) );
+	//	enofilo.add(new Enofilo("apellido2","img2", "nombre2", siguiendo.get(1), usuario.get(1) );
+	//  enofilo.add(new Enofilo("apellido3","img3", "nombre3", siguiendo.get(2), usuario.get(2) );
+
+	//siguiendo
+	//public void crearSiguiendoBDD(){
+	//	siguiendo.add(new Siguiendo(listaBodegas.get(0),"2021-01-01", "2023-03-01", null, null );
+ 	//	siguiendo.add(new Siguiendo(listaBodegas.get(3),"2022-02-02", "2024-04-04", null, null );
+	//  siguiendo.add(new Siguiendo(listaBodegas.get(3),"2021-01-01", "2025-05-05", null, null );
+	// -------------------------------------
 
 	//Constructor
 
@@ -147,8 +171,8 @@ public class ControladorImportarActualizacionVinosBodega {
 			}
 			if (!vinoActualizado){
 				ArrayList<Object> maridajesArray = buscarMaridaje(((List<Object>)vinostr).get(8), maridajesList);
-				ArrayList<Object> tipoUvaArray = buscarTipoUva(((List<Object>)vinostr).get(7), tipoUvaList);
-				//crearVino(maridajesArray, tipoUvaArray, vinostr, bodegaSeleccionada);
+				//ArrayList<Object> tipoUvaArray = buscarTipoUva(((List<Object>)vinostr).get(7), tipoUvaList);
+				//crearVino(maridajesArray, tipoUvaArray, vinostr, bodegaSeleccionada, tipoUvaList);
 
 
 				vinoIndividual.add(((List<Object>)vinostr).get(2).toString());
@@ -166,6 +190,10 @@ public class ControladorImportarActualizacionVinosBodega {
 
 		}
 		PantallaAB.mostrarResumenVinosImportados(vinosPantalla);
+		// nombresBodegasSeleccionadas
+		//seguidores = this.buscarSeguidoresBodega(nombresBodegasSeleccionadas); // Array Strings de Usuarios
+		//interfazNotificacion.notificarNovedadVino(seguidores); //Pasarle los datos a la interfaz de la notificacion
+		// Mostrar un cartel para notificar que se enviaron las notificaciones
 	}
 
 
@@ -215,35 +243,49 @@ public class ControladorImportarActualizacionVinosBodega {
 
 	public ArrayList<Object> buscarTipoUva(Object varietal, ArrayList<TipoUva> tipoUvaBDD) {
 		ArrayList<Object> result = new ArrayList<>();
-		for (Object tipoUvaIndividual : (List<Object>) varietal) {
+		ArrayList<Object> varietalList = (ArrayList<Object>) varietal;
+		System.out.println(varietalList);
+
+		// Crear una lista temporal para almacenar los resultados intermedios
+		ArrayList<Object> tempVarietalList = new ArrayList<>(varietalList);
+
+		for (Object tipoUvaIndividual : varietalList) {
 			boolean yaExiste = false;
 			for (TipoUva tu : tipoUvaBDD) {
-				if (tu._sosTipoUva(((List<Object>)tipoUvaIndividual).get(2))) {
-					List<Object> tipoUvaList = (List<Object>) ((List<Object>)tipoUvaIndividual).get(2);
-					tipoUvaList.add("existe");
-					result.add(tipoUvaList);
+				if (tu._sosTipoUva(((List<Object>) tipoUvaIndividual).get(2))) {
+					tempVarietalList.add("existe tipo uva");
+					result.add(tempVarietalList);
 					yaExiste = true;
 					break;
 				}
 			}
 			if (!yaExiste) {
-				List<Object> tipoUvaList = (List<Object>) ((List<Object>)tipoUvaIndividual).get(2);
-				tipoUvaList.add("no existe");
-				result.add(tipoUvaList);
+				List<Object> tipoUvaList = (List<Object>) ((List<Object>) tipoUvaIndividual).get(2);
+				tempVarietalList.add("no existe");
+				result.add(tempVarietalList);
 			}
 		}
+
 		return result;
 	}
 
-	public void crearVino(ArrayList maridajesArray, ArrayList tipoUvaArray, Object vinostr, List<Bodega> bodegaSeleccionada) {
-		Vino vino = new Vino();
-		vino._new(maridajesArray, tipoUvaArray, vinostr, bodegaSeleccionada);
+	public void crearVino(ArrayList maridajesArray, ArrayList tipoUvaArray, Object vinostr, List<Bodega> bodegaSeleccionada, ArrayList<TipoUva> tipoUvaList) {
+		Vino vino = new Vino(maridajesArray, tipoUvaArray, vinostr, bodegaSeleccionada, tipoUvaList);
+		listaVinos.add(vino);
 	}
 
-	public void buscarSeguidoresBodega() {
-		//Enofilo.seguisBodega()
-		//Enofilo.getNombreUsuario()
-	}
+	/*
+	public String buscarSeguidoresBodega(ArrayList<String> nombresBodegaSeleccionadas) {
+        for (String bodegaSeleccionada : nombresBodegaSeleccionadas) {
+            for (Enofilo enofilo : enofilosBDD) {
+                if (enofilo.seguisBodega(bodegaSeleccionada)) {
+                    return enofilo.getNombreUsuario();
+                }
+            }
+        }
+        return null; // Si no se encuentra ningún seguidor
+    }
+	 */
 
 	public void finCU() {
 	}

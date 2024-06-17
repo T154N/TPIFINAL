@@ -25,7 +25,12 @@ public class Siguiendo {
 
 	}
 
-	public void sosDeBodega() {
+	public Boolean sosDeBodega(String bodegaSeleccionada) {
+		if (this.bodega.getNombre().equals(bodegaSeleccionada)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public void sosDeSomelier() {
