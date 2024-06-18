@@ -18,15 +18,13 @@ public class Varietal {
 
 	public  Varietal(Object Varietal, ArrayList<TipoUva> tipoUvaList){
 		ArrayList<Object> varArray = (ArrayList<Object>) Varietal;
-		System.out.println("entro aqui");
-		System.out.println(varArray);
 		ArrayList<Object> tipoUvaArray = (ArrayList<Object>) varArray.get(2);
 
 		this.descripcion = varArray.get(0).toString();
 		this.porcentajeComposicion = Double.parseDouble(varArray.get(1).toString());
-		if (varArray.get(3) == "existe"){
+		if (varArray.get(3).equals("existe")){
 			for (TipoUva tipoUvaBDD : tipoUvaList) {
-				if (tipoUvaBDD.getNombre().equals((tipoUvaArray.get(1).toString()))){
+				if (tipoUvaBDD.getNombre().equals((tipoUvaArray.get(0).toString()))){
 					this.tipoUva = tipoUvaBDD;
 				}
 			}

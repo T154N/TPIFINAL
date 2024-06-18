@@ -6,13 +6,13 @@ public class Siguiendo {
 
 	//ATRIBUTOS
 	private Bodega bodega;
-	private Date fechaFin;
-	private Date fechaInicio;
+	private String fechaFin;
+	private String fechaInicio;
 	private Sommelier sommelier;
 	private Enofilo amigo;
 
 	//CONSTRUCTOR
-	public Siguiendo(Bodega bodega, Date fechaFin, Date fechaInicio, Sommelier sommelier, Enofilo amigo) {
+	public Siguiendo(Bodega bodega, String fechaFin, String fechaInicio, Sommelier sommelier, Enofilo amigo) {
 		this.bodega = bodega;
 		this.fechaFin = fechaFin;
 		this.fechaInicio = fechaInicio;
@@ -50,19 +50,19 @@ public class Siguiendo {
 		this.bodega = bodega;
 	}
 
-	public Date getFechaFin() {
+	public String getFechaFin() {
 		return fechaFin;
 	}
 
-	public void setFechaFin(Date fechaFin) {
+	public void setFechaFin(String fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 
-	public Date getFechaInicio() {
+	public String getFechaInicio() {
 		return fechaInicio;
 	}
 
-	public void setFechaInicio(Date fechaInicio) {
+	public void setFechaInicio(String fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 

@@ -52,29 +52,35 @@ public class Bodega {
 		return monthsBetween >= periodoActualizacion;
 	}
 
-	public Boolean actualizarDatosVino(Object vinoAPI, List<Vino> listaVinosBDD /*vino |hay que preguntar si se puede pasar un vino|*/) {
+	public Boolean actualizarDatosVino(Object vinoAPI, List<Vino> listaVinosBDD ) {
 		for (Vino vinoBDD : listaVinosBDD){
-
 			if (vinoBDD.sosVinoParaActualizar(vinoAPI)){
-				System.out.println("antes ="+ vinoBDD.getPrecioARS());
+				System.out.println("");
+				System.out.println("");
+				System.out.println("---------------------------------------------------------------------");
+				System.out.println("Datos actualizados correctamente del vino" + ((List<Object>)vinoAPI).get(2).toString());
+				System.out.println("Precio antes"+ vinoBDD.getPrecioARS() );
 				String priceStr = ((List<Object>)vinoAPI).get(4).toString();
 				Double price = Double.parseDouble(priceStr);
 				vinoBDD.setPrecioARS(price);
+				System.out.println("Precio Despues: " + priceStr );
+				System.out.println("Etiqueta Antes: " + vinoBDD.getImagenEtiqueta());
 				String etiqueta= ((List<Object>)vinoAPI).get(1).toString();
 				vinoBDD.setImagenEtiqueta(etiqueta);
+				System.out.println("Etiquete Despues: " + etiqueta);
+				System.out.println("Nota de cata antes: "+vinoBDD.getNotaDeCataBodega());
 				String nota= ((List<Object>)vinoAPI).get(3).toString();
 				vinoBDD.setNotaDeCataBodega(nota);
-				vinoBDD.setResenia(null);
-				System.out.println(vinoBDD.getNotaDeCataBodega() + " = ");
-				System.out.println(vinoBDD.getImagenEtiqueta() + " = " + "hola");
-				System.out.println(vinoBDD.getPrecioARS() + " = " + priceStr);
-				System.out.println("-------------------------------------------------------");
+				System.out.println("Nota de cata Despues: "+nota);
+				System.out.println("Esta es la resenia antes: " + vinoBDD.getResenia());
+				List<Resenia> reseniaList = (ArrayList<Resenia>) ((List<Object>) vinoAPI).get(6);
+				vinoBDD.setResenia(reseniaList);
+				System.out.println("Esta es la resenia Despues: " + reseniaList);
 
 				return true;
 			}
 		}
 		return false;
-
 	}
 
 

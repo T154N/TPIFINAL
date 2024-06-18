@@ -5,6 +5,7 @@ import Clases.Siguiendo;
 import Clases.Usuario;
 //----------------------------------
 
+import java.util.List;
 import java.util.Set;
 
 public class Enofilo {
@@ -12,11 +13,11 @@ public class Enofilo {
 	private String apellido;
 	private String imagenPerfil;
 	private String nombre;
-	private Set<Siguiendo> siguiendo;
-	private Set<Usuario> usuario;
+	private List<Siguiendo> siguiendo;
+	private Usuario usuario;
 
 	//CONSTRUCTOR
-	public Enofilo(String apellido, String imagenPerfil, String nombre, Set<Siguiendo> siguiendo, Set<Usuario> usuario) {
+	public Enofilo(String apellido, String imagenPerfil, String nombre, List<Siguiendo> siguiendo, Usuario usuario) {
 		this.apellido = apellido;
 		this.imagenPerfil = imagenPerfil;
 		this.nombre = nombre;
@@ -31,15 +32,18 @@ public class Enofilo {
 
 	}
 
-	public Boolean seguisBodega(/*String bodegaSeleccionada*/) {
-		// return Siguiendo.sosBodega(String bodegaSeleccionada);
+	public Boolean seguisBodega(String bodegaSeleccionada) {
+		for (Siguiendo siguiendo : siguiendo) {
+			if (siguiendo.sosDeBodega(bodegaSeleccionada)){
+				return true;
+			}
+		}
 		return false;
-
 	}
 
 	public String getNombreUsuario() {
-		//return this.Usuario.getNombre();
-		return "Cristulo";
+		System.out.println();
+		return this.usuario.getNombre();
 	}
 
 
@@ -68,18 +72,18 @@ public class Enofilo {
 		this.nombre = nombre;
 	}
 
-	public Set<Siguiendo> getSiguiendo() {
+	public List<Siguiendo> getSiguiendo() {
 		return siguiendo;
 	}
 
-	public void setSiguiendo(Set<Siguiendo> siguiendo) {
+	public void setSiguiendo(List<Siguiendo> siguiendo) {
 		this.siguiendo = siguiendo;
 	}
-	public Set<Usuario> getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Set<Usuario> usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
 

@@ -32,7 +32,6 @@ public class tablaResumen extends javax.swing.JPanel {
     public void llenarTablaResumen(ArrayList<Object> listaVinos) {
         DefaultTableModel model = (DefaultTableModel) tablaResumenVinos.getModel();
         model.setRowCount(0); // Limpiar la tabla existente
-        System.out.println("TABLA RESUMEN");
         for (Object vino : listaVinos) {
             String nombre = ((List<Object>)vino).get(0).toString();
             String aniada = ((List<Object>)vino).get(1).toString();
@@ -252,7 +251,6 @@ public class tablaResumen extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonFinalizarActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, "Se notifico a los usuarios.");
         System.exit(0);
     }//GEN-LAST:event_botonFinalizarActionPerformed
 

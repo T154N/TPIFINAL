@@ -1,5 +1,7 @@
 package Boundarys;
 
+import java.util.ArrayList;
+
 public class InterfazNotificacion {
 
 	private Object novedadesVinoParaBodega;
@@ -15,7 +17,11 @@ public class InterfazNotificacion {
 	}
 
 
-	public void notificarNovedadVino(/*Usuarios*/) {
-		// Sout de los usuarios por terminal
+	public void notificarNovedadVino(ArrayList<String> nombresDeUsuariosSeguidores, String bodega) {
+		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println("Envio de notificaciones de la bodega:" + bodega);
+		for (String usuario : nombresDeUsuariosSeguidores) {
+			System.out.println("Se le envio la notificacion al usuario: " + usuario);
+		}
 	}
 }
