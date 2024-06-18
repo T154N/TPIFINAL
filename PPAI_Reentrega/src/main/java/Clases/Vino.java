@@ -29,10 +29,12 @@ public class Vino {
 		this.maridaje = maridaje;
 	}
 
-	public Vino(ArrayList maridajesArray, ArrayList tipoUvaArray, Object vinostr, List<Bodega> bodegaSeleccionada, ArrayList<TipoUva> tipoUvaList) {
+	public Vino(ArrayList maridajesArray, ArrayList tipoUvaArray, Object vinostr, List<Bodega> bodegaSeleccionada, ArrayList<TipoUva> tipoUvaList, ArrayList<Maridaje> maridajesList) {
 		ArrayList<Object> vino = (ArrayList<Object>) vinostr;
 		ArrayList<Resenia> resenias = new ArrayList<>();
 
+		System.out.println("-------------------------------------------------------------");
+		System.out.println("creacion del vino "+ vino.get(2));
 		this.setAniada((Integer) vino.get(0));
 		System.out.println(this.getAniada());
 		this.setImagenEtiqueta(vino.get(1).toString());
@@ -68,16 +70,18 @@ public class Vino {
 		System.out.println(this.getResenia());
 
 		//Crea Varietal
-		ArrayList<Varietal> varietales = new ArrayList<>();
+		ArrayList<Varietal> varietales;
 		varietales = this.crearVarietal(tipoUvaArray, tipoUvaList);
-
-
 		this.setVarietal(varietales);
 		System.out.println(this.getVarietal());
 
-		System.out.println(this.getVarietal());
-		this.setMaridaje(maridajesArray);
+		//Crea Maridaje
+		ArrayList<Maridaje> maridajes;
+		maridajes = this.crearMaridaje(maridajesArray, maridajesList);
+		this.setMaridaje(maridajes);
 		System.out.println(this.getMaridaje());
+
+
 		//crear vino ==> crea el el vino con varietal nulo
 		//for tiposDeUvaEnVinoPorCrear
 		//		asignamos al vino = Varietal.new(tipouva)
@@ -121,11 +125,39 @@ public class Vino {
 			System.out.println("soy un nuevo varietal " + varietalesCreado );
 			System.out.println("soy el tipo de uva"+ varietalesCreado.getTipoUva());
 		}
-		System.out.println(varietalesCreados);
 		return varietalesCreados;
 	}
 
+	public ArrayList<Maridaje> crearMaridaje( ArrayList MaridajeListApi, ArrayList<Maridaje> maridajesListBDD){
+		ArrayList<Maridaje> maridajeCreados = new ArrayList<>();
+		for (Object MaridajeIndividualAPI : MaridajeListApi){
+			boolean bandera = false;
+			for (Maridaje maridajeIndividualBDD: maridajesListBDD ) {
+				Object elemento = ((List<Object>) MaridajeIndividualAPI).get(0);
+				if (maridajeIndividualBDD.getNombre().equals(elemento.toString())) {
+					elemento = ((List<Object>) MaridajeIndividualAPI).get(2);
+					if (elemento.toString().equals("existe")) {
+						maridajeCreados.add(maridajeIndividualBDD);
+						System.out.println("Este es el maridaje que hay que asisgnar "+ maridajeIndividualBDD);
+						bandera = true;
+						break;
+					}
+				}
+			}
+			if (bandera == false){
+				String nombre = ((List<Object>) MaridajeIndividualAPI).get(0).toString();
+				String descripcion = ((List<Object>) MaridajeIndividualAPI).get(1).toString();
+				Maridaje maridajeCreado = new Maridaje(nombre, descripcion);
+				maridajeCreados.add(maridajeCreado);
+				System.out.println("Soy un nuevo Maridaje " + maridajeCreado);
+			}
+		}
+		return maridajeCreados;
+	}
+
+	// -----------------------------------------------
 	//GETTERS Y SETTERS
+	// -----------------------------------------------
 	public Integer getAniada() {
 		return aniada;
 	}

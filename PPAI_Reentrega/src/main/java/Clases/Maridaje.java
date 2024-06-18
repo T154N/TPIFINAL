@@ -14,6 +14,27 @@ public class Maridaje {
 		this.descripcion = descripcion;
 	}
 
+	public Maridaje() {
+	}
+/*
+	public Maridaje(Object maridaje, ArrayList<Maridaje> maridajesListaBDD){
+		ArrayList<Object> marArray = (ArrayList<Object>) maridaje;
+		System.out.println("entro aqui");
+		System.out.println(marArray);
+		for (Maridaje  maridajeBDD : maridajesListaBDD) {
+			if (maridajeBDD.getNombre().equals(marArray.get(0).toString())){
+				if(marArray.get(2) == "existe"){
+					this.nombre = maridajeBDD.getNombre();
+					this.descripcion = maridajeBDD.getDescripcion();
+				}
+				else{
+					this.nombre = marArray.get(0).toString();
+					this.descripcion = marArray.get(1).toString();
+				}
+			}
+		}
+	}
+*/
 	//METODOS
 	public void maridaConVino() {
 

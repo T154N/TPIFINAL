@@ -1,5 +1,8 @@
 package com.company.PantallaAB;
 
+// --------------------------------------------
+// Importar clases necesarias 
+// --------------------------------------------
 import Clases.Vino;
 import Controladores.ControladorImportarActualizacionVinosBodega;
 import com.company.views.tablaBodegasAct;
@@ -9,6 +12,10 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+// ---------------------------------------------
+// Definicion de clase boudary PantallaAB
+//---------------------------------------------
 public class PantallaAB extends javax.swing.JFrame {
 
     private ControladorImportarActualizacionVinosBodega controlador;
@@ -201,12 +208,15 @@ public class PantallaAB extends javax.swing.JFrame {
 
     }
 
+    // Pantalla habilita pantalla
     private void botonImpActBodActionPerformed(java.awt.event.ActionEvent evt) {
         habilitarPantalla();
+        // llama al metodo del controlador
         controlador.opcionImportarActualizacionVinosBodega();
 
     }
-
+    
+    // Cosas esteticas, menu de arriba 
     public void barMenu(){
            barMenu.setBackground(new java.awt.Color(123, 38, 66));
             Inicio.setBackground(new java.awt.Color(219, 179, 177));
@@ -224,17 +234,25 @@ public class PantallaAB extends javax.swing.JFrame {
         contenedor.repaint();
     }
 
+    // --------------------------------------------------
+    //
+    // --------------------------------------------------
     public void habilitarPantalla() {
         // Ocultar botones y mostrar el panel de la tabla
         //contenedor.setVisible(false);
         //jPanel1.setVisible(false);
+
+        // Elimina todos los componentes actuales del contenedor (contenedor)
         contenedor.removeAll();
+        // Administrador de diseño que permite posicionar componentes dentro de una cuadrícula.
         contenedor.setLayout(new GridBagLayout());
+        // Especificar restricciones
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.CENTER;
         gbc.fill = GridBagConstraints.BOTH; // Hacer que el componente llene su celda en ambas direcciones
         gbc.weightx = 1.0; // Dar todo el espacio extra horizontal al componente
         gbc.weighty = 1.0; // Dar todo el espacio extra vertical al componente
+        // añade el compoente tabla al contenedor
         contenedor.add(tabla, gbc);
         contenedor.revalidate();
 

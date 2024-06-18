@@ -236,6 +236,18 @@
       {
         "nombre": "Pescado",
         "descripcion": "Ideal para Pescados"
+      },
+      {
+        "nombre": "Arroz",
+        "descripcion": "Excelente para platos de arroz"
+      },
+      {
+        "nombre": "Empanadas",
+        "descripcion": "Excelente para comer empanadas"
+      },
+      {
+        "nombre": "Ensaladas",
+        "descripcion": "Ideal para ensaladas frescas"
       }
     ]
   }

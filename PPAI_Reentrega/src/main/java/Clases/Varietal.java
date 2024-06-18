@@ -24,7 +24,7 @@ public class Varietal {
 
 		this.descripcion = varArray.get(0).toString();
 		this.porcentajeComposicion = Double.parseDouble(varArray.get(1).toString());
-		if (tipoUvaArray.get(3) == "existe"){
+		if (varArray.get(3) == "existe"){
 			for (TipoUva tipoUvaBDD : tipoUvaList) {
 				if (tipoUvaBDD.getNombre().equals((tipoUvaArray.get(1).toString()))){
 					this.tipoUva = tipoUvaBDD;

@@ -239,8 +239,10 @@ public class InterfazSB {
 						maridajeIndividual.add(maridajeJsonObject.optString("nombre"));
 						maridajeIndividual.add(maridajeJsonObject.optString("descripcion"));
 						maridajesList.add(maridajeIndividual);
+
 					}
 				}
+				System.out.println("estoy en la api"+maridajesList);
 				vinoIndividual.add(maridajesList);
 				vinoData.add(vinoIndividual);
 			}
