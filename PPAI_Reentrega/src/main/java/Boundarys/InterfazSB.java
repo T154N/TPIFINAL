@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
+import com.company.PantallaAB.PantallaAB;
 /*
 public class InterfazSB {
 
@@ -149,7 +149,7 @@ public class InterfazSB {
 	} */
 
 public class InterfazSB {
-
+	ArrayList<String> bodegasSinConexion = new ArrayList<>();
 	public ArrayList<Object> getImportarActualizacionVinos(String bodegaSeleccionadas) {
 		String bodegaSeleccionadasConGuiones = bodegaSeleccionadas.replace(" ", "-");
 		String urlStr = "http://localhost:8080/" + bodegaSeleccionadasConGuiones;
@@ -177,6 +177,7 @@ public class InterfazSB {
 
 			// Process the JSON response
 			JSONArray jsonArray = new JSONArray(sb.toString());
+
 			for (int i = 0; i < jsonArray.length(); i++) {
 				JSONObject jsonObject = jsonArray.getJSONObject(i);
 				ArrayList<Object> vinoIndividual = new ArrayList<>();
@@ -250,8 +251,11 @@ public class InterfazSB {
 			System.err.println("API sin conexion " + e.getMessage());
 		} catch (Exception e) {
 			System.err.println("Error al importar la actualización de vinos: " + e.getMessage());
-		}
 
-		return null;
+			bodegasSinConexion.add(bodegaSeleccionadas);
+			PantallaAB.tablaBodegasSinConexion( bodegasSinConexion);
+		}
+		ArrayList<Object> emptyList = new ArrayList<>();
+		return emptyList;
 	}
 }

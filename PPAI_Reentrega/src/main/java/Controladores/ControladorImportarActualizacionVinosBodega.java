@@ -30,6 +30,9 @@ public class ControladorImportarActualizacionVinosBodega {
 	private List<Vino> listaVinos;
 	private ArrayList<Maridaje> maridajesList;
 	private ArrayList<TipoUva> tipoUvaList;
+	//
+	//
+	//
 
 
 	//inicializar pantalla
@@ -153,7 +156,6 @@ public class ControladorImportarActualizacionVinosBodega {
 				}
 			}
 			 vinosParaActualizar = interfazSB.getImportarActualizacionVinos(nombreBodegaSeleccionada);
-		}
 
 
 
@@ -188,6 +190,7 @@ public class ControladorImportarActualizacionVinosBodega {
 			//pantalla.mostrarResumenVinosImportados(vino) //No se si se puede pasar el vino);
 			vinosPantalla.add(vinoIndividual);
 
+		}
 		}
 		PantallaAB.mostrarResumenVinosImportados(vinosPantalla);
 		// bodegasSinConexion

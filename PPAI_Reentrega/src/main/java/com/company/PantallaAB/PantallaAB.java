@@ -266,6 +266,11 @@ public class PantallaAB extends javax.swing.JFrame {
 
 
     }
+
+    public static void tablaBodegasSinConexion(ArrayList<String> bodegasSinConexion){
+        tablaResumenVinos.llenarTablaBodegasSinConex(bodegasSinConexion);
+    }
+
     public void habilitarTablaResumen(Container container){
         container.removeAll();
         container.setLayout(new GridBagLayout());
@@ -275,6 +280,7 @@ public class PantallaAB extends javax.swing.JFrame {
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
         container.add(tablaResumenVinos, gbc);
+
         container.revalidate();
 
     }
