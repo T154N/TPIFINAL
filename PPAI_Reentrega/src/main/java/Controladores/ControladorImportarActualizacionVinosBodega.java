@@ -85,10 +85,10 @@ public class ControladorImportarActualizacionVinosBodega {
 	//Parte de la notificacion
 
 	//usuarios
-	//public void crearUsuarioBDD(){
-	//	usuario.add(new Usuario("contra1","usuario1",true, null);
-	//	usuario.add(new Usuario("contra2","usuario2",true, null));
-	//  usuario.add(new Usuario("contra3","usuario3",false, null"));
+	//public void crearListaUsuarioBDD(){
+	//	listaUsuario.add(new Usuario("contra1","usuario1",true, null);
+	//	listaUsuario.add(new Usuario("contra2","usuario2",true, null));
+	//  listaUsuario.add(new Usuario("contra3","usuario3",false, null"));
 	//
 
 	//enofilo
@@ -190,9 +190,10 @@ public class ControladorImportarActualizacionVinosBodega {
 
 		}
 		PantallaAB.mostrarResumenVinosImportados(vinosPantalla);
-		// nombresBodegasSeleccionadas
-		//seguidores = this.buscarSeguidoresBodega(nombresBodegasSeleccionadas); // Array Strings de Usuarios
-		//interfazNotificacion.notificarNovedadVino(seguidores); //Pasarle los datos a la interfaz de la notificacion
+		// bodegasSinConexion
+		// nombresDeUsuariosSeguidores = this.buscarSeguidoresBodega(nombresBodegasSeleccionadas); // Array Strings de Usuarios
+		// interfazNotificacion.notificarNovedadVino(nombresDeUsuariosSeguidores); //Pasarle los datos a la interfaz de la notificacion
+		// 
 		// Mostrar un cartel para notificar que se enviaron las notificaciones
 	}
 
